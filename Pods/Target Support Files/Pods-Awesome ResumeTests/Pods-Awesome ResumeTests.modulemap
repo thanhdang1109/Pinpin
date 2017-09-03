@@ -1,0 +1,6 @@
+framework module Pods_Awesome_ResumeTests {
+  umbrella header "Pods-Awesome ResumeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

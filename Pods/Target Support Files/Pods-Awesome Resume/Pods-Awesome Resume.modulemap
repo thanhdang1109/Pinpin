@@ -1,0 +1,6 @@
+framework module Pods_Awesome_Resume {
+  umbrella header "Pods-Awesome Resume-umbrella.h"
+
+  export *
+  module * { export * }
+}

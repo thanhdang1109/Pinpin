@@ -60,17 +60,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-P2-2j9" customClass="TouchableUIView" customModule="Awesome_Resume" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="150" width="275" height="40"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vqY-M3-n4K">
-                                                <rect key="frame" x="13.5" y="2" width="248" height="36"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vqY-M3-n4K">
+                                                <rect key="frame" x="2" y="2" width="271" height="36"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook_icon" translatesAutoresizingMaskIntoConstraints="NO" id="hAu-c7-WU5">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook_icon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hAu-c7-WU5">
                                                         <rect key="frame" x="0.0" y="0.0" width="35.5" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="hAu-c7-WU5" secondAttribute="height" multiplier="40:40" id="Ryf-pE-0t2"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In with Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hH3-te-EvK">
-                                                        <rect key="frame" x="43.5" y="4.5" width="204.5" height="27.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In with Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hH3-te-EvK">
+                                                        <rect key="frame" x="43.5" y="4.5" width="227.5" height="27.5"/>
                                                         <color key="backgroundColor" red="0.28581732511520386" green="0.37901782989501953" blue="0.61135685443878174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -84,9 +84,11 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.28627450980392155" green="0.38039215686274508" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vqY-M3-n4K" secondAttribute="trailing" constant="2" id="29Z-gy-hEJ"/>
                                             <constraint firstItem="vqY-M3-n4K" firstAttribute="centerX" secondItem="BTt-P2-2j9" secondAttribute="centerX" id="Jwa-BV-tW5"/>
                                             <constraint firstItem="vqY-M3-n4K" firstAttribute="centerY" secondItem="BTt-P2-2j9" secondAttribute="centerY" id="WJs-Ji-Is0"/>
                                             <constraint firstAttribute="height" constant="40" id="awg-Of-AOe"/>
+                                            <constraint firstItem="vqY-M3-n4K" firstAttribute="leading" secondItem="BTt-P2-2j9" secondAttribute="leading" constant="2" id="d31-xX-R8G"/>
                                             <constraint firstItem="vqY-M3-n4K" firstAttribute="top" secondItem="BTt-P2-2j9" secondAttribute="top" constant="2" id="gGX-4I-BiQ"/>
                                             <constraint firstAttribute="bottom" secondItem="vqY-M3-n4K" secondAttribute="bottom" constant="2" id="onG-fH-iGF"/>
                                         </constraints>
@@ -107,22 +109,29 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-7M-XCN">
-                                <rect key="frame" x="67" y="55" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-7M-XCN">
+                                <rect key="frame" x="67" y="20" width="240" height="128"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aIh-IZ-WpK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HmP-7g-P1L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aIh-IZ-WpK" secondAttribute="trailing" constant="50" id="UlL-Ha-5eU"/>
+                            <constraint firstItem="2sH-7M-XCN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="acn-K3-SXq"/>
                             <constraint firstItem="aIh-IZ-WpK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r6V-QY-B4o"/>
+                            <constraint firstItem="2sH-7M-XCN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="s19-ZZ-rBF"/>
                             <constraint firstItem="aIh-IZ-WpK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x6g-lb-Y7l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="appImg" destination="2sH-7M-XCN" id="gJD-Xb-4yv"/>
+                        <outlet property="fbSignInBtn" destination="BTt-P2-2j9" id="kkN-Qb-Y0G"/>
                         <outlet property="loginStackView" destination="aIh-IZ-WpK" id="Glx-Wj-GvV"/>
+                        <outlet property="normalSignInBtn" destination="hw7-Tb-EIW" id="Lvg-dS-8Yf"/>
+                        <outlet property="signUpBtn" destination="Ap5-hx-lcq" id="SDh-Tc-qHP"/>
+                        <outlet property="userEmailField" destination="S1m-jW-RXC" id="Rd0-Yv-7bf"/>
+                        <outlet property="userPassField" destination="Y7V-Io-q3O" id="N5t-di-TxY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

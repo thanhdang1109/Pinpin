@@ -12,23 +12,26 @@ import FacebookLogin
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var appImg: UIImageView!
     @IBOutlet weak var loginStackView: UIStackView!
+    
+    @IBOutlet weak var userEmailField: UITextField!
+    @IBOutlet weak var userPassField: UITextField!
     //    @IBOutlet weak var fbLoginBtn: FBSDKButton!
+    @IBOutlet weak var normalSignInBtn: CorneredButton!
+    @IBOutlet weak var fbSignInBtn: TouchableUIView!
+    
+    @IBOutlet weak var signUpBtn: CorneredButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
 //        let loginButton = LoginButton(readPermissions: [.publicProfile])
 //        
 //        loginStackView.insertArrangedSubview(loginButton, at: 3)
-        
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
+    
 }
 

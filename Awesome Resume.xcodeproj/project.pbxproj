@@ -20,6 +20,9 @@
 		EB0837A91F5BE9B30015C661 /* Awesome_ResumeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837A81F5BE9B30015C661 /* Awesome_ResumeUITests.swift */; };
 		EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */; };
 		EB4DF0181F5C34C2006E9596 /* CorneredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4DF0171F5C34C2006E9596 /* CorneredButton.swift */; };
+		EB8868A81F5D01080018FA6E /* Hien_Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868A41F5D01080018FA6E /* Hien_Feeds.storyboard */; };
+		EB8868A91F5D01080018FA6E /* Claude_Resume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868A61F5D01080018FA6E /* Claude_Resume.storyboard */; };
+		EB8868AD1F5D01730018FA6E /* Hien_User_Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868AB1F5D01730018FA6E /* Hien_User_Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		EB0837AA1F5BE9B30015C661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableUIView.swift; sourceTree = "<group>"; };
 		EB4DF0171F5C34C2006E9596 /* CorneredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorneredButton.swift; sourceTree = "<group>"; };
+		EB8868A51F5D01080018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hien_Feeds.storyboard; sourceTree = "<group>"; };
+		EB8868A71F5D01080018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Claude_Resume.storyboard; sourceTree = "<group>"; };
+		EB8868AC1F5D01730018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hien_User_Profile.storyboard; sourceTree = "<group>"; };
 		EF0786AFA0C523D3F808A485 /* Pods-Awesome ResumeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeTests/Pods-Awesome ResumeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +154,9 @@
 				EB2053B71F5C007F009264E1 /* Model */,
 				EB0837851F5BE9B20015C661 /* AppDelegate.swift */,
 				EB0837891F5BE9B20015C661 /* Main.storyboard */,
+				EB8868A41F5D01080018FA6E /* Hien_Feeds.storyboard */,
+				EB8868A61F5D01080018FA6E /* Claude_Resume.storyboard */,
+				EB8868AB1F5D01730018FA6E /* Hien_User_Profile.storyboard */,
 				EB08378F1F5BE9B20015C661 /* Assets.xcassets */,
 				EB0837911F5BE9B20015C661 /* LaunchScreen.storyboard */,
 				EB0837941F5BE9B20015C661 /* Info.plist */,
@@ -315,7 +324,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0837931F5BE9B20015C661 /* LaunchScreen.storyboard in Resources */,
+				EB8868AD1F5D01730018FA6E /* Hien_User_Profile.storyboard in Resources */,
 				EB0837901F5BE9B20015C661 /* Assets.xcassets in Resources */,
+				EB8868A91F5D01080018FA6E /* Claude_Resume.storyboard in Resources */,
+				EB8868A81F5D01080018FA6E /* Hien_Feeds.storyboard in Resources */,
 				EB08378B1F5BE9B20015C661 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +547,30 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		EB8868A41F5D01080018FA6E /* Hien_Feeds.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB8868A51F5D01080018FA6E /* Base */,
+			);
+			name = Hien_Feeds.storyboard;
+			sourceTree = "<group>";
+		};
+		EB8868A61F5D01080018FA6E /* Claude_Resume.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB8868A71F5D01080018FA6E /* Base */,
+			);
+			name = Claude_Resume.storyboard;
+			sourceTree = "<group>";
+		};
+		EB8868AB1F5D01730018FA6E /* Hien_User_Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB8868AC1F5D01730018FA6E /* Base */,
+			);
+			name = Hien_User_Profile.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -651,7 +687,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F5NBU4297C;
+				DEVELOPMENT_TEAM = MXE9N2LLEZ;
 				INFOPLIST_FILE = "Awesome Resume/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -668,7 +704,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F5NBU4297C;
+				DEVELOPMENT_TEAM = MXE9N2LLEZ;
 				INFOPLIST_FILE = "Awesome Resume/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

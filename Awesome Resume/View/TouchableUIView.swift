@@ -25,6 +25,11 @@ extension UIResponder {
 
 class TouchableUIView: UIView {
     
+    var canClick: Bool = true
+    var firstPoint: CGPoint? = nil
+    var secondPoint: CGPoint? = nil
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 5
@@ -33,26 +38,42 @@ class TouchableUIView: UIView {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
-            let currentPoint = touch.location(in: self)
+//            let currentPoint = touch.location(in: self)
             // do something with your currentPoint
+            firstPoint = touch.location(in: self)
+//            secondPoint = touch.location(in: self)
         }
         let children = self.subviews
         for child in children {
             child.alpha = 0.5
         }
 //        self.alpha = 0.5
+        canClick = true
         self.backgroundColor = #colorLiteral(red: 0.2862745098, green: 0.3803921569, blue: 0.6117647059, alpha: 1)//Color when UIView is clicked.
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let currentPoint = touch.location(in: self)
-            // do something with your currentPoint
+        for touch in touches {
+            firstPoint = touch.location(in: self)
+            if self.frame.contains(firstPoint!) {
+                let children = self.subviews
+                for child in children {
+                    child.alpha = 0.5
+                }
+                canClick = true
+            }
+            else {
+                let children = self.subviews
+                for child in children {
+                    child.alpha = 1.0
+                }
+                canClick = false
+            }
         }
-        let children = self.subviews
-        for child in children {
-            child.alpha = 0.5
-        }
+//        if let touch = touches.first {
+//            let currentPoint = touch.location(in: self)
+//            // do something with your currentPoint
+//        }
 //        self.alpha = 0.5
         self.backgroundColor = #colorLiteral(red: 0.2862745098, green: 0.3803921569, blue: 0.6117647059, alpha: 1)//Color when UIView is clicked.
     }
@@ -68,7 +89,15 @@ class TouchableUIView: UIView {
         }
         self.alpha = 1.0
         self.backgroundColor = #colorLiteral(red: 0.2862745098, green: 0.3803921569, blue: 0.6117647059, alpha: 1)//Color when UIView is clicked.
-        loginBtnClicked()
+        if canClick {
+            if let accessToken = AccessToken.current {
+                // User is logged in, use 'accessToken' here.
+                print("Already In ----- >")
+                logoutBtnClicked()
+            } else {
+                loginBtnClicked()
+            }
+        }
     }
     
     func loginBtnClicked() {
@@ -80,8 +109,18 @@ class TouchableUIView: UIView {
             case .cancelled:
                 print("User cancelled login")
             case .success(let grantedPermissions, let declinedPermissions, let token):
+                print("Success!")
                 print("\(grantedPermissions) + \(declinedPermissions) + \(token)")
+                let loginVC = self.getParentViewController() as! LoginVC!
+                loginVC?.updateStatus(loginResult: "Logged In")
             }
         }
+    }
+    
+    func logoutBtnClicked() {
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        let loginVC = self.getParentViewController() as! LoginVC!
+        loginVC?.updateStatus(loginResult: "Logged Out")
     }
 }

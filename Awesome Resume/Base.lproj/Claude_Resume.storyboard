@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bkP-6X-AQR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="zeg-gZ-IbQ">
+            <objects>
+                <viewController id="bkP-6X-AQR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Wf-z6-oB5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claude_Resume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9o1-tS-RyY">
+                                <rect key="frame" x="114" y="322" width="147" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9o1-tS-RyY" firstAttribute="centerY" secondItem="1Wf-z6-oB5" secondAttribute="centerY" id="DjZ-Qr-HVc"/>
+                            <constraint firstItem="9o1-tS-RyY" firstAttribute="centerX" secondItem="1Wf-z6-oB5" secondAttribute="centerX" id="LSB-qY-IF6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m16-h1-N4g"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="UNq-QL-els"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgw-U9-Tos" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="-578"/>
+        </scene>
+    </scenes>
+</document>

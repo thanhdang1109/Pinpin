@@ -56,6 +56,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="07O-k1-P2x" kind="show" id="Ug1-0M-4Aj"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-P2-2j9" customClass="TouchableUIView" customModule="Awesome_Resume" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="150" width="275" height="40"/>
@@ -126,6 +129,7 @@
                     </view>
                     <connections>
                         <outlet property="appImg" destination="2sH-7M-XCN" id="gJD-Xb-4yv"/>
+                        <outlet property="fbBtnLbl" destination="hH3-te-EvK" id="PWG-kN-Xsl"/>
                         <outlet property="fbSignInBtn" destination="BTt-P2-2j9" id="kkN-Qb-Y0G"/>
                         <outlet property="loginStackView" destination="aIh-IZ-WpK" id="Glx-Wj-GvV"/>
                         <outlet property="normalSignInBtn" destination="hw7-Tb-EIW" id="Lvg-dS-8Yf"/>
@@ -137,6 +141,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Asj-F6-Fwf">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="07O-k1-P2x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f62-sH-rme">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7wt-sc-QJi" kind="relationship" relationship="viewControllers" id="2db-wG-O7j"/>
+                        <segue destination="61H-Wx-wTl" kind="relationship" relationship="viewControllers" id="1sp-rZ-oQT"/>
+                        <segue destination="SE4-3s-9OU" kind="relationship" relationship="viewControllers" id="Vu4-8C-gsW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9wb-7l-tl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="133"/>
+        </scene>
+        <!--Claude_Resume-->
+        <scene sceneID="LPI-TU-PcU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Claude_Resume" id="7wt-sc-QJi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Nvm-Pr-dgZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNb-gT-FT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="3"/>
+        </scene>
+        <!--Hien_Feeds-->
+        <scene sceneID="Df1-GZ-cyN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Hien_Feeds" id="61H-Wx-wTl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hXP-mY-6g7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="alm-nV-SOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1578" y="133"/>
+        </scene>
+        <!--Hien_User_Profile-->
+        <scene sceneID="d8c-C3-Tzu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Hien_User_Profile" id="SE4-3s-9OU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hBF-AR-7bH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbZ-Gx-dnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="273"/>
         </scene>
     </scenes>
     <resources>

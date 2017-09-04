@@ -57,7 +57,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="07O-k1-P2x" kind="show" id="Ug1-0M-4Aj"/>
+                                            <action selector="normalSignInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1R-U4-i5X"/>
+                                            <segue destination="07O-k1-P2x" kind="showDetail" action="showViewController:sender:" id="IRa-fg-bZW"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-P2-2j9" customClass="TouchableUIView" customModule="Awesome_Resume" customModuleProvider="target">
@@ -109,6 +110,9 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="KEo-4m-IkM" kind="show" id="Mbf-TO-L5Z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -140,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-260" y="149"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Asj-F6-Fwf">
@@ -148,6 +152,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="07O-k1-P2x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f62-sH-rme">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -190,6 +195,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbZ-Gx-dnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1590" y="273"/>
+        </scene>
+        <!--UserSignUp-->
+        <scene sceneID="UQq-DT-Nfu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserSignUp" id="KEo-4m-IkM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CS6-Ct-uDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-674" y="927"/>
         </scene>
     </scenes>
     <resources>

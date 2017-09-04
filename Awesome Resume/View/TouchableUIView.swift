@@ -53,29 +53,65 @@ class TouchableUIView: UIView {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            firstPoint = touch.location(in: self)
-            if self.frame.contains(firstPoint!) {
-                let children = self.subviews
-                for child in children {
-                    child.alpha = 0.5
-                }
-                canClick = true
-            }
-            else {
-                let children = self.subviews
-                for child in children {
-                    child.alpha = 1.0
-                }
-                canClick = false
-            }
-        }
+//        for touch in touches {
+//            firstPoint = touch.location(in: self)
+//            if self.frame.contains(firstPoint!) {
+//                let children = self.subviews
+//                for child in children {
+//                    child.alpha = 0.5
+//                }
+//                canClick = true
+//            }
+//            else {
+//                let children = self.subviews
+//                for child in children {
+//                    child.alpha = 1.0
+//                }
+//                canClick = false
+//            }
+//        }
 //        if let touch = touches.first {
 //            let currentPoint = touch.location(in: self)
 //            // do something with your currentPoint
 //        }
+//
+//        let children = self.subviews
+//        for child in children {
+//            child.alpha = 0.5
+//        }
+        //        self.alpha = 0.5
+        canClick = true
+//        self.backgroundColor = #colorLiteral(red: 0.2862745098, green: 0.3803921569, blue: 0.6117647059, alpha: 1)//Color when UIView is clicked.
 //        self.alpha = 0.5
+        let children = self.subviews
+        if let touch = touches.first {
+            if (hitTest(touch.location(in: self), with: event) != nil) {
+                print("Touch passed hit test and seems valid")
+                super.touchesCancelled(touches, with: event)
+                for child in children {
+                                child.alpha = 0.5
+                            }
+                self.backgroundColor = #colorLiteral(red: 0.2862745098, green: 0.3803921569, blue: 0.6117647059, alpha: 1)//Color when UIView is clicked.
+                canClick = true
+                return
+            }
+        }
+        
+        for child in children {
+            child.alpha = 1.0
+        }
+        canClick = false
+        print("Touch isn't passed hit test and will be ignored")
+        super.touchesMoved(touches, with: event)
+        
         self.backgroundColor = #colorLiteral(red: 0.2862745098, green: 0.3803921569, blue: 0.6117647059, alpha: 1)//Color when UIView is clicked.
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if self.bounds.contains(self.convert(point, from: self)) {
+            return self
+        }
+        return nil
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -111,8 +147,8 @@ class TouchableUIView: UIView {
             case .success(let grantedPermissions, let declinedPermissions, let token):
                 print("Success!")
                 print("\(grantedPermissions) + \(declinedPermissions) + \(token)")
-                let loginVC = self.getParentViewController() as! LoginVC!
-                loginVC?.updateStatus(loginResult: "Logged In")
+//                let loginVC = self.getParentViewController() as! LoginVC!
+//                loginVC?.updateStatus(loginResult: "Logged In")
             }
         }
     }
@@ -120,7 +156,7 @@ class TouchableUIView: UIView {
     func logoutBtnClicked() {
         let loginManager = LoginManager()
         loginManager.logOut()
-        let loginVC = self.getParentViewController() as! LoginVC!
-        loginVC?.updateStatus(loginResult: "Logged Out")
+//        let loginVC = self.getParentViewController() as! LoginVC!
+//        loginVC?.updateStatus(loginResult: "Logged Out")
     }
 }

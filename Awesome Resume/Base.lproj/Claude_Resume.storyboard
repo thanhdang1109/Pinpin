@@ -1,47 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bkP-6X-AQR">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IJp-tK-ifG">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
+        <array key="Palatino.ttc">
+            <string>Palatino-Roman</string>
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Resume1-->
         <scene sceneID="zeg-gZ-IbQ">
             <objects>
-                <viewController id="bkP-6X-AQR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1Wf-z6-oB5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claude_Resume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9o1-tS-RyY">
-                                <rect key="frame" x="114" y="322" width="147" height="23.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="9o1-tS-RyY" firstAttribute="centerY" secondItem="1Wf-z6-oB5" secondAttribute="centerY" id="DjZ-Qr-HVc"/>
-                            <constraint firstItem="9o1-tS-RyY" firstAttribute="centerX" secondItem="1Wf-z6-oB5" secondAttribute="centerX" id="LSB-qY-IF6"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="m16-h1-N4g"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="UNq-QL-els"/>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgw-U9-Tos" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="bkP-6X-AQR" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AoD-nA-JkJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="cTQ-Zy-eEu" customClass="ResumeTitleText">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="158"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CLAUDE CHEN" placeholder="your name ..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayY-fE-KcX">
+                                    <rect key="frame" x="13" y="29" width="388" height="25"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="22"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                </textField>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="15 John Street, East Brunswick, VIC 3057. Mobile: 0403.496.746" translatesAutoresizingMaskIntoConstraints="NO" id="bgS-NK-EmD">
+                                    <rect key="frame" x="8" y="53" width="393" height="70"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="70" id="yhY-7f-Vfc"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ayY-fE-KcX" secondAttribute="trailing" constant="13" id="CIM-4Z-ISd"/>
+                                <constraint firstItem="bgS-NK-EmD" firstAttribute="top" secondItem="ayY-fE-KcX" secondAttribute="bottom" constant="-1" id="R3t-Ki-Zer"/>
+                                <constraint firstItem="ayY-fE-KcX" firstAttribute="top" secondItem="cTQ-Zy-eEu" secondAttribute="top" constant="29" id="bAe-XU-6IM"/>
+                                <constraint firstAttribute="trailing" secondItem="bgS-NK-EmD" secondAttribute="trailing" constant="13" id="egp-Q9-TNb"/>
+                                <constraint firstItem="ayY-fE-KcX" firstAttribute="leading" secondItem="cTQ-Zy-eEu" secondAttribute="leading" constant="13" id="go1-N7-Nga"/>
+                                <constraint firstItem="bgS-NK-EmD" firstAttribute="leading" secondItem="cTQ-Zy-eEu" secondAttribute="leading" constant="8" id="sMT-bz-ru1"/>
+                            </constraints>
+                        </view>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Resume1" id="X3g-kp-fAS">
+                        <barButtonItem key="backBarButtonItem" title="Main" id="Stw-cF-Tvv"/>
+                    </navigationItem>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="1577" y="-578"/>
+            <point key="canvasLocation" x="2366.666666666667" y="-580.43478260869574"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e3T-3e-pip">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IJp-tK-ifG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="UNq-QL-els"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N2p-ev-fsP">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bkP-6X-AQR" kind="relationship" relationship="rootViewController" id="9NE-db-IZc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCV-io-fYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576" y="-578.41079460269873"/>
         </scene>
     </scenes>
 </document>

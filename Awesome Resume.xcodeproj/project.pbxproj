@@ -10,7 +10,11 @@
 		0D605741AF00EFE353987E46 /* Pods_Awesome_ResumeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDFF746DB4A045E6259CC91 /* Pods_Awesome_ResumeUITests.framework */; };
 		3EAC929EB6077A5A7AC3E9D3 /* Pods_Awesome_Resume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4109B8F90C7BF455301EAB /* Pods_Awesome_Resume.framework */; };
 		DF3368963E5FE853E3502B65 /* Pods_Awesome_ResumeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBD6C8523A2B20D693EC668 /* Pods_Awesome_ResumeTests.framework */; };
-		E7CA4CEA1F5D8F37000A4C7F /* ResumeTitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CA4CE91F5D8F37000A4C7F /* ResumeTitleText.swift */; };
+		E78899121F65028E005B1CBF /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78899101F65028E005B1CBF /* TitleCell.swift */; };
+		E78899131F65028E005B1CBF /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E78899111F65028E005B1CBF /* TitleCell.xib */; };
+		E7BD90851F61922A00A100C9 /* ResumesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD90841F61922A00A100C9 /* ResumesVC.swift */; };
+		E7BD90871F625A5800A100C9 /* ResumesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD90861F625A5800A100C9 /* ResumesModel.swift */; };
+		E7E0B3681F60211200753DA6 /* ResumesPagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */; };
 		EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837851F5BE9B20015C661 /* AppDelegate.swift */; };
 		EB0837881F5BE9B20015C661 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837871F5BE9B20015C661 /* LoginVC.swift */; };
 		EB08378B1F5BE9B20015C661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0837891F5BE9B20015C661 /* Main.storyboard */; };
@@ -54,7 +58,11 @@
 		DD3745AF3B4F2DDE536A2EBD /* Pods-Awesome ResumeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeUITests/Pods-Awesome ResumeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF82634A1A25A24792E45645 /* Pods-Awesome ResumeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeTests/Pods-Awesome ResumeTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFCA3FFC9A5E0105A1B2A528 /* Pods-Awesome ResumeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeUITests/Pods-Awesome ResumeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E7CA4CE91F5D8F37000A4C7F /* ResumeTitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTitleText.swift; sourceTree = "<group>"; };
+		E78899101F65028E005B1CBF /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		E78899111F65028E005B1CBF /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
+		E7BD90841F61922A00A100C9 /* ResumesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesVC.swift; sourceTree = "<group>"; };
+		E7BD90861F625A5800A100C9 /* ResumesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumesModel.swift; path = "Awesome Resume/Controller/ResumesModel.swift"; sourceTree = SOURCE_ROOT; };
+		E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesPagesVC.swift; sourceTree = "<group>"; };
 		EB0837821F5BE9B20015C661 /* Awesome Resume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Resume.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0837851F5BE9B20015C661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB0837871F5BE9B20015C661 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 		EB2053B71F5C007F009264E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7BD90861F625A5800A100C9 /* ResumesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,7 +211,8 @@
 			children = (
 				EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */,
 				EB4DF0171F5C34C2006E9596 /* CorneredButton.swift */,
-				E7CA4CE91F5D8F37000A4C7F /* ResumeTitleText.swift */,
+				E78899101F65028E005B1CBF /* TitleCell.swift */,
+				E78899111F65028E005B1CBF /* TitleCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +222,8 @@
 			children = (
 				EB0837871F5BE9B20015C661 /* LoginVC.swift */,
 				EBEF4E5C1F5D5D0F006C48C0 /* SignUpVC.swift */,
+				E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */,
+				E7BD90841F61922A00A100C9 /* ResumesVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -332,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78899131F65028E005B1CBF /* TitleCell.xib in Resources */,
 				EB0837931F5BE9B20015C661 /* LaunchScreen.storyboard in Resources */,
 				EB8868AD1F5D01730018FA6E /* Hien_User_Profile.storyboard in Resources */,
 				EBEF4E611F5D6986006C48C0 /* UserSignUp.storyboard in Resources */,
@@ -528,12 +541,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */,
+				E78899121F65028E005B1CBF /* TitleCell.swift in Sources */,
 				EB0837881F5BE9B20015C661 /* LoginVC.swift in Sources */,
 				EB4DF0181F5C34C2006E9596 /* CorneredButton.swift in Sources */,
+				E7BD90871F625A5800A100C9 /* ResumesModel.swift in Sources */,
 				EB08378E1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld in Sources */,
+				E7E0B3681F60211200753DA6 /* ResumesPagesVC.swift in Sources */,
 				EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */,
-				E7CA4CEA1F5D8F37000A4C7F /* ResumeTitleText.swift in Sources */,
 				EBEF4E5D1F5D5D0F006C48C0 /* SignUpVC.swift in Sources */,
+				E7BD90851F61922A00A100C9 /* ResumesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

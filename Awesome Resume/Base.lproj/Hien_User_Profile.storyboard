@@ -33,8 +33,19 @@
                         <viewLayoutGuide key="safeArea" id="IZv-7B-dhg"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="LTY-56-K07"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="J5F-Hf-zX0" id="Tto-9i-d7l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7r-DR-Gne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="J5F-Hf-zX0">
+                    <connections>
+                        <outlet property="delegate" destination="6cf-r7-HG7" id="mp8-Lr-EcJ"/>
+                        <outlet property="searchContentsController" destination="6cf-r7-HG7" id="aS6-JX-4Px"/>
+                        <outlet property="searchResultsDataSource" destination="6cf-r7-HG7" id="dyc-CZ-4hm"/>
+                        <outlet property="searchResultsDelegate" destination="6cf-r7-HG7" id="9i8-4a-2CL"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1577" y="943"/>
         </scene>

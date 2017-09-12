@@ -9,6 +9,7 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import FBSDKLoginKit
 import Alamofire
 
 class LoginVC: UIViewController {
@@ -28,6 +29,9 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
+//        let fbLoginBtn = FBSDKLoginButton()
+//        loginStackView.insertArrangedSubview(fbLoginBtn, at: 3)
+        
 //        let loginButton = LoginButton(readPermissions: [.publicProfile])
 //        
 //        loginStackView.insertArrangedSubview(loginButton, at: 3)

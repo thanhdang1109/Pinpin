@@ -23,6 +23,11 @@
 		EB8868A81F5D01080018FA6E /* Hien_Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868A41F5D01080018FA6E /* Hien_Feeds.storyboard */; };
 		EB8868A91F5D01080018FA6E /* Claude_Resume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868A61F5D01080018FA6E /* Claude_Resume.storyboard */; };
 		EB8868AD1F5D01730018FA6E /* Hien_User_Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868AB1F5D01730018FA6E /* Hien_User_Profile.storyboard */; };
+		EBB260AA1F66C4E000E0B901 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB260A91F66C4E000E0B901 /* Profile.swift */; };
+		EBB260AC1F66C4F400E0B901 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB260AB1F66C4F400E0B901 /* Friends.swift */; };
+		EBB260AE1F66D60100E0B901 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB260AD1F66D60100E0B901 /* User.swift */; };
+		EBB260B01F676A0000E0B901 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB260AF1F676A0000E0B901 /* Video.swift */; };
+		EBE885CB1F5DB15C0095630C /* FeedsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE885CA1F5DB15C0095630C /* FeedsVC.swift */; };
 		EBEF4E5D1F5D5D0F006C48C0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEF4E5C1F5D5D0F006C48C0 /* SignUpVC.swift */; };
 		EBEF4E611F5D6986006C48C0 /* UserSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEF4E5F1F5D6986006C48C0 /* UserSignUp.storyboard */; };
 /* End PBXBuildFile section */
@@ -72,6 +77,11 @@
 		EB8868A51F5D01080018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hien_Feeds.storyboard; sourceTree = "<group>"; };
 		EB8868A71F5D01080018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Claude_Resume.storyboard; sourceTree = "<group>"; };
 		EB8868AC1F5D01730018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hien_User_Profile.storyboard; sourceTree = "<group>"; };
+		EBB260A91F66C4E000E0B901 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		EBB260AB1F66C4F400E0B901 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		EBB260AD1F66D60100E0B901 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EBB260AF1F676A0000E0B901 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		EBE885CA1F5DB15C0095630C /* FeedsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsVC.swift; sourceTree = "<group>"; };
 		EBEF4E5C1F5D5D0F006C48C0 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		EBEF4E601F5D6986006C48C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSignUp.storyboard; sourceTree = "<group>"; };
 		EF0786AFA0C523D3F808A485 /* Pods-Awesome ResumeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeTests/Pods-Awesome ResumeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +201,10 @@
 		EB2053B71F5C007F009264E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EBB260A91F66C4E000E0B901 /* Profile.swift */,
+				EBB260AB1F66C4F400E0B901 /* Friends.swift */,
+				EBB260AD1F66D60100E0B901 /* User.swift */,
+				EBB260AF1F676A0000E0B901 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +223,7 @@
 			children = (
 				EB0837871F5BE9B20015C661 /* LoginVC.swift */,
 				EBEF4E5C1F5D5D0F006C48C0 /* SignUpVC.swift */,
+				EBE885CA1F5DB15C0095630C /* FeedsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -500,9 +515,14 @@
 			files = (
 				EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */,
 				EB0837881F5BE9B20015C661 /* LoginVC.swift in Sources */,
+				EBE885CB1F5DB15C0095630C /* FeedsVC.swift in Sources */,
 				EB4DF0181F5C34C2006E9596 /* CorneredButton.swift in Sources */,
+				EBB260AC1F66C4F400E0B901 /* Friends.swift in Sources */,
+				EBB260AA1F66C4E000E0B901 /* Profile.swift in Sources */,
 				EB08378E1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld in Sources */,
+				EBB260B01F676A0000E0B901 /* Video.swift in Sources */,
 				EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */,
+				EBB260AE1F66D60100E0B901 /* User.swift in Sources */,
 				EBEF4E5D1F5D5D0F006C48C0 /* SignUpVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

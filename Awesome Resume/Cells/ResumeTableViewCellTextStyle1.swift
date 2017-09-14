@@ -1,18 +1,15 @@
 //
-//  TitleCell.swift
+//  ResumeTableViewCellTextStyle1.swift
 //  Awesome Resume
 //
-//  Created by BOYA CHEN on 10/9/17.
+//  Created by BOYA CHEN on 11/9/17.
 //  Copyright © 2017 Awesome Team. All rights reserved.
 //
 
 import UIKit
 
-class TitleCell: UITableViewCell {
+class ResumeTableViewCellTextStyle1: UITableViewCell {
 
-    
-    @IBOutlet weak var TitleNameLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,5 +20,5 @@ class TitleCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

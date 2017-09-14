@@ -1,83 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IJp-tK-ifG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uay-BH-zKm">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Palatino.ttc">
-            <string>Palatino-Roman</string>
+            <string>Palatino-Bold</string>
         </array>
     </customFonts>
     <scenes>
-        <!--Resume1-->
-        <scene sceneID="zeg-gZ-IbQ">
+        <!--Resumes-->
+        <scene sceneID="JhY-cT-aUh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgw-U9-Tos" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="bkP-6X-AQR" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AoD-nA-JkJ">
+                <viewController title="Resumes" id="uay-BH-zKm" customClass="ResumesPagesVC" customModule="Awesome_Resume" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jc5-Yc-fEk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="cTQ-Zy-eEu" customClass="ResumeTitleText">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="158"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CLAUDE CHEN" placeholder="your name ..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayY-fE-KcX">
-                                    <rect key="frame" x="13" y="29" width="388" height="25"/>
-                                    <nil key="textColor"/>
-                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="22"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                </textField>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="15 John Street, East Brunswick, VIC 3057. Mobile: 0403.496.746" translatesAutoresizingMaskIntoConstraints="NO" id="bgS-NK-EmD">
-                                    <rect key="frame" x="8" y="53" width="393" height="70"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="70" id="yhY-7f-Vfc"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="18"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="ayY-fE-KcX" secondAttribute="trailing" constant="13" id="CIM-4Z-ISd"/>
-                                <constraint firstItem="bgS-NK-EmD" firstAttribute="top" secondItem="ayY-fE-KcX" secondAttribute="bottom" constant="-1" id="R3t-Ki-Zer"/>
-                                <constraint firstItem="ayY-fE-KcX" firstAttribute="top" secondItem="cTQ-Zy-eEu" secondAttribute="top" constant="29" id="bAe-XU-6IM"/>
-                                <constraint firstAttribute="trailing" secondItem="bgS-NK-EmD" secondAttribute="trailing" constant="13" id="egp-Q9-TNb"/>
-                                <constraint firstItem="ayY-fE-KcX" firstAttribute="leading" secondItem="cTQ-Zy-eEu" secondAttribute="leading" constant="13" id="go1-N7-Nga"/>
-                                <constraint firstItem="bgS-NK-EmD" firstAttribute="leading" secondItem="cTQ-Zy-eEu" secondAttribute="leading" constant="8" id="sMT-bz-ru1"/>
-                            </constraints>
-                        </view>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Resume1" id="X3g-kp-fAS">
-                        <barButtonItem key="backBarButtonItem" title="Main" id="Stw-cF-Tvv"/>
-                    </navigationItem>
+                        <viewLayoutGuide key="safeArea" id="olT-qH-DtT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" systemItem="bookmarks" id="z1n-lg-59Y"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zt0-nZ-rM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366.666666666667" y="-580.43478260869574"/>
+            <point key="canvasLocation" x="1013" y="-641"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="e3T-3e-pip">
+        <!--Page View Controller-->
+        <scene sceneID="3k8-Fk-XnZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IJp-tK-ifG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="UNq-QL-els"/>
+                <pageViewController storyboardIdentifier="ResumePagesVC" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5nh-IK-WdY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N2p-ev-fsP">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bkP-6X-AQR" kind="relationship" relationship="rootViewController" id="9NE-db-IZc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XCV-io-fYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JCj-nH-OhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576" y="-578.41079460269873"/>
+            <point key="canvasLocation" x="1800" y="-642"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Cr7-8Z-N0l">
+            <objects>
+                <viewController storyboardIdentifier="pageMedia" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E7Z-6X-4es" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AVW-3j-ico">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Media" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PW9-hx-FoC">
+                                <rect key="frame" x="0.0" y="20" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8kC-wN-tbL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PW9-hx-FoC" firstAttribute="trailing" secondItem="iQA-EQ-kbs" secondAttribute="trailing" id="86i-iL-KIh"/>
+                            <constraint firstItem="PW9-hx-FoC" firstAttribute="top" secondItem="iQA-EQ-kbs" secondAttribute="top" id="fh0-md-YWO"/>
+                            <constraint firstItem="PW9-hx-FoC" firstAttribute="leading" secondItem="iQA-EQ-kbs" secondAttribute="leading" id="xuC-wC-zvB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iQA-EQ-kbs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zqc-Av-bSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="40"/>
+        </scene>
+        <!--ResumesVC-->
+        <scene sceneID="G6R-9e-vhX">
+            <objects>
+                <viewController storyboardIdentifier="pageResume" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VeT-5k-fMO" customClass="ResumesVC" customModule="Awesome_Resume" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VxR-H6-QIW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resume" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztO-RQ-BKU">
+                                <rect key="frame" x="0.0" y="20" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JmX-wJ-CRZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaD-pg-Q90">
+                                <rect key="frame" x="364" y="32" width="30" height="30"/>
+                                <state key="normal" title="Edit"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ztO-RQ-BKU" firstAttribute="top" secondItem="FSo-c2-U6E" secondAttribute="top" id="B0L-UT-8Al"/>
+                            <constraint firstItem="ztO-RQ-BKU" firstAttribute="leading" secondItem="FSo-c2-U6E" secondAttribute="leading" id="SwO-B9-MOr"/>
+                            <constraint firstItem="PaD-pg-Q90" firstAttribute="top" secondItem="FSo-c2-U6E" secondAttribute="top" constant="12" id="UR5-Qu-9hw"/>
+                            <constraint firstItem="FSo-c2-U6E" firstAttribute="trailing" secondItem="PaD-pg-Q90" secondAttribute="trailing" constant="20" id="jTL-Mx-pvV"/>
+                            <constraint firstItem="ztO-RQ-BKU" firstAttribute="trailing" secondItem="FSo-c2-U6E" secondAttribute="trailing" id="xKy-Bv-uJF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FSo-c2-U6E"/>
+                    </view>
+                    <connections>
+                        <outlet property="ResumeEditButton" destination="PaD-pg-Q90" id="ML7-ue-iX0"/>
+                        <outlet property="resumePageTitle" destination="ztO-RQ-BKU" id="Vas-vk-ZSu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fbn-DW-iC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2443" y="40"/>
         </scene>
     </scenes>
 </document>

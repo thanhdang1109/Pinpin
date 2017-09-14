@@ -19,10 +19,14 @@ class SignUpVC: UIViewController {
     @IBAction func cancelSignUpPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func alreadyHaveAccBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
     
     /*
     // MARK: - Navigation

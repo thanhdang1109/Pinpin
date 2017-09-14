@@ -13,6 +13,7 @@
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
             <string>Avenir-Book</string>
+            <string>Avenir-Light</string>
             <string>Avenir-LightOblique</string>
         </array>
         <array key="AvenirNext.ttc">
@@ -29,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dvr-6D-JXd">
-                                <rect key="frame" x="50" y="242" width="275" height="184"/>
+                                <rect key="frame" x="50" y="218" width="275" height="232"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JHy-8m-Amt">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="40"/>
@@ -67,16 +68,16 @@
                                         </state>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------ or ------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8L-aO-0At">
-                                        <rect key="frame" x="0.0" y="184" width="275" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="188" width="275" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0X-xT-wqx" customClass="TouchableUIView" customModule="Awesome_Resume" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="184" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="188" width="275" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUp-QD-ab0">
-                                                <rect key="frame" x="2" y="2" width="271" height="36"/>
+                                                <rect key="frame" x="2.5" y="2" width="271" height="36"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook_icon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ox-g7-bNk">
                                                         <rect key="frame" x="0.0" y="0.0" width="35.5" height="36"/>
@@ -108,6 +109,27 @@
                                             <constraint firstAttribute="height" constant="40" id="geg-wg-C99"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GWL-j9-3CH">
+                                        <rect key="frame" x="0.0" y="192" width="275" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-mQ-ORo">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLZ-Sb-bz9" customClass="CorneredButton" customModule="Awesome_Resume" customModuleProvider="target">
+                                                <rect key="frame" x="208" y="0.0" width="67" height="40"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <state key="normal" title="Login.">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="alreadyHaveAccBtnPressed:" destination="d36-qj-rhX" eventType="touchUpInside" id="5th-e4-o2Z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgL-bH-RCU">
@@ -123,9 +145,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ObS-5T-Isc" firstAttribute="trailing" secondItem="dvr-6D-JXd" secondAttribute="trailing" constant="50" id="3lX-hV-5gq"/>
                             <constraint firstItem="dvr-6D-JXd" firstAttribute="centerY" secondItem="PIt-Nk-qDS" secondAttribute="centerY" id="Dit-Pw-JnU"/>
                             <constraint firstItem="ObS-5T-Isc" firstAttribute="trailing" secondItem="SgL-bH-RCU" secondAttribute="trailing" constant="16" id="N6t-3C-o4m"/>
                             <constraint firstItem="dvr-6D-JXd" firstAttribute="centerX" secondItem="PIt-Nk-qDS" secondAttribute="centerX" id="b5v-7o-uPA"/>
+                            <constraint firstItem="dvr-6D-JXd" firstAttribute="leading" secondItem="ObS-5T-Isc" secondAttribute="leading" constant="50" id="fkP-K6-u2m"/>
                             <constraint firstItem="SgL-bH-RCU" firstAttribute="top" secondItem="ObS-5T-Isc" secondAttribute="top" id="poC-Vs-I8b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ObS-5T-Isc"/>

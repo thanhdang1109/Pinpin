@@ -8,23 +8,39 @@
 
 import UIKit
 
-class FeedsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+extension FeedsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1;
+        return self.dataArr.count;
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = self.feedTableView.dequeueReusableCell(withIdentifier: "feed_video_cell") as? MediaViewCell else {
+            return MediaViewCell()
+        }
+        
+        let (user, video) = dataArr[indexPath.row]
+        
+        cell.configCell(user: user, media: video)
+        
+        return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
+
+class FeedsVC: UIViewController {
+    var dataArr: [(User, Video)] = [(User, Video)]()
 
     @IBOutlet weak var feedTableView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        feedTableView.dataSource = self
-        feedTableView.delegate = self
-        // Do any additional setup after loading the view.
+    
+    func prepData() {
         let user = User(userName: "Hien Tran", email: "heuism23892@gmail.com", pictureUrl: nil)
         print(user._videos)
         print(user._userName)
@@ -34,6 +50,19 @@ class FeedsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let friends = user._friends {
             print(friends[0]._userName)
         }
+        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link: nil)
+        self.dataArr.append((user, video))
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        feedTableView.dataSource = self
+        feedTableView.delegate = self
+        feedTableView.allowsSelection = false
+
+        // Do any additional setup after loading the view.
+        prepData()
+        
     }
     
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -24,10 +24,5 @@ class MediaInfoView: UIView {
         self.mediaDesc.text = media._description
         self.mediaTime.text = media._time
     }
-    
-    @IBAction func imageIsClicked(_ sender: Any) {
-        print("tap!")
-    }
-    
 
 }

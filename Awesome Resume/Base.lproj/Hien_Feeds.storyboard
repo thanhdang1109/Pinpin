@@ -86,7 +86,7 @@
                                                             <state key="normal" title="Button"/>
                                                             <connections>
                                                                 <action selector="imageIsClicked:" destination="Ldi-ua-Ykz" eventType="touchUpInside" id="WcJ-9N-r5x"/>
-                                                                <action selector="imageIsClicked:" destination="kNB-rE-GAq" eventType="touchUpInside" id="dhw-eN-Xeh"/>
+                                                                <segue destination="g1l-94-iet" kind="show" id="XTm-OG-iNc"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -244,6 +244,59 @@
             </objects>
             <point key="canvasLocation" x="2365.5999999999999" y="131.78410794602701"/>
         </scene>
+        <!--Embed Table View Controller-->
+        <scene sceneID="uq5-XN-zIQ">
+            <objects>
+                <tableViewController id="g1l-94-iet" customClass="VGEmbedTableViewController" customModule="Awesome_Resume" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IF9-R0-agQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="206" id="TfY-jN-EtV" customClass="VGVideoCell" customModule="Awesome_Resume" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="206"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TfY-jN-EtV" id="iEx-wf-Ent">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="205.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder _image" translatesAutoresizingMaskIntoConstraints="NO" id="xui-DS-Y50">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="205.5"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxO-B1-hc0">
+                                            <rect key="frame" x="8" y="8" width="359" height="189.5"/>
+                                            <state key="normal" image="button_cover_video_play"/>
+                                            <connections>
+                                                <action selector="onPlay:" destination="TfY-jN-EtV" eventType="touchUpInside" id="krM-bP-kHC"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ZxO-B1-hc0" secondAttribute="bottom" id="5wv-gx-Sbr"/>
+                                        <constraint firstItem="ZxO-B1-hc0" firstAttribute="leading" secondItem="iEx-wf-Ent" secondAttribute="leadingMargin" id="Xq6-dZ-mDJ"/>
+                                        <constraint firstItem="xui-DS-Y50" firstAttribute="top" secondItem="iEx-wf-Ent" secondAttribute="top" id="fIv-jT-yb4"/>
+                                        <constraint firstAttribute="bottom" secondItem="xui-DS-Y50" secondAttribute="bottom" id="fmw-Wl-IUd"/>
+                                        <constraint firstAttribute="trailing" secondItem="xui-DS-Y50" secondAttribute="trailing" id="gP3-UU-p4N"/>
+                                        <constraint firstItem="ZxO-B1-hc0" firstAttribute="top" secondItem="iEx-wf-Ent" secondAttribute="topMargin" id="hFA-No-MB6"/>
+                                        <constraint firstItem="xui-DS-Y50" firstAttribute="leading" secondItem="iEx-wf-Ent" secondAttribute="leading" id="iCo-3F-NGB"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ZxO-B1-hc0" secondAttribute="trailing" id="xRg-BJ-AX9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="playBtn" destination="ZxO-B1-hc0" id="jiu-fa-NEx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="g1l-94-iet" id="rCh-EI-u2Q"/>
+                            <outlet property="delegate" destination="g1l-94-iet" id="KL1-KO-v3v"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzy-Hv-I16" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3074.4000000000001" y="134.48275862068968"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="jQ2-sp-jhM">
             <objects>
@@ -264,4 +317,8 @@
             <point key="canvasLocation" x="1577.5999999999999" y="132.23388305847078"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_cover_video_play" width="56" height="56"/>
+        <image name="placeholder _image" width="414" height="233"/>
+    </resources>
 </document>

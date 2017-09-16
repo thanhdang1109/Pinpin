@@ -32,6 +32,9 @@
 		EBE885CB1F5DB15C0095630C /* FeedsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE885CA1F5DB15C0095630C /* FeedsVC.swift */; };
 		EBEF4E5D1F5D5D0F006C48C0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEF4E5C1F5D5D0F006C48C0 /* SignUpVC.swift */; };
 		EBEF4E611F5D6986006C48C0 /* UserSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEF4E5F1F5D6986006C48C0 /* UserSignUp.storyboard */; };
+		EBF29F581F6CD30400B0D12B /* VGEmbedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF29F571F6CD30400B0D12B /* VGEmbedTableViewController.swift */; };
+		EBF29F5A1F6CD34100B0D12B /* VGEmbedPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF29F591F6CD34100B0D12B /* VGEmbedPlayerView.swift */; };
+		EBF29F5C1F6CD39200B0D12B /* VGVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF29F5B1F6CD39200B0D12B /* VGVideoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		EBE885CA1F5DB15C0095630C /* FeedsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsVC.swift; sourceTree = "<group>"; };
 		EBEF4E5C1F5D5D0F006C48C0 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		EBEF4E601F5D6986006C48C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSignUp.storyboard; sourceTree = "<group>"; };
+		EBF29F571F6CD30400B0D12B /* VGEmbedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGEmbedTableViewController.swift; sourceTree = "<group>"; };
+		EBF29F591F6CD34100B0D12B /* VGEmbedPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGEmbedPlayerView.swift; sourceTree = "<group>"; };
+		EBF29F5B1F6CD39200B0D12B /* VGVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGVideoCell.swift; sourceTree = "<group>"; };
 		EF0786AFA0C523D3F808A485 /* Pods-Awesome ResumeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeTests/Pods-Awesome ResumeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +226,8 @@
 				EB4DF0171F5C34C2006E9596 /* CorneredButton.swift */,
 				EBE67C381F68251600337274 /* MediaViewCell.swift */,
 				EBE67C3A1F68263E00337274 /* MediaInfoView.swift */,
+				EBF29F591F6CD34100B0D12B /* VGEmbedPlayerView.swift */,
+				EBF29F5B1F6CD39200B0D12B /* VGVideoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 				EB0837871F5BE9B20015C661 /* LoginVC.swift */,
 				EBEF4E5C1F5D5D0F006C48C0 /* SignUpVC.swift */,
 				EBE885CA1F5DB15C0095630C /* FeedsVC.swift */,
+				EBF29F571F6CD30400B0D12B /* VGEmbedTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -519,16 +528,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF29F5C1F6CD39200B0D12B /* VGVideoCell.swift in Sources */,
 				EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */,
 				EBE67C391F68251600337274 /* MediaViewCell.swift in Sources */,
 				EB0837881F5BE9B20015C661 /* LoginVC.swift in Sources */,
 				EBE67C3B1F68263E00337274 /* MediaInfoView.swift in Sources */,
 				EBE885CB1F5DB15C0095630C /* FeedsVC.swift in Sources */,
+				EBF29F5A1F6CD34100B0D12B /* VGEmbedPlayerView.swift in Sources */,
 				EB4DF0181F5C34C2006E9596 /* CorneredButton.swift in Sources */,
 				EBB260AC1F66C4F400E0B901 /* Friends.swift in Sources */,
 				EBB260AA1F66C4E000E0B901 /* Profile.swift in Sources */,
 				EB08378E1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld in Sources */,
 				EBB260B01F676A0000E0B901 /* Video.swift in Sources */,
+				EBF29F581F6CD30400B0D12B /* VGEmbedTableViewController.swift in Sources */,
 				EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */,
 				EBB260AE1F66D60100E0B901 /* User.swift in Sources */,
 				EBEF4E5D1F5D5D0F006C48C0 /* SignUpVC.swift in Sources */,

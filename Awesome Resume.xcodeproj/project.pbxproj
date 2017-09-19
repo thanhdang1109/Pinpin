@@ -10,14 +10,17 @@
 		0D605741AF00EFE353987E46 /* Pods_Awesome_ResumeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDFF746DB4A045E6259CC91 /* Pods_Awesome_ResumeUITests.framework */; };
 		3EAC929EB6077A5A7AC3E9D3 /* Pods_Awesome_Resume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4109B8F90C7BF455301EAB /* Pods_Awesome_Resume.framework */; };
 		DF3368963E5FE853E3502B65 /* Pods_Awesome_ResumeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBD6C8523A2B20D693EC668 /* Pods_Awesome_ResumeTests.framework */; };
-		E733AF741F6619F100B8C7C1 /* ResumeTableCellSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733AF731F6619F100B8C7C1 /* ResumeTableCellSectionTitle.swift */; };
+		E733AF741F6619F100B8C7C1 /* ResumeTableCellEducation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733AF731F6619F100B8C7C1 /* ResumeTableCellEducation.swift */; };
+		E73673C41F6BBABC00460DEC /* ResumeTableCellExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73673C31F6BBABC00460DEC /* ResumeTableCellExp.swift */; };
+		E76F0B371F6D0B1000F28BBF /* EditMode1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */; };
 		E7A8D2671F652AF6008166AF /* ResumeTableCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8D2661F652AF6008166AF /* ResumeTableCellTitle.swift */; };
 		E7BD90851F61922A00A100C9 /* ResumesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD90841F61922A00A100C9 /* ResumesVC.swift */; };
 		E7BD90871F625A5800A100C9 /* ResumesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD90861F625A5800A100C9 /* ResumesModel.swift */; };
 		E7E0B3681F60211200753DA6 /* ResumesPagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */; };
-		E7E60D781F66ABA600726F56 /* ResumeTableViewCellTextStyle1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E60D771F66ABA600726F56 /* ResumeTableViewCellTextStyle1.swift */; };
 		E7EE965D1F68FEDF00F4529B /* VideoCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE965C1F68FEDF00F4529B /* VideoCellVC.swift */; };
 		E7EE965F1F69010300F4529B /* ResumesVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE965E1F69010300F4529B /* ResumesVideoVC.swift */; };
+		E7F76EAC1F6A905C005E8A6F /* ViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F76EAB1F6A905C005E8A6F /* ViewCellDelegate.swift */; };
+		E7F76EAE1F6A9FBA005E8A6F /* UIExtendableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */; };
 		EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837851F5BE9B20015C661 /* AppDelegate.swift */; };
 		EB0837881F5BE9B20015C661 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837871F5BE9B20015C661 /* LoginVC.swift */; };
 		EB08378B1F5BE9B20015C661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0837891F5BE9B20015C661 /* Main.storyboard */; };
@@ -61,14 +64,17 @@
 		DD3745AF3B4F2DDE536A2EBD /* Pods-Awesome ResumeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeUITests/Pods-Awesome ResumeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF82634A1A25A24792E45645 /* Pods-Awesome ResumeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeTests/Pods-Awesome ResumeTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFCA3FFC9A5E0105A1B2A528 /* Pods-Awesome ResumeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeUITests/Pods-Awesome ResumeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E733AF731F6619F100B8C7C1 /* ResumeTableCellSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellSectionTitle.swift; sourceTree = "<group>"; };
+		E733AF731F6619F100B8C7C1 /* ResumeTableCellEducation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellEducation.swift; sourceTree = "<group>"; };
+		E73673C31F6BBABC00460DEC /* ResumeTableCellExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellExp.swift; sourceTree = "<group>"; };
+		E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode1VC.swift; sourceTree = "<group>"; };
 		E7A8D2661F652AF6008166AF /* ResumeTableCellTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellTitle.swift; sourceTree = "<group>"; };
 		E7BD90841F61922A00A100C9 /* ResumesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesVC.swift; sourceTree = "<group>"; };
 		E7BD90861F625A5800A100C9 /* ResumesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumesModel.swift; path = "Awesome Resume/Models/ResumesModel.swift"; sourceTree = SOURCE_ROOT; };
 		E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesPagesVC.swift; sourceTree = "<group>"; };
-		E7E60D771F66ABA600726F56 /* ResumeTableViewCellTextStyle1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableViewCellTextStyle1.swift; sourceTree = "<group>"; };
 		E7EE965C1F68FEDF00F4529B /* VideoCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCellVC.swift; sourceTree = "<group>"; };
 		E7EE965E1F69010300F4529B /* ResumesVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesVideoVC.swift; sourceTree = "<group>"; };
+		E7F76EAB1F6A905C005E8A6F /* ViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCellDelegate.swift; sourceTree = "<group>"; };
+		E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtendableTextView.swift; sourceTree = "<group>"; };
 		EB0837821F5BE9B20015C661 /* Awesome Resume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Resume.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0837851F5BE9B20015C661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB0837871F5BE9B20015C661 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -152,14 +158,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E76F0B341F6D0AF400F28BBF /* ResumeViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */,
+			);
+			path = ResumeViewControllers;
+			sourceTree = "<group>";
+		};
 		E7A8D2631F652A8E008166AF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				E7A8D2661F652AF6008166AF /* ResumeTableCellTitle.swift */,
-				E733AF731F6619F100B8C7C1 /* ResumeTableCellSectionTitle.swift */,
-				E7E60D771F66ABA600726F56 /* ResumeTableViewCellTextStyle1.swift */,
+				E733AF731F6619F100B8C7C1 /* ResumeTableCellEducation.swift */,
+				E73673C31F6BBABC00460DEC /* ResumeTableCellExp.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E7F76EAA1F6A9033005E8A6F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E7F76EAB1F6A905C005E8A6F /* ViewCellDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EB0837791F5BE9B20015C661 = {
@@ -187,6 +209,8 @@
 		EB0837841F5BE9B20015C661 /* Awesome Resume */ = {
 			isa = PBXGroup;
 			children = (
+				E76F0B341F6D0AF400F28BBF /* ResumeViewControllers */,
+				E7F76EAA1F6A9033005E8A6F /* Protocols */,
 				E7146E8D1F681E280091C6A7 /* Models */,
 				E7A8D2631F652A8E008166AF /* Cells */,
 				EB2053B91F5C0088009264E1 /* Controller */,
@@ -228,6 +252,7 @@
 			children = (
 				EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */,
 				EB4DF0171F5C34C2006E9596 /* CorneredButton.swift */,
+				E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -557,12 +582,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */,
+				E7F76EAC1F6A905C005E8A6F /* ViewCellDelegate.swift in Sources */,
 				EB0837881F5BE9B20015C661 /* LoginVC.swift in Sources */,
+				E76F0B371F6D0B1000F28BBF /* EditMode1VC.swift in Sources */,
 				EB4DF0181F5C34C2006E9596 /* CorneredButton.swift in Sources */,
 				E7BD90871F625A5800A100C9 /* ResumesModel.swift in Sources */,
 				E7EE965D1F68FEDF00F4529B /* VideoCellVC.swift in Sources */,
-				E733AF741F6619F100B8C7C1 /* ResumeTableCellSectionTitle.swift in Sources */,
-				E7E60D781F66ABA600726F56 /* ResumeTableViewCellTextStyle1.swift in Sources */,
+				E733AF741F6619F100B8C7C1 /* ResumeTableCellEducation.swift in Sources */,
 				E7EE965F1F69010300F4529B /* ResumesVideoVC.swift in Sources */,
 				E7A8D2671F652AF6008166AF /* ResumeTableCellTitle.swift in Sources */,
 				EB08378E1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld in Sources */,
@@ -570,6 +596,8 @@
 				EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */,
 				EBEF4E5D1F5D5D0F006C48C0 /* SignUpVC.swift in Sources */,
 				E7BD90851F61922A00A100C9 /* ResumesVC.swift in Sources */,
+				E73673C41F6BBABC00460DEC /* ResumeTableCellExp.swift in Sources */,
+				E7F76EAE1F6A9FBA005E8A6F /* UIExtendableTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

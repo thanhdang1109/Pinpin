@@ -11,7 +11,7 @@ import UIKit
 class ResumesPagesVC: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     var pageVC: UIPageViewController!
-    let pages = ["pageMedia","pageResume"]
+    let pages = ["pageMedia","ResumePageNavigate"]
     
     // Page view datasource:Before
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

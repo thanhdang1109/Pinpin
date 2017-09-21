@@ -1,5 +1,5 @@
 //
-//  VGEmbedTableViewController.swift
+//  FeedsViewController
 //  Awesome Resume
 //
 //  Created by Hien Tran on 15/9/17.
@@ -10,8 +10,8 @@ import UIKit
 import VGPlayer
 import SnapKit
 
-class VGEmbedTableViewController: UITableViewController {
-    
+class FeedsViewController: UITableViewController {
+    var dataArr: [(User, Video)] = [(User, Video)]()
     
     var player : VGPlayer!
     var playerView : VGEmbedPlayerView!
@@ -26,6 +26,22 @@ class VGEmbedTableViewController: UITableViewController {
         title = "Feeds"
         configureSmallScreenView()
         addTableViewObservers()
+        
+        prepData()
+    }
+    
+    func prepData() {
+        let user = User(userName: "Hien Tran", email: "heuism23892@gmail.com", pictureUrl: nil)
+        print(user._videos)
+        print(user._userName)
+        print(user._email)
+        user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil))
+        print(user._friends)
+        if let friends = user._friends {
+            print(friends[0]._userName)
+        }
+        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link: "http://www.html5videoplayer.net/videos/toystory.mp4")
+        self.dataArr.append((user, video))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -107,32 +123,34 @@ class VGEmbedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return dataArr.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! VGVideoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feed_video_cell", for: indexPath) as! MediaViewCell
+        let (user, video) = dataArr[indexPath.row]
         cell.indexPath = indexPath
         cell.playCallBack = ({ [weak self] (indexPath: IndexPath?) -> Void in
             guard let strongSelf = self else { return }
-            strongSelf.playerViewSize = cell.contentView.bounds.size
-            strongSelf.addPlayer(cell)
+            strongSelf.playerViewSize = cell.mediaContent.bounds.size
+            strongSelf.addPlayer(cell, video)
             strongSelf.currentPlayIndexPath = indexPath
         })
+        cell.configCell(user: user, media: video)
         
         return cell
     }
     
-    func addPlayer(_ cell: UITableViewCell) {
+    func addPlayer(_ cell: MediaViewCell, _ video: Video) {
         if player != nil {
             player.cleanPlayer()
         }
         configurePlayer()
-        cell.contentView.addSubview(player.displayView)
+        cell.mediaContent.addSubview(player.displayView)
         player.displayView.snp.makeConstraints {
-            $0.edges.equalTo(cell)
+            $0.edges.equalTo(cell.mediaContent)
         }
-        player.replaceVideo(URL(string:"http://www.html5videoplayer.net/videos/toystory.mp4")!)
+        player.replaceVideo(URL(string:video._link!)!)
         player.play()
     }
     
@@ -164,21 +182,21 @@ class VGEmbedTableViewController: UITableViewController {
     }
 }
 
-extension VGEmbedTableViewController {
+extension FeedsViewController {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         //        if (context == &tableViewContext) {
         
         if keyPath == #keyPath(UITableView.contentOffset) {
             if let playIndexPath = currentPlayIndexPath {
                 
-                if let cell = tableView.cellForRow(at: playIndexPath) {
+                if let cell = tableView.cellForRow(at: playIndexPath) as? MediaViewCell {
                     if player.displayView.isFullScreen { return }
                     let visibleCells = tableView.visibleCells
                     if visibleCells.contains(cell) {
                         smallScreenView.removeFromSuperview()
                         cell.contentView.addSubview(player.displayView)
                         player.displayView.snp.remakeConstraints {
-                            $0.edges.equalTo(cell)
+                            $0.edges.equalTo(cell.mediaContent)
                         }
                         playerView.isSmallMode = false
                     } else {

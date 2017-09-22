@@ -37,7 +37,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Aa-2j-xM1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="tkn-OT-HW0"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="tkn-OT-HW0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4Y-NL-urf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

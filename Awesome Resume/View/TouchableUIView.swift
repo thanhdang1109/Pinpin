@@ -129,34 +129,34 @@ class TouchableUIView: UIView {
             if let accessToken = AccessToken.current {
                 // User is logged in, use 'accessToken' here.
                 print("Already In ----- >")
-                logoutBtnClicked()
+//                logoutBtnClicked()
             } else {
-                loginBtnClicked()
+//                loginBtnClicked()
             }
         }
     }
     
-    func loginBtnClicked() {
-        let loginManager = LoginManager()
-        loginManager.logIn([ ReadPermission.publicProfile ], viewController: self.getParentViewController()) { loginResult in
-            switch loginResult {
-                case .failed(let err):
-                    print(err)
-            case .cancelled:
-                print("User cancelled login")
-            case .success(let grantedPermissions, let declinedPermissions, let token):
-                print("Success!")
-                print("\(grantedPermissions) + \(declinedPermissions) + \(token)")
-                let loginVC = self.getParentViewController() as! LoginVC!
-                loginVC?.updateStatus(loginResult: "Logged In")
-            }
-        }
-    }
+//    func loginBtnClicked() {
+//        let loginManager = LoginManager()
+//        loginManager.logIn([ ReadPermission.publicProfile ], viewController: self.getParentViewController()) { loginResult in
+//            switch loginResult {
+//                case .failed(let err):
+//                    print(err)
+//            case .cancelled:
+//                print("User cancelled login")
+//            case .success(let grantedPermissions, let declinedPermissions, let token):
+//                print("Success!")
+//                print("\(grantedPermissions) + \(declinedPermissions) + \(token)")
+//                let loginVC = self.getParentViewController() as! LoginVC!
+//                loginVC?.updateStatus(loginResult: "Logged In")
+//            }
+//        }
+//    }
     
-    func logoutBtnClicked() {
-        let loginManager = LoginManager()
-        loginManager.logOut()
-        let loginVC = self.getParentViewController() as! LoginVC!
-        loginVC?.updateStatus(loginResult: "Logged Out")
-    }
+//    func logoutBtnClicked() {
+//        let loginManager = LoginManager()
+//        loginManager.logOut()
+//        let loginVC = self.getParentViewController() as! LoginVC!
+//        loginVC?.updateStatus(loginResult: "Logged Out")
+//    }
 }

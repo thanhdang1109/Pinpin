@@ -10,23 +10,37 @@
 		0D605741AF00EFE353987E46 /* Pods_Awesome_ResumeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDFF746DB4A045E6259CC91 /* Pods_Awesome_ResumeUITests.framework */; };
 		3EAC929EB6077A5A7AC3E9D3 /* Pods_Awesome_Resume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4109B8F90C7BF455301EAB /* Pods_Awesome_Resume.framework */; };
 		DF3368963E5FE853E3502B65 /* Pods_Awesome_ResumeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBD6C8523A2B20D693EC668 /* Pods_Awesome_ResumeTests.framework */; };
+		E733AF741F6619F100B8C7C1 /* ResumeTableCellEducation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733AF731F6619F100B8C7C1 /* ResumeTableCellEducation.swift */; };
+		E73673C41F6BBABC00460DEC /* ResumeTableCellExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73673C31F6BBABC00460DEC /* ResumeTableCellExp.swift */; };
+		E7471E761F7157D7001F758A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7471E751F7157D7001F758A /* HeaderView.swift */; };
+		E7471E781F715BD9001F758A /* ExpSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7471E771F715BD9001F758A /* ExpSectionCell.swift */; };
+		E7471E7A1F715BE5001F758A /* EduSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7471E791F715BE5001F758A /* EduSectionCell.swift */; };
+		E76F0B371F6D0B1000F28BBF /* EditMode1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */; };
+		E7A8D2671F652AF6008166AF /* ResumeTableCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8D2661F652AF6008166AF /* ResumeTableCellTitle.swift */; };
+		E7BD90851F61922A00A100C9 /* ResumesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD90841F61922A00A100C9 /* ResumesVC.swift */; };
+		E7BD90871F625A5800A100C9 /* ResumesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD90861F625A5800A100C9 /* ResumesModel.swift */; };
+		E7E0B3681F60211200753DA6 /* ResumesPagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */; };
+		E7EE965D1F68FEDF00F4529B /* VideoCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE965C1F68FEDF00F4529B /* VideoCellVC.swift */; };
+		E7EE965F1F69010300F4529B /* ResumesVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE965E1F69010300F4529B /* ResumesVideoVC.swift */; };
+		E7F76EAC1F6A905C005E8A6F /* ViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F76EAB1F6A905C005E8A6F /* ViewCellDelegate.swift */; };
+		E7F76EAE1F6A9FBA005E8A6F /* UIExtendableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */; };
 		EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837851F5BE9B20015C661 /* AppDelegate.swift */; };
-		EB0837881F5BE9B20015C661 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837871F5BE9B20015C661 /* LoginVC.swift */; };
 		EB08378B1F5BE9B20015C661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0837891F5BE9B20015C661 /* Main.storyboard */; };
-		EB08378E1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB08378C1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld */; };
 		EB0837901F5BE9B20015C661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB08378F1F5BE9B20015C661 /* Assets.xcassets */; };
 		EB0837931F5BE9B20015C661 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0837911F5BE9B20015C661 /* LaunchScreen.storyboard */; };
 		EB08379E1F5BE9B30015C661 /* Awesome_ResumeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08379D1F5BE9B30015C661 /* Awesome_ResumeTests.swift */; };
 		EB0837A91F5BE9B30015C661 /* Awesome_ResumeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837A81F5BE9B30015C661 /* Awesome_ResumeUITests.swift */; };
 		EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */; };
-		EB4DF0181F5C34C2006E9596 /* CorneredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4DF0171F5C34C2006E9596 /* CorneredButton.swift */; };
 		EB8868A81F5D01080018FA6E /* Hien_Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868A41F5D01080018FA6E /* Hien_Feeds.storyboard */; };
 		EB8868A91F5D01080018FA6E /* Claude_Resume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868A61F5D01080018FA6E /* Claude_Resume.storyboard */; };
 		EB8868AD1F5D01730018FA6E /* Hien_User_Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868AB1F5D01730018FA6E /* Hien_User_Profile.storyboard */; };
-		EBB260AA1F66C4E000E0B901 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB260A91F66C4E000E0B901 /* Profile.swift */; };
-		EBB260AC1F66C4F400E0B901 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB260AB1F66C4F400E0B901 /* Friend.swift */; };
-		EBB260AE1F66D60100E0B901 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB260AD1F66D60100E0B901 /* User.swift */; };
-		EBB260B01F676A0000E0B901 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB260AF1F676A0000E0B901 /* Video.swift */; };
+		EBB6DE401F7568A900327251 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6DE3C1F7568A800327251 /* Friend.swift */; };
+		EBB6DE411F7568A900327251 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6DE3D1F7568A900327251 /* Video.swift */; };
+		EBB6DE421F7568A900327251 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6DE3E1F7568A900327251 /* User.swift */; };
+		EBB6DE431F7568A900327251 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6DE3F1F7568A900327251 /* Profile.swift */; };
+		EBDBF7F11F756E38001FBCF7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBF7F01F756E37001FBCF7 /* LoginVC.swift */; };
+		EBDBF7F31F756E4C001FBCF7 /* CorneredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBF7F21F756E4C001FBCF7 /* CorneredButton.swift */; };
+		EBDBF7F61F756EC8001FBCF7 /* Awesome_Resume.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBDBF7F41F756EC8001FBCF7 /* Awesome_Resume.xcdatamodeld */; };
 		EBDDA0751F7529C500E5C6C6 /* FriendsSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDDA0741F7529C500E5C6C6 /* FriendsSearchVC.swift */; };
 		EBE67C391F68251600337274 /* MediaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE67C381F68251600337274 /* MediaViewCell.swift */; };
 		EBE67C3B1F68263E00337274 /* MediaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE67C3A1F68263E00337274 /* MediaInfoView.swift */; };
@@ -64,11 +78,23 @@
 		DD3745AF3B4F2DDE536A2EBD /* Pods-Awesome ResumeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeUITests/Pods-Awesome ResumeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF82634A1A25A24792E45645 /* Pods-Awesome ResumeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeTests/Pods-Awesome ResumeTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFCA3FFC9A5E0105A1B2A528 /* Pods-Awesome ResumeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeUITests/Pods-Awesome ResumeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E733AF731F6619F100B8C7C1 /* ResumeTableCellEducation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellEducation.swift; sourceTree = "<group>"; };
+		E73673C31F6BBABC00460DEC /* ResumeTableCellExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellExp.swift; sourceTree = "<group>"; };
+		E7471E751F7157D7001F758A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E7471E771F715BD9001F758A /* ExpSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpSectionCell.swift; sourceTree = "<group>"; };
+		E7471E791F715BE5001F758A /* EduSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduSectionCell.swift; sourceTree = "<group>"; };
+		E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode1VC.swift; sourceTree = "<group>"; };
+		E7A8D2661F652AF6008166AF /* ResumeTableCellTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellTitle.swift; sourceTree = "<group>"; };
+		E7BD90841F61922A00A100C9 /* ResumesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesVC.swift; sourceTree = "<group>"; };
+		E7BD90861F625A5800A100C9 /* ResumesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumesModel.swift; path = "Awesome Resume/Models/ResumesModel.swift"; sourceTree = SOURCE_ROOT; };
+		E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesPagesVC.swift; sourceTree = "<group>"; };
+		E7EE965C1F68FEDF00F4529B /* VideoCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCellVC.swift; sourceTree = "<group>"; };
+		E7EE965E1F69010300F4529B /* ResumesVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesVideoVC.swift; sourceTree = "<group>"; };
+		E7F76EAB1F6A905C005E8A6F /* ViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCellDelegate.swift; sourceTree = "<group>"; };
+		E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtendableTextView.swift; sourceTree = "<group>"; };
 		EB0837821F5BE9B20015C661 /* Awesome Resume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Resume.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0837851F5BE9B20015C661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB0837871F5BE9B20015C661 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		EB08378A1F5BE9B20015C661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EB08378D1F5BE9B20015C661 /* Awesome_Resume.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Awesome_Resume.xcdatamodel; sourceTree = "<group>"; };
 		EB08378F1F5BE9B20015C661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB0837921F5BE9B20015C661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB0837941F5BE9B20015C661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +105,6 @@
 		EB0837A81F5BE9B30015C661 /* Awesome_ResumeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Awesome_ResumeUITests.swift; sourceTree = "<group>"; };
 		EB0837AA1F5BE9B30015C661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableUIView.swift; sourceTree = "<group>"; };
-		EB4DF0171F5C34C2006E9596 /* CorneredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorneredButton.swift; sourceTree = "<group>"; };
 		EB8868A51F5D01080018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hien_Feeds.storyboard; sourceTree = "<group>"; };
 		EB8868A71F5D01080018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Claude_Resume.storyboard; sourceTree = "<group>"; };
 		EB8868AC1F5D01730018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hien_User_Profile.storyboard; sourceTree = "<group>"; };
@@ -87,6 +112,13 @@
 		EBB260AB1F66C4F400E0B901 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		EBB260AD1F66D60100E0B901 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EBB260AF1F676A0000E0B901 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		EBB6DE3C1F7568A800327251 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		EBB6DE3D1F7568A900327251 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		EBB6DE3E1F7568A900327251 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EBB6DE3F1F7568A900327251 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		EBDBF7F01F756E37001FBCF7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		EBDBF7F21F756E4C001FBCF7 /* CorneredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorneredButton.swift; sourceTree = "<group>"; };
+		EBDBF7F51F756EC8001FBCF7 /* Awesome_Resume.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Awesome_Resume.xcdatamodel; sourceTree = "<group>"; };
 		EBDDA0741F7529C500E5C6C6 /* FriendsSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSearchVC.swift; sourceTree = "<group>"; };
 		EBE67C381F68251600337274 /* MediaViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewCell.swift; sourceTree = "<group>"; };
 		EBE67C3A1F68263E00337274 /* MediaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfoView.swift; sourceTree = "<group>"; };
@@ -150,6 +182,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E7146E8D1F681E280091C6A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBB6DE3C1F7568A800327251 /* Friend.swift */,
+				EBB6DE3F1F7568A900327251 /* Profile.swift */,
+				EBB6DE3E1F7568A900327251 /* User.swift */,
+				EBB6DE3D1F7568A900327251 /* Video.swift */,
+				E7BD90861F625A5800A100C9 /* ResumesModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E76F0B341F6D0AF400F28BBF /* ResumeViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */,
+			);
+			path = ResumeViewControllers;
+			sourceTree = "<group>";
+		};
+		E7A8D2631F652A8E008166AF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E7A8D2661F652AF6008166AF /* ResumeTableCellTitle.swift */,
+				E733AF731F6619F100B8C7C1 /* ResumeTableCellEducation.swift */,
+				E73673C31F6BBABC00460DEC /* ResumeTableCellExp.swift */,
+				E7471E771F715BD9001F758A /* ExpSectionCell.swift */,
+				E7471E791F715BE5001F758A /* EduSectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E7F76EAA1F6A9033005E8A6F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E7F76EAB1F6A905C005E8A6F /* ViewCellDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		EB0837791F5BE9B20015C661 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +231,7 @@
 				EB0837831F5BE9B20015C661 /* Products */,
 				2DE83CA91E654225B7AEE00C /* Pods */,
 				344AE176162D959D4251B620 /* Frameworks */,
+				EBB6DE281F7566FC00327251 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,9 +248,12 @@
 		EB0837841F5BE9B20015C661 /* Awesome Resume */ = {
 			isa = PBXGroup;
 			children = (
+				E76F0B341F6D0AF400F28BBF /* ResumeViewControllers */,
+				E7F76EAA1F6A9033005E8A6F /* Protocols */,
+				E7146E8D1F681E280091C6A7 /* Models */,
+				E7A8D2631F652A8E008166AF /* Cells */,
 				EB2053B91F5C0088009264E1 /* Controller */,
 				EB2053B81F5C0084009264E1 /* View */,
-				EB2053B71F5C007F009264E1 /* Model */,
 				EB0837851F5BE9B20015C661 /* AppDelegate.swift */,
 				EB0837891F5BE9B20015C661 /* Main.storyboard */,
 				EB8868A41F5D01080018FA6E /* Hien_Feeds.storyboard */,
@@ -187,7 +263,7 @@
 				EB08378F1F5BE9B20015C661 /* Assets.xcassets */,
 				EB0837911F5BE9B20015C661 /* LaunchScreen.storyboard */,
 				EB0837941F5BE9B20015C661 /* Info.plist */,
-				EB08378C1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld */,
+				EBDBF7F41F756EC8001FBCF7 /* Awesome_Resume.xcdatamodeld */,
 			);
 			path = "Awesome Resume";
 			sourceTree = "<group>";
@@ -210,26 +286,17 @@
 			path = "Awesome ResumeUITests";
 			sourceTree = "<group>";
 		};
-		EB2053B71F5C007F009264E1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				EBB260A91F66C4E000E0B901 /* Profile.swift */,
-				EBB260AB1F66C4F400E0B901 /* Friend.swift */,
-				EBB260AD1F66D60100E0B901 /* User.swift */,
-				EBB260AF1F676A0000E0B901 /* Video.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		EB2053B81F5C0084009264E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EBDBF7F21F756E4C001FBCF7 /* CorneredButton.swift */,
 				EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */,
-				EB4DF0171F5C34C2006E9596 /* CorneredButton.swift */,
 				EBE67C381F68251600337274 /* MediaViewCell.swift */,
 				EBE67C3A1F68263E00337274 /* MediaInfoView.swift */,
 				EBF29F591F6CD34100B0D12B /* VGEmbedPlayerView.swift */,
 				EBF29F5B1F6CD39200B0D12B /* VGVideoCell.swift */,
+				E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */,
+				E7471E751F7157D7001F758A /* HeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,13 +304,28 @@
 		EB2053B91F5C0088009264E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EB0837871F5BE9B20015C661 /* LoginVC.swift */,
+				EBDBF7F01F756E37001FBCF7 /* LoginVC.swift */,
 				EBEF4E5C1F5D5D0F006C48C0 /* SignUpVC.swift */,
 				EBE885CA1F5DB15C0095630C /* FeedsVC.swift */,
 				EBF29F571F6CD30400B0D12B /* FeedsViewController.swift */,
 				EBDDA0741F7529C500E5C6C6 /* FriendsSearchVC.swift */,
+				E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */,
+				E7BD90841F61922A00A100C9 /* ResumesVC.swift */,
+				E7EE965C1F68FEDF00F4529B /* VideoCellVC.swift */,
+				E7EE965E1F69010300F4529B /* ResumesVideoVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		EBB6DE281F7566FC00327251 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				EBB260AB1F66C4F400E0B901 /* Friend.swift */,
+				EBB260A91F66C4E000E0B901 /* Profile.swift */,
+				EBB260AF1F676A0000E0B901 /* Video.swift */,
+				EBB260AD1F66D60100E0B901 /* User.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,9 +477,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Awesome Resume-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -425,9 +510,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Awesome ResumeTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -470,9 +558,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Awesome Resume/Pods-Awesome Resume-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -500,9 +605,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Awesome ResumeUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -531,23 +639,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDBF7F61F756EC8001FBCF7 /* Awesome_Resume.xcdatamodeld in Sources */,
+				EBDBF7F31F756E4C001FBCF7 /* CorneredButton.swift in Sources */,
+				EBDBF7F11F756E38001FBCF7 /* LoginVC.swift in Sources */,
+				EBB6DE401F7568A900327251 /* Friend.swift in Sources */,
+				EBB6DE411F7568A900327251 /* Video.swift in Sources */,
+				EBB6DE421F7568A900327251 /* User.swift in Sources */,
+				EBB6DE431F7568A900327251 /* Profile.swift in Sources */,
 				EBF29F5C1F6CD39200B0D12B /* VGVideoCell.swift in Sources */,
 				EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */,
 				EBE67C391F68251600337274 /* MediaViewCell.swift in Sources */,
-				EB0837881F5BE9B20015C661 /* LoginVC.swift in Sources */,
 				EBE67C3B1F68263E00337274 /* MediaInfoView.swift in Sources */,
 				EBE885CB1F5DB15C0095630C /* FeedsVC.swift in Sources */,
 				EBF29F5A1F6CD34100B0D12B /* VGEmbedPlayerView.swift in Sources */,
-				EB4DF0181F5C34C2006E9596 /* CorneredButton.swift in Sources */,
-				EBB260AC1F66C4F400E0B901 /* Friend.swift in Sources */,
-				EBB260AA1F66C4E000E0B901 /* Profile.swift in Sources */,
-				EB08378E1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld in Sources */,
-				EBB260B01F676A0000E0B901 /* Video.swift in Sources */,
 				EBDDA0751F7529C500E5C6C6 /* FriendsSearchVC.swift in Sources */,
 				EBF29F581F6CD30400B0D12B /* FeedsViewController.swift in Sources */,
+				E7471E761F7157D7001F758A /* HeaderView.swift in Sources */,
+				E7471E7A1F715BE5001F758A /* EduSectionCell.swift in Sources */,
+				E7F76EAC1F6A905C005E8A6F /* ViewCellDelegate.swift in Sources */,
+				E76F0B371F6D0B1000F28BBF /* EditMode1VC.swift in Sources */,
+				E7BD90871F625A5800A100C9 /* ResumesModel.swift in Sources */,
+				E7EE965D1F68FEDF00F4529B /* VideoCellVC.swift in Sources */,
+				E733AF741F6619F100B8C7C1 /* ResumeTableCellEducation.swift in Sources */,
+				E7471E781F715BD9001F758A /* ExpSectionCell.swift in Sources */,
+				E7EE965F1F69010300F4529B /* ResumesVideoVC.swift in Sources */,
+				E7A8D2671F652AF6008166AF /* ResumeTableCellTitle.swift in Sources */,
+				E7E0B3681F60211200753DA6 /* ResumesPagesVC.swift in Sources */,
 				EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */,
-				EBB260AE1F66D60100E0B901 /* User.swift in Sources */,
 				EBEF4E5D1F5D5D0F006C48C0 /* SignUpVC.swift in Sources */,
+				E7BD90851F61922A00A100C9 /* ResumesVC.swift in Sources */,
+				E73673C41F6BBABC00460DEC /* ResumeTableCellExp.swift in Sources */,
+				E7F76EAE1F6A9FBA005E8A6F /* UIExtendableTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,11 +869,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MXE9N2LLEZ;
+				DEVELOPMENT_TEAM = A825RC2X5D;
 				INFOPLIST_FILE = "Awesome Resume/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.prod.Awesome-Resume";
+				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Awesome-Resume";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -764,11 +886,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MXE9N2LLEZ;
+				DEVELOPMENT_TEAM = A825RC2X5D;
 				INFOPLIST_FILE = "Awesome Resume/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.prod.Awesome-Resume";
+				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Awesome-Resume";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -817,7 +939,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F5NBU4297C;
+				DEVELOPMENT_TEAM = A825RC2X5D;
 				INFOPLIST_FILE = "Awesome ResumeUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.prod.Awesome-ResumeUITests";
@@ -834,7 +956,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F5NBU4297C;
+				DEVELOPMENT_TEAM = A825RC2X5D;
 				INFOPLIST_FILE = "Awesome ResumeUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.prod.Awesome-ResumeUITests";
@@ -887,12 +1009,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		EB08378C1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld */ = {
+		EBDBF7F41F756EC8001FBCF7 /* Awesome_Resume.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EB08378D1F5BE9B20015C661 /* Awesome_Resume.xcdatamodel */,
+				EBDBF7F51F756EC8001FBCF7 /* Awesome_Resume.xcdatamodel */,
 			);
-			currentVersion = EB08378D1F5BE9B20015C661 /* Awesome_Resume.xcdatamodel */;
+			currentVersion = EBDBF7F51F756EC8001FBCF7 /* Awesome_Resume.xcdatamodel */;
 			path = Awesome_Resume.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

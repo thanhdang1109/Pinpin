@@ -127,23 +127,27 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-7M-XCN">
-                                <rect key="frame" x="67" y="20" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="awesome_resume" translatesAutoresizingMaskIntoConstraints="NO" id="oMj-WD-NUs">
+                                <rect key="frame" x="86" y="40" width="202" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="U7V-l9-kFQ"/>
+                                    <constraint firstAttribute="height" constant="150" id="r77-p6-lwx"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aIh-IZ-WpK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HmP-7g-P1L"/>
+                            <constraint firstItem="oMj-WD-NUs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hqm-gN-6Dl"/>
+                            <constraint firstItem="oMj-WD-NUs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="UL8-Ld-Cus"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aIh-IZ-WpK" secondAttribute="trailing" constant="50" id="UlL-Ha-5eU"/>
-                            <constraint firstItem="2sH-7M-XCN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="acn-K3-SXq"/>
                             <constraint firstItem="aIh-IZ-WpK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r6V-QY-B4o"/>
-                            <constraint firstItem="2sH-7M-XCN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="s19-ZZ-rBF"/>
                             <constraint firstItem="aIh-IZ-WpK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x6g-lb-Y7l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="appImg" destination="2sH-7M-XCN" id="gJD-Xb-4yv"/>
+                        <outlet property="appImg" destination="oMj-WD-NUs" id="weo-lV-WMZ"/>
                         <outlet property="fbBtnLbl" destination="hH3-te-EvK" id="PWG-kN-Xsl"/>
                         <outlet property="fbSignInBtn" destination="BTt-P2-2j9" id="kkN-Qb-Y0G"/>
                         <outlet property="loginStackView" destination="aIh-IZ-WpK" id="Glx-Wj-GvV"/>
@@ -155,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-260" y="149"/>
+            <point key="canvasLocation" x="-260" y="148.87556221889056"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Asj-F6-Fwf">
@@ -165,7 +169,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f62-sH-rme">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.36470588240000001" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="7wt-sc-QJi" kind="relationship" relationship="viewControllers" id="2db-wG-O7j"/>
@@ -185,7 +190,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNb-gT-FT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1598" y="3"/>
+            <point key="canvasLocation" x="1581" y="45"/>
         </scene>
         <!--Hien_Feeds-->
         <scene sceneID="Df1-GZ-cyN">
@@ -195,7 +200,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alm-nV-SOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="133"/>
+            <point key="canvasLocation" x="1560" y="132"/>
         </scene>
         <!--Hien_User_Profile-->
         <scene sceneID="d8c-C3-Tzu">
@@ -205,7 +210,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbZ-Gx-dnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="273"/>
+            <point key="canvasLocation" x="1589" y="217"/>
         </scene>
         <!--UserSignUp-->
         <scene sceneID="UQq-DT-Nfu">
@@ -217,6 +222,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="awesome_resume" width="1000" height="1000"/>
         <image name="facebook_icon" width="266" height="266"/>
     </resources>
 </document>

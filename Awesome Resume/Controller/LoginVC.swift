@@ -15,6 +15,7 @@ import Alamofire
 class LoginVC: UIViewController {
 
     @IBOutlet weak var appImg: UIImageView!
+    
     @IBOutlet weak var loginStackView: UIStackView!
     
     @IBOutlet weak var userEmailField: UITextField!

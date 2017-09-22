@@ -147,8 +147,8 @@ class TouchableUIView: UIView {
             case .success(let grantedPermissions, let declinedPermissions, let token):
                 print("Success!")
                 print("\(grantedPermissions) + \(declinedPermissions) + \(token)")
-//                let loginVC = self.getParentViewController() as! LoginVC!
-//                loginVC?.updateStatus(loginResult: "Logged In")
+                let loginVC = self.getParentViewController() as! LoginVC!
+                loginVC?.updateStatus(loginResult: "Logged In")
             }
         }
     }
@@ -156,7 +156,7 @@ class TouchableUIView: UIView {
     func logoutBtnClicked() {
         let loginManager = LoginManager()
         loginManager.logOut()
-//        let loginVC = self.getParentViewController() as! LoginVC!
-//        loginVC?.updateStatus(loginResult: "Logged Out")
+        let loginVC = self.getParentViewController() as! LoginVC!
+        loginVC?.updateStatus(loginResult: "Logged Out")
     }
 }

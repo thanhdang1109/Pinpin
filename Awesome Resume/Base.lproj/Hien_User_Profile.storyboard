@@ -1,42 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6cf-r7-HG7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6cf-r7-HG7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+        </array>
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Friends SearchVC-->
         <scene sceneID="SYa-Oj-8qB">
             <objects>
-                <viewController id="6cf-r7-HG7" sceneMemberID="viewController">
+                <viewController id="6cf-r7-HG7" customClass="FriendsSearchVC" customModule="Awesome_Resume" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="obg-uR-Fg9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hien_User_Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0K-k7-XGG">
-                                <rect key="frame" x="120.5" y="323" width="133" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <searchBar contentMode="redraw" placeholder="Friend's Name" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nK-pO-JjN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4b-Sr-vcZ">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TnR-fM-aHd">
+                                        <rect key="frame" x="67" y="262" width="241" height="68.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You seems lonely" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCZ-wm-mZU">
+                                                <rect key="frame" x="0.0" y="0.0" width="241" height="41"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's look for your friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFT-Jl-cZg">
+                                                <rect key="frame" x="5.5" y="41" width="230.5" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cP6-53-B6d">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="TnR-fM-aHd" firstAttribute="centerY" secondItem="u4b-Sr-vcZ" secondAttribute="centerY" id="0gy-vE-XbX"/>
+                                    <constraint firstAttribute="bottom" secondItem="cP6-53-B6d" secondAttribute="bottom" id="2UG-Nn-j8N"/>
+                                    <constraint firstItem="cP6-53-B6d" firstAttribute="leading" secondItem="u4b-Sr-vcZ" secondAttribute="leading" id="7gg-Z5-UqZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="cP6-53-B6d" secondAttribute="trailing" id="9A4-hX-lIA"/>
+                                    <constraint firstItem="cP6-53-B6d" firstAttribute="top" secondItem="u4b-Sr-vcZ" secondAttribute="top" id="FbA-yd-RDr"/>
+                                    <constraint firstItem="TnR-fM-aHd" firstAttribute="centerX" secondItem="u4b-Sr-vcZ" secondAttribute="centerX" id="ZYt-gD-hia"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p0K-k7-XGG" firstAttribute="centerY" secondItem="obg-uR-Fg9" secondAttribute="centerY" id="SqS-HF-d65"/>
-                            <constraint firstItem="p0K-k7-XGG" firstAttribute="centerX" secondItem="obg-uR-Fg9" secondAttribute="centerX" id="YNG-Jb-lZv"/>
+                            <constraint firstItem="IZv-7B-dhg" firstAttribute="trailing" secondItem="u4b-Sr-vcZ" secondAttribute="trailing" id="EtR-Dt-mXI"/>
+                            <constraint firstItem="u4b-Sr-vcZ" firstAttribute="top" secondItem="9nK-pO-JjN" secondAttribute="bottom" id="TtE-vJ-Jyw"/>
+                            <constraint firstItem="9nK-pO-JjN" firstAttribute="top" secondItem="obg-uR-Fg9" secondAttribute="top" constant="20" id="Vy7-uC-wg8"/>
+                            <constraint firstItem="u4b-Sr-vcZ" firstAttribute="leading" secondItem="IZv-7B-dhg" secondAttribute="leading" id="Y2M-Y2-nSR"/>
+                            <constraint firstItem="9nK-pO-JjN" firstAttribute="trailing" secondItem="IZv-7B-dhg" secondAttribute="trailing" id="c7o-Oo-V5p"/>
+                            <constraint firstItem="IZv-7B-dhg" firstAttribute="bottom" secondItem="u4b-Sr-vcZ" secondAttribute="bottom" id="sU9-Xv-vET"/>
+                            <constraint firstItem="9nK-pO-JjN" firstAttribute="leading" secondItem="IZv-7B-dhg" secondAttribute="leading" id="zbT-e3-Fnx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IZv-7B-dhg"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="LTY-56-K07"/>
+                    <connections>
+                        <outlet property="friendListTableView" destination="cP6-53-B6d" id="cIR-IH-tXG"/>
+                        <outlet property="friendSearchBar" destination="9nK-pO-JjN" id="Mff-bh-7mQ"/>
+                        <outlet property="searchDisplayController" destination="J5F-Hf-zX0" id="Tto-9i-d7l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7r-DR-Gne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="J5F-Hf-zX0">
+                    <connections>
+                        <outlet property="delegate" destination="6cf-r7-HG7" id="mp8-Lr-EcJ"/>
+                        <outlet property="searchContentsController" destination="6cf-r7-HG7" id="aS6-JX-4Px"/>
+                        <outlet property="searchResultsDataSource" destination="6cf-r7-HG7" id="dyc-CZ-4hm"/>
+                        <outlet property="searchResultsDelegate" destination="6cf-r7-HG7" id="9i8-4a-2CL"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1577" y="943"/>
+            <point key="canvasLocation" x="1576.8" y="942.27886056971522"/>
         </scene>
     </scenes>
 </document>

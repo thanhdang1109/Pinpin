@@ -12,6 +12,9 @@
 		DF3368963E5FE853E3502B65 /* Pods_Awesome_ResumeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBD6C8523A2B20D693EC668 /* Pods_Awesome_ResumeTests.framework */; };
 		E733AF741F6619F100B8C7C1 /* ResumeTableCellEducation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733AF731F6619F100B8C7C1 /* ResumeTableCellEducation.swift */; };
 		E73673C41F6BBABC00460DEC /* ResumeTableCellExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73673C31F6BBABC00460DEC /* ResumeTableCellExp.swift */; };
+		E7471E761F7157D7001F758A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7471E751F7157D7001F758A /* HeaderView.swift */; };
+		E7471E781F715BD9001F758A /* ExpSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7471E771F715BD9001F758A /* ExpSectionCell.swift */; };
+		E7471E7A1F715BE5001F758A /* EduSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7471E791F715BE5001F758A /* EduSectionCell.swift */; };
 		E76F0B371F6D0B1000F28BBF /* EditMode1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */; };
 		E7A8D2671F652AF6008166AF /* ResumeTableCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8D2661F652AF6008166AF /* ResumeTableCellTitle.swift */; };
 		E7BD90851F61922A00A100C9 /* ResumesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD90841F61922A00A100C9 /* ResumesVC.swift */; };
@@ -66,6 +69,9 @@
 		DFCA3FFC9A5E0105A1B2A528 /* Pods-Awesome ResumeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeUITests/Pods-Awesome ResumeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E733AF731F6619F100B8C7C1 /* ResumeTableCellEducation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellEducation.swift; sourceTree = "<group>"; };
 		E73673C31F6BBABC00460DEC /* ResumeTableCellExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellExp.swift; sourceTree = "<group>"; };
+		E7471E751F7157D7001F758A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E7471E771F715BD9001F758A /* ExpSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpSectionCell.swift; sourceTree = "<group>"; };
+		E7471E791F715BE5001F758A /* EduSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduSectionCell.swift; sourceTree = "<group>"; };
 		E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode1VC.swift; sourceTree = "<group>"; };
 		E7A8D2661F652AF6008166AF /* ResumeTableCellTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellTitle.swift; sourceTree = "<group>"; };
 		E7BD90841F61922A00A100C9 /* ResumesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesVC.swift; sourceTree = "<group>"; };
@@ -172,6 +178,8 @@
 				E7A8D2661F652AF6008166AF /* ResumeTableCellTitle.swift */,
 				E733AF731F6619F100B8C7C1 /* ResumeTableCellEducation.swift */,
 				E73673C31F6BBABC00460DEC /* ResumeTableCellExp.swift */,
+				E7471E771F715BD9001F758A /* ExpSectionCell.swift */,
+				E7471E791F715BE5001F758A /* EduSectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 				EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */,
 				EB4DF0171F5C34C2006E9596 /* CorneredButton.swift */,
 				E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */,
+				E7471E751F7157D7001F758A /* HeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -582,6 +591,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */,
+				E7471E761F7157D7001F758A /* HeaderView.swift in Sources */,
+				E7471E7A1F715BE5001F758A /* EduSectionCell.swift in Sources */,
 				E7F76EAC1F6A905C005E8A6F /* ViewCellDelegate.swift in Sources */,
 				EB0837881F5BE9B20015C661 /* LoginVC.swift in Sources */,
 				E76F0B371F6D0B1000F28BBF /* EditMode1VC.swift in Sources */,
@@ -589,6 +600,7 @@
 				E7BD90871F625A5800A100C9 /* ResumesModel.swift in Sources */,
 				E7EE965D1F68FEDF00F4529B /* VideoCellVC.swift in Sources */,
 				E733AF741F6619F100B8C7C1 /* ResumeTableCellEducation.swift in Sources */,
+				E7471E781F715BD9001F758A /* ExpSectionCell.swift in Sources */,
 				E7EE965F1F69010300F4529B /* ResumesVideoVC.swift in Sources */,
 				E7A8D2671F652AF6008166AF /* ResumeTableCellTitle.swift in Sources */,
 				EB08378E1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld in Sources */,

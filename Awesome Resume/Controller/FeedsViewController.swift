@@ -9,6 +9,7 @@
 import UIKit
 import VGPlayer
 import SnapKit
+import Alamofire
 
 class FeedsViewController: UITableViewController {
     var dataArr: [(User, Video)] = [(User, Video)]()
@@ -27,20 +28,47 @@ class FeedsViewController: UITableViewController {
         configureSmallScreenView()
         addTableViewObservers()
         
-        prepData()
+        let responseJSON: [String: Any] = [String: Any]()
+        
+        prepData(inputJSON: responseJSON)
     }
     
-    func prepData() {
+    func requestJSONFromServer(url: String, parameters: [String: Any]) -> Any {
+        var returnData: Any?
+        Alamofire.request(url).responseJSON { (response) in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")
+            // response serialization result
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
+            }
+
+            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                print("Data: \(utf8Text)") // original server data as UTF8 string
+                returnData = data
+            } else {
+                returnData = ""
+            }
+        }
+        return returnData ?? ""
+    }
+    
+    func prepData(inputJSON: [String: Any]) {
         let user = User(userName: "Hien Tran", email: "heuism23892@gmail.com", pictureUrl: nil)
         print(user._videos)
         print(user._userName)
         print(user._email)
+        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link: "http://www.html5videoplayer.net/videos/toystory.mp4")
+        user._videos?.append(video)
+        user._videos?.append(video)
+        
+        print(user._videos![0]._link)
         user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil))
         print(user._friends)
         if let friends = user._friends {
             print(friends[0]._userName)
         }
-        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link: "http://www.html5videoplayer.net/videos/toystory.mp4")
         self.dataArr.append((user, video))
     }
     

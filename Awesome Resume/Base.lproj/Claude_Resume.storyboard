@@ -150,7 +150,7 @@
                                     <navigationItem title="Title" id="dkF-Q5-1hm"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WMh-eu-rLs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WMh-eu-rLs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
@@ -213,10 +213,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LeA-IN-Hko">
-                                                    <rect key="frame" x="8" y="8" width="398" height="184"/>
+                                                    <rect key="frame" x="0.0" y="8" width="0.0" height="184"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ Edu - Label ]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFN-Jl-Xss">
-                                                            <rect key="frame" x="0.0" y="0.0" width="398" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="CXB-9T-NT0"/>
                                                             </constraints>
@@ -225,7 +225,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeD-aa-fCy">
-                                                            <rect key="frame" x="0.0" y="24" width="398" height="22"/>
+                                                            <rect key="frame" x="0.0" y="24" width="0.0" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="TRN-Le-pbX"/>
                                                             </constraints>
@@ -234,7 +234,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0B3-nD-LZD">
-                                                            <rect key="frame" x="0.0" y="46" width="398" height="18"/>
+                                                            <rect key="frame" x="0.0" y="46" width="0.0" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="smT-Tv-O5w"/>
                                                             </constraints>
@@ -243,7 +243,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B02-7C-QLz">
-                                                            <rect key="frame" x="0.0" y="64" width="398" height="18"/>
+                                                            <rect key="frame" x="0.0" y="64" width="0.0" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="HFn-BA-jB8"/>
                                                             </constraints>
@@ -252,7 +252,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Bt-Xb-ihy">
-                                                            <rect key="frame" x="0.0" y="82" width="398" height="102"/>
+                                                            <rect key="frame" x="0.0" y="82" width="0.0" height="102"/>
                                                             <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                                             <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                                                             <nil key="textColor"/>

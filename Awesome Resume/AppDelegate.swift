@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import FacebookCore
+import AVFoundation
 
 
 @UIApplicationMain
@@ -18,7 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        do
+        {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        }
+        catch let error as NSError
+        {
+            print(error)
+        }
         return true
+        //        return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

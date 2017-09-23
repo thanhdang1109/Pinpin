@@ -8,7 +8,7 @@ target 'Awesome Resume' do
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'FacebookShare'
-
+	pod 'VGPlayer'
   # Pods for Awesome Resume
 
   target 'Awesome ResumeTests' do

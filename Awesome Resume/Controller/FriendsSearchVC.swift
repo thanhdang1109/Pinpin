@@ -38,6 +38,7 @@ extension FriendsSearchVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchActive = false;
+        print("Search Start!!")
     }
 }
 
@@ -73,6 +74,17 @@ class FriendsSearchVC: UIViewController {
     
     func getFriendList(url: String) -> Any? {
         return []
+    }
+    
+    func updateFriendsList(url: String) {
+        friendList = (getFriendList(url: url) as? [Friend])!
+        if friendList.isEmpty {
+            friendListTableView.isHidden = true
+        }
+        else {
+            friendListTableView.isHidden = false
+        }
+        friendListTableView.reloadData()
     }
     /*
     // MARK: - Navigation

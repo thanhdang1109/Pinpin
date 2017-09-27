@@ -9,6 +9,8 @@
 import Foundation
 
 class User: Profile {
+    var _location: String?
+    
     var _userName: String?
     
     var _pictureUrl: String?
@@ -19,11 +21,12 @@ class User: Profile {
     
     var _friends: [Friend]?
     
-    init(userName: String?, email: String?, pictureUrl: String?) {
+    init(userName: String?, email: String?, pictureUrl: String?, location: String?) {
         self._userName = userName
         self._email = email
         self._pictureUrl = pictureUrl
         self._videos = [Video]()
         self._friends = [Friend]()
+        self._location = location
     }
 }

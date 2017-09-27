@@ -11,6 +11,18 @@ import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
 import Alamofire
+import NVActivityIndicatorView
+
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+}
+
+extension LoginVC: NVActivityIndicatorViewable {
+    
+}
 
 class LoginVC: UIViewController {
 
@@ -24,24 +36,20 @@ class LoginVC: UIViewController {
     @IBOutlet weak var normalSignInBtn: CorneredButton!
     @IBOutlet weak var fbSignInBtn: TouchableUIView!
     @IBOutlet weak var fbBtnLbl: UILabel!
+    @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     
     @IBOutlet weak var signUpBtn: CorneredButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib
-//        let fbLoginBtn = FBSDKLoginButton()
-//        loginStackView.insertArrangedSubview(fbLoginBtn, at: 3)
+        configVC()
+    }
+    
+    func configVC() {
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
-//        let loginButton = LoginButton(readPermissions: [.publicProfile])
-//        
-//        loginStackView.insertArrangedSubview(loginButton, at: 3)
-//        loginButton.frame.size.height = 60
-//        if let accessToken = AccessToken.current {
-//            // User is logged in, use 'accessToken' here.
-//            print("Success")
-//        }
-
+        userEmailField.delegate = self
+        userPassField.delegate = self
     }
     
     func updateStatus(loginResult: String) {
@@ -74,6 +82,15 @@ class LoginVC: UIViewController {
 //                    }
 //                }
 //        }
+    }
+    
+    func startActivityAnimating() {
+        self.startAnimating(self.activityIndicatorView.frame.size, message: "Getting Location", messageFont: nil, type: self.activityIndicatorView.type, color: self.activityIndicatorView.color, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: nil, textColor: self.activityIndicatorView.color)
+        //        print(currentCity)
+    }
+    
+    func stopActivityAnimating() {
+        self.stopAnimating()
     }
     
     @IBAction func normalSignInBtnPressed(_ sender: Any) {

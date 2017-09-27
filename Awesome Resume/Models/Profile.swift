@@ -13,4 +13,5 @@ protocol Profile {
     var _pictureUrl: String? {get}
     var _email: String? {get}
     var _videos: [Video]? {get}
+    var _location: String? {get}
 }

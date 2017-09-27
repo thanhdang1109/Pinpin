@@ -17,10 +17,14 @@ class Friend: Profile {
     
     var _videos: [Video]?
     
-    init(userName: String?, email: String?, pictureUrl: String?) {
+    var _location: String?
+    
+    
+    init(userName: String?, email: String?, pictureUrl: String?, location: String?) {
         self._userName = userName
         self._email = email
         self._pictureUrl = pictureUrl
         self._videos = [Video]()
+        self._location = location
     }
 }

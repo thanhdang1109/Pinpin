@@ -19,7 +19,7 @@ class MediaInfoView: UIView {
         super.awakeFromNib()
     }
     
-    func configView(user: User, media: Video) {
+    func configView(user: Profile, media: Video) {
         self.userName.text = user._userName
         self.mediaDesc.text = media._description
         self.mediaTime.text = media._time

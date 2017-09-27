@@ -81,16 +81,16 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Y7V-Io-q3O">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Y7V-Io-q3O">
                                         <rect key="frame" x="0.0" y="50" width="275" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ek9-Xr-xl5"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw7-Tb-EIW" customClass="CorneredButton" customModule="Awesome_Resume" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="100" width="275" height="40"/>
@@ -134,19 +134,32 @@
                                     <constraint firstAttribute="height" constant="150" id="r77-p6-lwx"/>
                                 </constraints>
                             </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nge-Mw-A4a" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="157" y="303" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballScaleMultiple"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="nge-Mw-A4a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1hz-fO-1zQ"/>
                             <constraint firstItem="aIh-IZ-WpK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HmP-7g-P1L"/>
                             <constraint firstItem="oMj-WD-NUs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hqm-gN-6Dl"/>
                             <constraint firstItem="oMj-WD-NUs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="UL8-Ld-Cus"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aIh-IZ-WpK" secondAttribute="trailing" constant="50" id="UlL-Ha-5eU"/>
+                            <constraint firstItem="nge-Mw-A4a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hri-tV-ASW"/>
                             <constraint firstItem="aIh-IZ-WpK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r6V-QY-B4o"/>
                             <constraint firstItem="aIh-IZ-WpK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x6g-lb-Y7l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="nge-Mw-A4a" id="2pL-mh-LIf"/>
                         <outlet property="appImg" destination="oMj-WD-NUs" id="weo-lV-WMZ"/>
                         <outlet property="fbBtnLbl" destination="hH3-te-EvK" id="PWG-kN-Xsl"/>
                         <outlet property="fbSignInBtn" destination="BTt-P2-2j9" id="kkN-Qb-Y0G"/>

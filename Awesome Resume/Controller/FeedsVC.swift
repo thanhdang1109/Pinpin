@@ -41,11 +41,11 @@ class FeedsVC: UIViewController {
     @IBOutlet weak var feedTableView: UITableView!
     
     func prepData() {
-        let user = User(userName: "Hien Tran", email: "heuism23892@gmail.com", pictureUrl: nil)
+        let user = User(userName: "Hien Tran", email: "heuism23892@gmail.com", pictureUrl: nil, location: "Melbourne, Australia")
         print(user._videos)
         print(user._userName)
         print(user._email)
-        user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil))
+        user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil, location: "Michigan, USA"))
         print(user._friends)
         if let friends = user._friends {
             print(friends[0]._userName)

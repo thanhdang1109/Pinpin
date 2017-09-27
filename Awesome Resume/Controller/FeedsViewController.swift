@@ -12,7 +12,7 @@ import SnapKit
 import Alamofire
 
 class FeedsViewController: UITableViewController {
-    var dataArr: [(User, Video)] = [(User, Video)]()
+    var dataArr: [(Profile, Video)] = [(Profile, Video)]()
     
     var player : VGPlayer!
     var playerView : VGEmbedPlayerView!
@@ -55,7 +55,7 @@ class FeedsViewController: UITableViewController {
     }
     
     func prepData(inputJSON: [String: Any]) {
-        let user = User(userName: "Hien Tran", email: "heuism23892@gmail.com", pictureUrl: nil)
+        let user = User(userName: "Hien Tran", email: "heuism23892@gmail.com", pictureUrl: nil, location: "Melbourne, Australia")
         print(user._videos)
         print(user._userName)
         print(user._email)
@@ -64,12 +64,12 @@ class FeedsViewController: UITableViewController {
         user._videos?.append(video)
         
         print(user._videos![0]._link)
-        user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil))
+        user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil, location: "Michigan, USA"))
         print(user._friends)
         if let friends = user._friends {
             print(friends[0]._userName)
         }
-        self.dataArr.append((user, video))
+        self.dataArr.append((user._friends![0], video))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -156,7 +156,7 @@ class FeedsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feed_video_cell", for: indexPath) as! MediaViewCell
-        let (user, video) = dataArr[indexPath.row]
+        let (friend, video) = dataArr[indexPath.row]
         cell.indexPath = indexPath
         cell.playCallBack = ({ [weak self] (indexPath: IndexPath?) -> Void in
             guard let strongSelf = self else { return }
@@ -164,7 +164,7 @@ class FeedsViewController: UITableViewController {
             strongSelf.addPlayer(cell, video)
             strongSelf.currentPlayIndexPath = indexPath
         })
-        cell.configCell(user: user, media: video)
+        cell.configCell(user: friend, media: video)
         
         return cell
     }

@@ -21,7 +21,7 @@ class MediaViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func configCell(user: User, media: Video) {
+    func configCell(user: Profile, media: Video) {
         self.mediaInfoView.configView(user: user, media: media)
     }
 

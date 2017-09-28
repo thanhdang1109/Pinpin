@@ -657,8 +657,6 @@
 				E7EE965D1F68FEDF00F4529B /* VideoCellVC.swift in Sources */,
 				E7471E781F715BD9001F758A /* ExpSectionCell.swift in Sources */,
 				E7EE965F1F69010300F4529B /* ResumesVideoVC.swift in Sources */,
-				EB08378E1F5BE9B20015C661 /* Awesome_Resume.xcdatamodeld in Sources */,
-				E7A8D2671F652AF6008166AF /* ResumeTableCellTitle.swift in Sources */,
 				E7E0B3681F60211200753DA6 /* ResumesPagesVC.swift in Sources */,
 				EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */,
 				EBEF4E5D1F5D5D0F006C48C0 /* SignUpVC.swift in Sources */,

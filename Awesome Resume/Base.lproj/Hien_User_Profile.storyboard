@@ -22,7 +22,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Friends SearchVC-->
+        <!--Search-->
         <scene sceneID="SYa-Oj-8qB">
             <objects>
                 <viewController id="6cf-r7-HG7" customClass="FriendsSearchVC" customModule="Awesome_Resume" customModuleProvider="target" sceneMemberID="viewController">
@@ -174,7 +174,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IZv-7B-dhg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="LTY-56-K07"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="tap-search" selectedImage="tap-search" id="LTY-56-K07"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="90b-ZP-42w" id="xGT-MS-Hgm"/>
                         <outlet property="friendListTableView" destination="cP6-53-B6d" id="cIR-IH-tXG"/>
@@ -195,4 +195,7 @@
             <point key="canvasLocation" x="1576.8" y="942.27886056971522"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tap-search" width="24" height="24"/>
+    </resources>
 </document>

@@ -179,11 +179,11 @@
             </objects>
             <point key="canvasLocation" x="2292" y="132"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Feeds-->
         <scene sceneID="jQ2-sp-jhM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rWz-qD-gxy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="tkn-OT-HW0"/>
+                    <tabBarItem key="tabBarItem" title="Feeds" image="tap-feeds" selectedImage="tap-feeds" id="tkn-OT-HW0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hEg-JV-QjB">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -202,5 +202,6 @@
     <resources>
         <image name="button_cover_video_play" width="56" height="56"/>
         <image name="placeholder _image" width="414" height="233"/>
+        <image name="tap-feeds" width="24" height="24"/>
     </resources>
 </document>

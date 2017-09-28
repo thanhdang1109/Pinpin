@@ -16,8 +16,8 @@ class ResumesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             "type": "resumeTitle",
             "titleItems": [
                 [
-                "name": "THANH 'STEVE' DANG",
-                "addr": "15 John Street, East Brunswick, VIC 3057. Mobile: 0403.496.746"
+                "name": "BOYA 'CLAUDE' CHEN",
+                "addr": "2 Cobden st., North Melbourne, VIC 3051, Mobile: 0413448518"
                 ]
             ]
         ],
@@ -32,18 +32,11 @@ class ResumesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
                     "description": "- Master of Information Technology, expected December 2017, The University of Melbourne (informally Melbourne University) is a public research university located in Melbourne, Australia. Founded in 1853, it is Australia's second oldest university and the oldest in Victoria.[7] Times Higher Education ranks Melbourne as 33rd in the world,[8] while the Academic Ranking of World Universities places Melbourne 40th in the world (both first in Australia).[9]"
                 ],
                 [
-                    "organization": "DICKINSON COLLEGE",
-                    "title": "International Business & Management",
-                    "time": "2010-2014",
-                    "location": "USA",
-                    "description": "- B.A in International Business & Management"
-                ],
-                [
-                    "organization": "STATE UNIVERSITY OF NEW YORK",
-                    "title": "B.S of Finance",
-                    "time": "2010-2014",
-                    "location": "USA",
-                    "description": "- Studied B.S in Finance"
+                    "organization": "UESTC",
+                    "title": "Computer Science and Technology",
+                    "time": "2011-2015",
+                    "location": "Chengdu China",
+                    "description": "- B.A in Computer science and Technology"
                 ]
             ]
         ],
@@ -67,18 +60,46 @@ class ResumesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print ("resume page loaded!")
+        
         resumeTableView.delegate = self
         resumeTableView.dataSource = self
-        let scrollRect = CGRect(x: 0, y: 0, width: 20, height: 20)
-        resumeTableView.scrollRectToVisible(scrollRect, animated: true)
-    
+        
+        
         // Navigation Bar Style
         self.navigationController?.navigationBar.tintColor = UIColor(red:0.57, green:0.07, blue:0.04, alpha:1.0)
 //        self.navigationController?.navigationBar.titleTextAttributes = [
 //            NSAttributedStringKey.font: UIFont(name: "Palatino-bold", size: 20)
 //        ]
         
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem?.action = #selector(EditBtnAction)
         updateSectionData()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.resumeTableView.isEditing = false
+        self.navigationItem.rightBarButtonItem?.title = "Edit"
+    }
+    
+    // -------------- Header Part
+    @IBOutlet weak var resumePageTitle: UILabel?
+    @IBOutlet weak var resumePageEditBtn: UIButton?
+    @objc func EditBtnAction(sender: UIBarButtonItem) {
+        if (self.resumeTableView.isEditing == false){
+            self.resumeTableView.isEditing = true
+            sender.title = "Done"
+        }else{
+            self.resumeTableView.isEditing = false
+            sender.title = "Edit"
+        }
+    }
+    
+    func sortItems(items: [String: String]) -> [String: String] {
+        // This function is used to sort the items in terms of Time
+        return  [:]
     }
     
     func updateSectionData(){
@@ -87,6 +108,12 @@ class ResumesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
             1: resumeData[1]["eduItems"] as! Array<[String : String]>,
             2: resumeData[2]["expItems"] as! Array<[String : String]>
         ]
+    }
+    
+    func updateToOrigin() {
+        resumeData[0]["titleItems"] = self.resumeSectionData[0]
+        resumeData[1]["eduItems"] = self.resumeSectionData[1]
+        resumeData[2]["expItems"] = self.resumeSectionData[2]
     }
     
     /*
@@ -115,7 +142,7 @@ class ResumesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         if section == 0{
             return 0
         }else{
-            return 35
+            return 30
         }
     }
     
@@ -147,7 +174,7 @@ class ResumesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         }
     }
     
-    // -- Height for row setting
+    // ::TV:: Height for row setting
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 110
@@ -163,13 +190,50 @@ class ResumesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, S
         }
     }
     
-    // -------------- Header Part
-    @IBOutlet weak var resumePageTitle: UILabel?
-    @IBOutlet weak var resumePageEditBtn: UIButton?
-    @IBAction func EditBtnAction(_ sender: UIButton) {
-        
+    // ::TV:: editingStyleForRowAt
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
     }
     
+    // ::TV:: shouldIndentWhileEditingRowAt
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    // TABLEVIEW -- moveRowAt
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = self.resumeSectionData[sourceIndexPath.section]![sourceIndexPath.row]
+        self.resumeSectionData[sourceIndexPath.section]?.remove(at: sourceIndexPath.row)
+        self.resumeSectionData[sourceIndexPath.section]?.insert(movedObject, at: destinationIndexPath.row)
+        updateToOrigin() // Update the data
+        
+        // RELOAD TABLEVIEW
+        self.resumeTableView.reloadData()
+        // ---
+        
+        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(self.resumeSectionData[sourceIndexPath.section])")
+        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(self.resumeData[sourceIndexPath.section])")
+        // To check for correctness enable: self.tableView.reloadData()
+    }
+    
+    // TABLEVIEW -- which rows are allowed to be moved
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section != 0
+    }
+    
+    // TABLEVIEW:
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if (sourceIndexPath.section != proposedDestinationIndexPath.section) {
+            var row: Int = 0
+            if (sourceIndexPath.section < proposedDestinationIndexPath.section) {
+                row = self.resumeTableView.numberOfRows(inSection: sourceIndexPath.section) - 1
+            }
+            return IndexPath(row: row, section: sourceIndexPath.section)
+        }
+        return proposedDestinationIndexPath;
+    }
+    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //// Code
     }

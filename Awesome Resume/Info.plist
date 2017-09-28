@@ -45,6 +45,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Allows user to capture a photo or video to upload to their family circle</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allows user to use microphone</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allows user to access the Photo library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

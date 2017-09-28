@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesPagesVC.swift"
-            timestampString = "527147954.231095"
+            timestampString = "528009738.051179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVideoVC.swift"
-            timestampString = "527499550.488337"
+            timestampString = "528023401.454127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVideoVC.swift"
-            timestampString = "527499550.488747"
+            timestampString = "528023401.454199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVideoVC.swift"
-            timestampString = "527499550.489028"
+            timestampString = "528023401.454251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVideoVC.swift"
-            timestampString = "527499550.489303"
+            timestampString = "528023401.454299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVC.swift"
-            timestampString = "527777503.099982"
+            timestampString = "528276487.625047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -296,11 +296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVC.swift"
-            timestampString = "527777503.10106"
+            timestampString = "528276487.625559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "tableView(_:viewForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Cells/EduSectionCell.swift"
-            timestampString = "527777503.101868"
+            timestampString = "528276487.625911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "configCell(data:tag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -328,11 +328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVC.swift"
-            timestampString = "527777503.102436"
+            timestampString = "528276487.626229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "tableView(_:viewForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -344,11 +344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVC.swift"
-            timestampString = "527777503.103134"
+            timestampString = "528276487.626583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -360,11 +360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
-            timestampString = "527777503.103825"
+            timestampString = "528276487.626958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "saveButtonAction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -376,11 +376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
-            timestampString = "527777503.104724"
+            timestampString = "528276487.628151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "backBtnAlertAction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -392,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVC.swift"
-            timestampString = "527777503.105527"
+            timestampString = "528276487.629192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "saveBtnPressed(data:dataType:isSave:editIndex:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -408,12 +408,238 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/Controller/ResumesVC.swift"
-            timestampString = "527777503.106191"
+            timestampString = "528276487.629561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "saveBtnPressed(data:dataType:isSave:editIndex:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
+            timestampString = "528276487.629911"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "startCameraFromViewController(viewController:withDelegate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
+            timestampString = "528276487.630954"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "startCameraFromViewController(viewController:withDelegate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
+            timestampString = "528276487.632015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
+            landmarkName = "saveVideo(_:didFinishSavingWithError:contextInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.AddressBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "*0x1809ad84c">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "objc_object::release()"
+                  moduleName = "libobjc.A.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesome Resume/Controller/ResumesVC.swift"
+            timestampString = "528276487.633115"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "ResumesVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Awesome_Resume.ResumesVC.resumeSections.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Awesome Resume"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boyachen/Documents/IOS%20Projects/resume_iOS/Awesome%20Resume/Controller/ResumesVC.swift"
+                  timestampString = "528270987.41381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Awesome_Resume.ResumesVC.resumeSections.setter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Awesome Resume"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boyachen/Documents/IOS%20Projects/resume_iOS/Awesome%20Resume/Controller/ResumesVC.swift"
+                  timestampString = "528270987.416641"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Awesome_Resume.ResumesVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Awesome_Resume.ResumesVC"
+                  moduleName = "Awesome Resume"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boyachen/Documents/IOS%20Projects/resume_iOS/Awesome%20Resume/Controller/ResumesVC.swift"
+                  timestampString = "528270987.419584"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "2824">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Awesome_Resume.ResumesVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Awesome_Resume.ResumesVC&gt;"
+                  moduleName = "Awesome Resume"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/boyachen/Documents/IOS%20Projects/resume_iOS/Awesome%20Resume/Controller/ResumesVC.swift"
+                  timestampString = "528270987.422362"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "2788">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
+            timestampString = "528276487.633476"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
+            timestampString = "528276487.634508"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
+            timestampString = "528276487.635533"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
+            timestampString = "528276487.636574"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesome Resume/ResumeViewControllers/EditMode1VC.swift"
+            timestampString = "528276487.637583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

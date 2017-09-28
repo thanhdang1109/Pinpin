@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "editBtn.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "editBtn copy.png",
+      "filename" : "video-24-512.png",
       "scale" : "2x"
     },
     {

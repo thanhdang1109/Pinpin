@@ -62,7 +62,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feed_video_cell" rowHeight="313" id="XIJ-gE-TUX" customClass="MediaViewCell" customModule="Awesome_Resume" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="234" width="375" height="313"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XIJ-gE-TUX" id="d9F-US-rCA">
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XIJ-gE-TUX" id="d9F-US-rCA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="312.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -151,7 +151,6 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="fLP-cY-hKw" firstAttribute="trailing" secondItem="d9F-US-rCA" secondAttribute="trailingMargin" id="Eou-v7-5Kp"/>

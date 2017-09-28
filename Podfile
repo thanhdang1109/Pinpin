@@ -10,6 +10,7 @@ target 'Awesome Resume' do
 	pod 'FacebookShare'
 	pod 'VGPlayer'
 	pod 'NVActivityIndicatorView'
+	pod 'SwiftyJSON'
   # Pods for Awesome Resume
 
   target 'Awesome ResumeTests' do

@@ -10,8 +10,58 @@ import UIKit
 import VGPlayer
 import SnapKit
 import Alamofire
+import SwiftyJSON
+
+/*
+ let json = {
+     "friends": [
+                     {
+                         "user_name": Hien Tran,
+                         "email": "heuism23892@gmail.com",
+                         "videos":[
+                                     {
+                                         "video_description": "Master of IT"
+                                         "video_date": "23/9/2017"
+                                         "video_link": ""
+                                     }
+                                 ],
+                         "location": "Princes Hill, Victoria, Australia"
+                     }
+                 ]
+ }
+ */
+
+extension FeedsViewController {
+    func convertJSONtoData(json: [String: JSON]) -> [(Profile, Video)] {
+        var returnData = [(Profile, Video)]()
+        let friends = json["friends"]
+        for friend in friends! {
+            returnData.append(getVideoFromFriend(friend: friend))
+        }
+        return returnData
+    }
+
+//    func getVideoFromFriend(friend: JSON) -> [(Profile, Video)] {
+//        let videosForFriend = [(Profile, Video)]()
+//
+//        let friend_videos = friend["videos"] as
+//    }
+}
 
 class FeedsViewController: UITableViewController {
+    
+    lazy var refreshCtrl: UIRefreshControl = {
+        let refreshCtrl = UIRefreshControl()
+        refreshCtrl.addTarget(self, action:
+            #selector(self.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        refreshCtrl.tintColor = UIColor.red
+        refreshCtrl.attributedTitle = NSAttributedString(string: "Fetching Friends Feed Video ...")
+
+        
+        return refreshCtrl
+    }()
+    
     var dataArr: [(Profile, Video)] = [(Profile, Video)]()
     
     var player : VGPlayer!
@@ -21,12 +71,23 @@ class FeedsViewController: UITableViewController {
     var panGesture = UIPanGestureRecognizer()
     var playerViewSize : CGSize?
     
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        let responseJSON: [String: Any] = [String: Any]()
+        
+        prepData(inputJSON: responseJSON)
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Feeds"
         configureSmallScreenView()
         addTableViewObservers()
+        self.tableView.refreshControl = self.refreshCtrl
         
         let responseJSON: [String: Any] = [String: Any]()
         
@@ -39,17 +100,20 @@ class FeedsViewController: UITableViewController {
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")
+            let json = JSON(data: response.data)
             // response serialization result
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-                returnData = data
-            } else {
-                returnData = ""
-            }
+//            if let json = response.result.value {
+//                print("JSON: \(json)") // serialized json response
+//            }
+//
+//
+//
+//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+//                print("Data: \(utf8Text)") // original server data as UTF8 string
+//                returnData = data
+//            } else {
+//                returnData = ""
+//            }
         }
         return returnData ?? ""
     }

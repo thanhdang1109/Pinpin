@@ -29,6 +29,7 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
   - SnapKit (3.2.0)
+  - SwiftyJSON (3.1.4)
   - VGPlayer (0.1.5):
     - SnapKit (~> 3.2.0)
 
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - NVActivityIndicatorView
+  - SwiftyJSON
   - VGPlayer
 
 SPEC CHECKSUMS:
@@ -51,8 +53,9 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 5953758366278430dc322d5cdc906db361ed7f81
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   VGPlayer: 75ac161c0b6f489144b6633b0195a90958e7092f
 
-PODFILE CHECKSUM: 3387a64c98c7d4ef37fbeb41ce29aaa850f402d5
+PODFILE CHECKSUM: 2b05cd002638eec25e6e4d6dff2a7528c88dbdd4
 
 COCOAPODS: 1.2.0

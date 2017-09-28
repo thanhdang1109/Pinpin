@@ -32,14 +32,14 @@ import SwiftyJSON
  */
 
 extension FeedsViewController {
-    func convertJSONtoData(json: [String: JSON]) -> [(Profile, Video)] {
-        var returnData = [(Profile, Video)]()
-        let friends = json["friends"]
-        for friend in friends! {
-            returnData.append(getVideoFromFriend(friend: friend))
-        }
-        return returnData
-    }
+//    func convertJSONtoData(json: [String: JSON]) -> [(Profile, Video)] {
+//        var returnData = [(Profile, Video)]()
+//        let friends = json["friends"]
+//        for friend in friends! {
+//            returnData.append(getVideoFromFriend(friend: friend))
+//        }
+//        return returnData
+//    }
 
 //    func getVideoFromFriend(friend: JSON) -> [(Profile, Video)] {
 //        let videosForFriend = [(Profile, Video)]()
@@ -100,7 +100,7 @@ class FeedsViewController: UITableViewController {
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")
-            let json = JSON(data: response.data)
+//            let json = JSON(data: response.data)
             // response serialization result
 //            if let json = response.result.value {
 //                print("JSON: \(json)") // serialized json response

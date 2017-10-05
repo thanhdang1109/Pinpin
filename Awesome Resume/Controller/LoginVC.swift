@@ -27,9 +27,9 @@ extension LoginVC {
     func loginUser(email: String, password: String, sender: UIButton) {
         print("Login User...")
         startActivityAnimating(message: "Login User...")
-        let dataToSend = getDataToSend(type: "user_sign_in", email: email, password: password)
+        let dataToSend = getDataToSend(type: "user_login", email: email, password: password)
         //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/pinpin/user_sign_in/"
+        let url = "http://13.66.48.219:8000/user_login/"
         sendDataToServer(url: url, parameters: dataToSend, sender: sender)
     }
     
@@ -58,10 +58,9 @@ extension LoginVC {
                                         if json["success"].boolValue {
                                             let email = json["email"].string
                                             let userName = json["username"].string
-                                            let userLoc = json["location"].string
                                             self.storeDataToUserDefault(key: "userEmail", data: email)
                                             self.storeDataToUserDefault(key: "userName", data: userName)
-                                            self.storeDataToUserDefault(key: "userLocation", data: userLoc)
+                                            self.performSegue(withIdentifier: "loginSuccess", sender: self)
                                         } else {
                                             sender.wiggle()
                                         }
@@ -148,7 +147,7 @@ class LoginVC: UIViewController {
         let btn = sender as! UIButton
 //        let userEmailVal = userEmailField.text
 //        let userPassVal = userPassField.text
-        performSegue(withIdentifier: "loginSuccess", sender: self)
+//        performSegue(withIdentifier: "loginSuccess", sender: self)
         if let userEmailVal = userEmailField.text, let userPassVal = userPassField.text {
             if isValidEmail(email: userEmailVal) {
 //                self.defaults.set(userEmailVal, forKey: "user_email")

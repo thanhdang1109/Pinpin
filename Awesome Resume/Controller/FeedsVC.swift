@@ -50,7 +50,7 @@ class FeedsVC: UIViewController {
         if let friends = user._friends {
             print(friends[0]._userName)
         }
-        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link: nil)
+        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link: nil, filename: "")
         self.dataArr.append((user, video))
     }
     

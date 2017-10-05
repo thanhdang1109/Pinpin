@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
+  - AZSClient (0.2.4)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -35,6 +36,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - AZSClient
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -44,6 +46,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AZSClient: 086e68a3a043da5e162c7a962efce9fbceb1c9f7
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
@@ -56,6 +59,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   VGPlayer: 75ac161c0b6f489144b6633b0195a90958e7092f
 
-PODFILE CHECKSUM: 2b05cd002638eec25e6e4d6dff2a7528c88dbdd4
+PODFILE CHECKSUM: 42d6dd283706bcb1770be77f9d8ea82a2416280c
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1

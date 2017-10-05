@@ -9,13 +9,20 @@
 import UIKit
 
 class VideoMediaTableCellInfoView: UIView {
+    
+    @IBOutlet weak var TitleLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
+    @IBOutlet weak var DescLabel: UILabel!
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
-    */
+    
+    func configView(media: Video) {
+        self.TitleLabel.text = media._title?.uppercased()
+        self.DateLabel.text = media._time
+        self.DescLabel.text = media._description
+    }
+
 
 }

@@ -55,7 +55,7 @@ class LoginVC: UIViewController {
     func updateStatus(loginResult: String) {
         if let accessToken = AccessToken.current {
             // User is logged in, use 'accessToken' here.
-            print("Success ----- >")
+            print("Success ----->")
             fbBtnLbl.text = "Sign Out"
         } else {
             fbBtnLbl.text = "Sign In with Facebook"

@@ -123,7 +123,7 @@ class FeedsViewController: UITableViewController {
         print(user._videos)
         print(user._userName)
         print(user._email)
-        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link: "http://www.html5videoplayer.net/videos/toystory.mp4")
+        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link: "http://www.html5videoplayer.net/videos/toystory.mp4", filename: "")
         user._videos?.append(video)
         user._videos?.append(video)
         

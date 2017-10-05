@@ -9,13 +9,22 @@
 import UIKit
 
 class VideoInfoView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    
+    @IBOutlet weak var UserName: UILabel!
+    @IBOutlet weak var VideoDesc: UILabel!
+    @IBOutlet weak var VideoTimestamp: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
-    */
-
+    
+    func configView(user: Profile, media: Video) {
+        self.UserName.text = user._userName
+        self.VideoDesc.text = media._description
+        self.VideoTimestamp.text = media._time
+    }
+    
 }
+

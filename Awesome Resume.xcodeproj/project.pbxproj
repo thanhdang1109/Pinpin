@@ -10,18 +10,13 @@
 		0D605741AF00EFE353987E46 /* Pods_Awesome_ResumeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDFF746DB4A045E6259CC91 /* Pods_Awesome_ResumeUITests.framework */; };
 		3EAC929EB6077A5A7AC3E9D3 /* Pods_Awesome_Resume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4109B8F90C7BF455301EAB /* Pods_Awesome_Resume.framework */; };
 		DF3368963E5FE853E3502B65 /* Pods_Awesome_ResumeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DBD6C8523A2B20D693EC668 /* Pods_Awesome_ResumeTests.framework */; };
-		E73B02D41F75541D0088E38E /* ResumeTableCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73B02D31F75541C0088E38E /* ResumeTableCellTitle.swift */; };
-		E7471E761F7157D7001F758A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7471E751F7157D7001F758A /* HeaderView.swift */; };
-		E7471E781F715BD9001F758A /* ExpSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7471E771F715BD9001F758A /* ExpSectionCell.swift */; };
-		E7471E7A1F715BE5001F758A /* EduSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7471E791F715BE5001F758A /* EduSectionCell.swift */; };
-		E76F0B371F6D0B1000F28BBF /* EditMode1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */; };
-		E7BD90851F61922A00A100C9 /* ResumesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD90841F61922A00A100C9 /* ResumesVC.swift */; };
+		E76176CC1F7FCDC1009F21B4 /* VideosEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76176CB1F7FCDC1009F21B4 /* VideosEditViewController.swift */; };
+		E76C45B91F7F32A000214590 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76C45B81F7F32A000214590 /* VideosViewController.swift */; };
+		E76C45BE1F7F34EA00214590 /* VideoMediaTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76C45BD1F7F34EA00214590 /* VideoMediaTableCell.swift */; };
+		E76C45C01F7F358600214590 /* VideoMediaTableCellInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76C45BF1F7F358600214590 /* VideoMediaTableCellInfoView.swift */; };
 		E7BD90871F625A5800A100C9 /* ResumesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD90861F625A5800A100C9 /* ResumesModel.swift */; };
-		E7E0B3681F60211200753DA6 /* ResumesPagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */; };
-		E7EE965D1F68FEDF00F4529B /* VideoCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE965C1F68FEDF00F4529B /* VideoCellVC.swift */; };
-		E7EE965F1F69010300F4529B /* ResumesVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE965E1F69010300F4529B /* ResumesVideoVC.swift */; };
-		E7F76EAC1F6A905C005E8A6F /* ViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F76EAB1F6A905C005E8A6F /* ViewCellDelegate.swift */; };
 		E7F76EAE1F6A9FBA005E8A6F /* UIExtendableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */; };
+		E7FD0F7D1F7DF115009D9A12 /* VideoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FD0F7C1F7DF115009D9A12 /* VideoInfoView.swift */; };
 		EB05B9BC1F79E5CA00F9E2D1 /* FollowFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05B9BB1F79E5CA00F9E2D1 /* FollowFriendCell.swift */; };
 		EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837851F5BE9B20015C661 /* AppDelegate.swift */; };
 		EB08378B1F5BE9B20015C661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0837891F5BE9B20015C661 /* Main.storyboard */; };
@@ -78,18 +73,14 @@
 		DD3745AF3B4F2DDE536A2EBD /* Pods-Awesome ResumeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeUITests/Pods-Awesome ResumeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF82634A1A25A24792E45645 /* Pods-Awesome ResumeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeTests/Pods-Awesome ResumeTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFCA3FFC9A5E0105A1B2A528 /* Pods-Awesome ResumeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome ResumeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome ResumeUITests/Pods-Awesome ResumeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E73B02D31F75541C0088E38E /* ResumeTableCellTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeTableCellTitle.swift; sourceTree = "<group>"; };
-		E7471E751F7157D7001F758A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		E7471E771F715BD9001F758A /* ExpSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpSectionCell.swift; sourceTree = "<group>"; };
-		E7471E791F715BE5001F758A /* EduSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduSectionCell.swift; sourceTree = "<group>"; };
-		E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode1VC.swift; sourceTree = "<group>"; };
-		E7BD90841F61922A00A100C9 /* ResumesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesVC.swift; sourceTree = "<group>"; };
+		E70CA6B31F83879B00BB6A19 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		E76176CB1F7FCDC1009F21B4 /* VideosEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosEditViewController.swift; sourceTree = "<group>"; };
+		E76C45B81F7F32A000214590 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		E76C45BD1F7F34EA00214590 /* VideoMediaTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMediaTableCell.swift; sourceTree = "<group>"; };
+		E76C45BF1F7F358600214590 /* VideoMediaTableCellInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMediaTableCellInfoView.swift; sourceTree = "<group>"; };
 		E7BD90861F625A5800A100C9 /* ResumesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumesModel.swift; path = "Awesome Resume/Models/ResumesModel.swift"; sourceTree = SOURCE_ROOT; };
-		E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesPagesVC.swift; sourceTree = "<group>"; };
-		E7EE965C1F68FEDF00F4529B /* VideoCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCellVC.swift; sourceTree = "<group>"; };
-		E7EE965E1F69010300F4529B /* ResumesVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesVideoVC.swift; sourceTree = "<group>"; };
-		E7F76EAB1F6A905C005E8A6F /* ViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCellDelegate.swift; sourceTree = "<group>"; };
 		E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtendableTextView.swift; sourceTree = "<group>"; };
+		E7FD0F7C1F7DF115009D9A12 /* VideoInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoView.swift; sourceTree = "<group>"; };
 		EB05B9BB1F79E5CA00F9E2D1 /* FollowFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowFriendCell.swift; sourceTree = "<group>"; };
 		EB0837821F5BE9B20015C661 /* Awesome Resume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Resume.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0837851F5BE9B20015C661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -194,30 +185,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E76F0B341F6D0AF400F28BBF /* ResumeViewControllers */ = {
+		E76C45B71F7F327400214590 /* FirstPageView */ = {
 			isa = PBXGroup;
 			children = (
-				E76F0B361F6D0B1000F28BBF /* EditMode1VC.swift */,
+				E76C45B81F7F32A000214590 /* VideosViewController.swift */,
+				E76C45BD1F7F34EA00214590 /* VideoMediaTableCell.swift */,
+				E76C45BF1F7F358600214590 /* VideoMediaTableCellInfoView.swift */,
+				E76176CB1F7FCDC1009F21B4 /* VideosEditViewController.swift */,
+				E70CA6B31F83879B00BB6A19 /* Bridging-Header.h */,
 			);
-			path = ResumeViewControllers;
-			sourceTree = "<group>";
-		};
-		E7A8D2631F652A8E008166AF /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E73B02D31F75541C0088E38E /* ResumeTableCellTitle.swift */,
-				E7471E771F715BD9001F758A /* ExpSectionCell.swift */,
-				E7471E791F715BE5001F758A /* EduSectionCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		E7F76EAA1F6A9033005E8A6F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				E7F76EAB1F6A905C005E8A6F /* ViewCellDelegate.swift */,
-			);
-			path = Protocols;
+			path = FirstPageView;
 			sourceTree = "<group>";
 		};
 		EB0837791F5BE9B20015C661 = {
@@ -249,8 +226,8 @@
 				EB0DCE0C1F7E453F001A21E3 /* Extension */,
 				E76F0B341F6D0AF400F28BBF /* ResumeViewControllers */,
 				E7F76EAA1F6A9033005E8A6F /* Protocols */,
+				E76C45B71F7F327400214590 /* FirstPageView */,
 				E7146E8D1F681E280091C6A7 /* Models */,
-				E7A8D2631F652A8E008166AF /* Cells */,
 				EB2053B91F5C0088009264E1 /* Controller */,
 				EB2053B81F5C0084009264E1 /* View */,
 				EB0837851F5BE9B20015C661 /* AppDelegate.swift */,
@@ -303,8 +280,8 @@
 				EBF29F591F6CD34100B0D12B /* VGEmbedPlayerView.swift */,
 				EBF29F5B1F6CD39200B0D12B /* VGVideoCell.swift */,
 				E7F76EAD1F6A9FBA005E8A6F /* UIExtendableTextView.swift */,
-				E7471E751F7157D7001F758A /* HeaderView.swift */,
 				EB05B9BB1F79E5CA00F9E2D1 /* FollowFriendCell.swift */,
+				E7FD0F7C1F7DF115009D9A12 /* VideoInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,10 +294,6 @@
 				EBE885CA1F5DB15C0095630C /* FeedsVC.swift */,
 				EBF29F571F6CD30400B0D12B /* FeedsViewController.swift */,
 				EBDDA0741F7529C500E5C6C6 /* FriendsSearchVC.swift */,
-				E7E0B3671F60211200753DA6 /* ResumesPagesVC.swift */,
-				E7BD90841F61922A00A100C9 /* ResumesVC.swift */,
-				E7EE965C1F68FEDF00F4529B /* VideoCellVC.swift */,
-				E7EE965E1F69010300F4529B /* ResumesVideoVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -494,7 +467,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0C68EC1B4AE6685387045398 /* [CP] Embed Pods Frameworks */ = {
@@ -527,7 +500,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		52FFAD5DBDA64FCA1464B783 /* [CP] Copy Pods Resources */ = {
@@ -567,6 +540,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Awesome Resume/Pods-Awesome Resume-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AZSClient/AZSClient.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -575,9 +549,14 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/VGPlayer/VGPlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AZSClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
@@ -586,6 +565,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VGPlayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -622,7 +605,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE2CCF0A214D2FE4587B89D0 /* [CP] Embed Pods Frameworks */ = {
@@ -647,36 +630,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73B02D41F75541D0088E38E /* ResumeTableCellTitle.swift in Sources */,
 				EBDBF7F61F756EC8001FBCF7 /* Awesome_Resume.xcdatamodeld in Sources */,
 				EBDBF7F31F756E4C001FBCF7 /* CorneredButton.swift in Sources */,
 				EB0DCE0E1F7E4560001A21E3 /* UIButtonExt.swift in Sources */,
 				EBDBF7F11F756E38001FBCF7 /* LoginVC.swift in Sources */,
 				EBB6DE401F7568A900327251 /* Friend.swift in Sources */,
 				EBB6DE411F7568A900327251 /* Video.swift in Sources */,
+				E76176CC1F7FCDC1009F21B4 /* VideosEditViewController.swift in Sources */,
 				EBB6DE421F7568A900327251 /* User.swift in Sources */,
 				EBB6DE431F7568A900327251 /* Profile.swift in Sources */,
 				EBF29F5C1F6CD39200B0D12B /* VGVideoCell.swift in Sources */,
+				E76C45B91F7F32A000214590 /* VideosViewController.swift in Sources */,
 				EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */,
+				E76C45BE1F7F34EA00214590 /* VideoMediaTableCell.swift in Sources */,
 				EBE67C391F68251600337274 /* MediaViewCell.swift in Sources */,
 				EBE67C3B1F68263E00337274 /* MediaInfoView.swift in Sources */,
 				EBE885CB1F5DB15C0095630C /* FeedsVC.swift in Sources */,
 				EBF29F5A1F6CD34100B0D12B /* VGEmbedPlayerView.swift in Sources */,
 				EBDDA0751F7529C500E5C6C6 /* FriendsSearchVC.swift in Sources */,
+				E7FD0F7D1F7DF115009D9A12 /* VideoInfoView.swift in Sources */,
 				EBF29F581F6CD30400B0D12B /* FeedsViewController.swift in Sources */,
-				E7471E761F7157D7001F758A /* HeaderView.swift in Sources */,
-				E7471E7A1F715BE5001F758A /* EduSectionCell.swift in Sources */,
-				E7F76EAC1F6A905C005E8A6F /* ViewCellDelegate.swift in Sources */,
-				E76F0B371F6D0B1000F28BBF /* EditMode1VC.swift in Sources */,
 				E7BD90871F625A5800A100C9 /* ResumesModel.swift in Sources */,
-				E7EE965D1F68FEDF00F4529B /* VideoCellVC.swift in Sources */,
-				E7471E781F715BD9001F758A /* ExpSectionCell.swift in Sources */,
-				E7EE965F1F69010300F4529B /* ResumesVideoVC.swift in Sources */,
-				E7E0B3681F60211200753DA6 /* ResumesPagesVC.swift in Sources */,
+				E76C45C01F7F358600214590 /* VideoMediaTableCellInfoView.swift in Sources */,
 				EB0837861F5BE9B20015C661 /* AppDelegate.swift in Sources */,
 				EBEF4E5D1F5D5D0F006C48C0 /* SignUpVC.swift in Sources */,
 				EB05B9BC1F79E5CA00F9E2D1 /* FollowFriendCell.swift in Sources */,
-				E7BD90851F61922A00A100C9 /* ResumesVC.swift in Sources */,
 				E7F76EAE1F6A9FBA005E8A6F /* UIExtendableTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,12 +855,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MXE9N2LLEZ;
+				DEVELOPMENT_TEAM = A825RC2X5D;
 				INFOPLIST_FILE = "Awesome Resume/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Awesome-Resume-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Pinpin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Awesome Resume/FirstPageView/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -894,12 +873,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MXE9N2LLEZ;
+				DEVELOPMENT_TEAM = A825RC2X5D;
 				INFOPLIST_FILE = "Awesome Resume/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Awesome-Resume-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Pinpin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Awesome Resume/FirstPageView/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

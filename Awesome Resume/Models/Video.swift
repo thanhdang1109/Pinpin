@@ -13,11 +13,13 @@ class Video {
     var _description: String?
     var _time: String?
     var _link: String?
+    var _fileName: String?
     
-    init(title: String?, description: String?, time: String?, link: String?) {
+    init(title: String?, description: String?, time: String?, link: String?, filename: String?) {
         self._title = title
         self._description = description
         self._time = time
         self._link = link
+        self._fileName = filename
     }
 }

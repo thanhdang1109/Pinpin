@@ -11,6 +11,7 @@ target 'Awesome Resume' do
 	pod 'VGPlayer'
 	pod 'NVActivityIndicatorView'
 	pod 'SwiftyJSON'
+	pod 'AZSClient'
   # Pods for Awesome Resume
 
   target 'Awesome ResumeTests' do

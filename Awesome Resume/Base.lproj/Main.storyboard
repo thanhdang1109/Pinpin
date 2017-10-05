@@ -167,7 +167,7 @@
                         <outlet property="signUpBtn" destination="Ap5-hx-lcq" id="SDh-Tc-qHP"/>
                         <outlet property="userEmailField" destination="S1m-jW-RXC" id="Rd0-Yv-7bf"/>
                         <outlet property="userPassField" destination="Y7V-Io-q3O" id="N5t-di-TxY"/>
-                        <segue destination="07O-k1-P2x" kind="show" id="W8G-y9-S9k"/>
+                        <segue destination="07O-k1-P2x" kind="show" identifier="loginSuccess" id="W8G-y9-S9k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -148,6 +148,7 @@ class LoginVC: UIViewController {
         let btn = sender as! UIButton
 //        let userEmailVal = userEmailField.text
 //        let userPassVal = userPassField.text
+        performSegue(withIdentifier: "loginSuccess", sender: self)
         if let userEmailVal = userEmailField.text, let userPassVal = userPassField.text {
             if isValidEmail(email: userEmailVal) {
 //                self.defaults.set(userEmailVal, forKey: "user_email")

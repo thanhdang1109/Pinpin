@@ -23,8 +23,8 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     var containerName: String!
     var dataArr: [Video] = [
         Video(title: "Claude Chen", description: "2 Cobden st. North Melbourne, 3051 VIC", time: "", link: "https://cs1ea921f0a44b4x43fbxa0e.blob.core.windows.net/videocontainerone/video.mp4", filename: ""),
-                Video(title: "University of Melbourne", description: "Master of Information Technology", time: "2016-2018", link: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", filename: ""),
-        //        Video(title: "UESTC", description: "Bachalor of Computer Science and Technology", time: "", link: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", filename: ""),
+                Video(title: "University of Melbourne", description: "Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology", time: "2016-2018", link: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", filename: ""),
+                Video(title: "UESTC", description: "Bachalor of Computer Science and Technology", time: "", link: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", filename: ""),
     ]
     var player : VGPlayer!
     var playerView : VGEmbedPlayerView!
@@ -345,7 +345,7 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 338
+        return 345
     }
     
     // Enable tableview to reorder the cell

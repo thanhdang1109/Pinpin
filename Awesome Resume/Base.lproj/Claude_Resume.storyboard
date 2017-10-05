@@ -120,12 +120,12 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4H-Mp-GiO">
-                                                            <rect key="frame" x="13" y="43" width="376" height="50"/>
+                                                            <rect key="frame" x="13" y="48" width="376" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="2uy-cZ-36F"/>
                                                             </constraints>
                                                             <string key="text">University of Melbourne - Master of IT 2015 - 2017  University of Melbourne - Master of IT 2015 - 2017 University of Melbourne - Master of IT 2015 - 2017</string>
-                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -133,7 +133,7 @@
                                                     <constraints>
                                                         <constraint firstItem="d79-gw-jto" firstAttribute="leading" secondItem="3xY-Fe-DNV" secondAttribute="leading" constant="13" id="3UB-6r-42N"/>
                                                         <constraint firstItem="a5z-Is-vhI" firstAttribute="top" secondItem="d79-gw-jto" secondAttribute="bottom" id="59m-SU-9HG"/>
-                                                        <constraint firstItem="y4H-Mp-GiO" firstAttribute="top" secondItem="a5z-Is-vhI" secondAttribute="bottom" id="Imd-er-BIB"/>
+                                                        <constraint firstItem="y4H-Mp-GiO" firstAttribute="top" secondItem="a5z-Is-vhI" secondAttribute="bottom" constant="5" id="Imd-er-BIB"/>
                                                         <constraint firstItem="a5z-Is-vhI" firstAttribute="leading" secondItem="3xY-Fe-DNV" secondAttribute="leadingMargin" constant="5" id="KGA-tf-ZnE"/>
                                                         <constraint firstAttribute="trailing" secondItem="y4H-Mp-GiO" secondAttribute="trailing" constant="15" id="Rl2-vq-iw9"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="a5z-Is-vhI" secondAttribute="trailing" constant="7" id="UHi-ho-mER"/>
@@ -242,7 +242,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input the title ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOs-V4-ppq">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input the date ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOs-V4-ppq">
                                 <rect key="frame" x="12" y="209" width="390" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sUj-YM-YIV"/>

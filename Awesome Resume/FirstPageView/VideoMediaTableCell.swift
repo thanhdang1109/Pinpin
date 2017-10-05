@@ -25,7 +25,7 @@ class VideoMediaTableCell: UITableViewCell {
     
     func configCell(media: Video) {
         self.CellOuterView.layer.masksToBounds = true
-        self.CellOuterView.layer.cornerRadius = 6.0
+        self.CellOuterView.layer.cornerRadius = 4.0
         self.videoInfo = media
         self.mediaInfoView.configView(media: media)
         let selectCellGesture = UITapGestureRecognizer(target: self, action: #selector(selectAction))
@@ -33,10 +33,10 @@ class VideoMediaTableCell: UITableViewCell {
     }
     
     @objc func selectAction(sender: UITapGestureRecognizer){
-        print(self.videoInfo._title)
-        print(self.videoInfo._description)
-        print(self.videoInfo._link)
-        print(self.videoInfo._fileName)
+        print(self.videoInfo._title!)
+        print(self.videoInfo._description!)
+        print(self.videoInfo._link!)
+        print(self.videoInfo._fileName!)
     }
     
     @IBAction func startVideo(_ sender: Any) {

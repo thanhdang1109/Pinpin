@@ -12,6 +12,70 @@ import FacebookLogin
 import FBSDKLoginKit
 import Alamofire
 import NVActivityIndicatorView
+import SwiftyJSON
+
+extension LoginVC {
+//    func gotoTabBar() {
+//        let secondViewController = self.storyboard.instantiateViewControllerWithIdentifier("TabBarViewController") as VideoViewController
+//        self.navigationController.pushViewController(secondViewController, animated: true)
+//    }
+    
+    func storeDataToUserDefault(key: String, data: Any) {
+        self.defaults.set(data, forKey: key)
+    }
+    
+    func loginUser(email: String, password: String, sender: UIButton) {
+        print("Login User...")
+        startActivityAnimating(message: "Login User...")
+        let dataToSend = getDataToSend(type: "user_sign_in", email: email, password: password)
+        //        print(dataToSend)
+        let url = "http://13.66.48.219:8000/pinpin/user_sign_in/"
+        sendDataToServer(url: url, parameters: dataToSend, sender: sender)
+    }
+    
+    func getDataToSend(type: String, email: String, password: String) -> [String : Any] {
+        let data = [
+            "type" : type,
+            "email": email, //email
+            "password": password, //password
+        ]
+        return data
+    }
+    
+    func sendDataToServer(url: String, parameters: [String: Any], sender: UIButton) {
+        print("---------------- SENDING DATA --------------")
+        Alamofire.request(url, method: .post, parameters: parameters, headers: nil)
+            .responseString { response in
+                debugPrint(response)
+                switch response.result {
+                                case .success:
+                                    print("SUCCESSFUL: -> \(response)")
+                                    if let dataR = response.data {
+                                        let json = JSON(data: dataR)
+                                        print("JSON_TESTING: \(json)")
+                                        print(type(of: json))
+                                        print(json["url"])
+                                        if json["success"].boolValue {
+                                            let email = json["email"].string
+                                            let userName = json["username"].string
+                                            let userLoc = json["location"].string
+                                            self.storeDataToUserDefault(key: "userEmail", data: email)
+                                            self.storeDataToUserDefault(key: "userName", data: userName)
+                                            self.storeDataToUserDefault(key: "userLocation", data: userLoc)
+                                        } else {
+                                            sender.wiggle()
+                                        }
+                                    }
+                                    break
+                                case .failure(let error):
+                                    sender.wiggle()
+                                    print("EREROR: -> \(error)")
+                                    break
+                                }
+                self.stopActivityAnimating()
+        }
+    }
+}
 
 extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -40,6 +104,8 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var signUpBtn: CorneredButton!
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
@@ -50,6 +116,9 @@ class LoginVC: UIViewController {
         
         userEmailField.delegate = self
         userPassField.delegate = self
+        
+        print(self.defaults.string(forKey: "user_email"))
+        print(self.defaults.string(forKey: "user_pass"))
     }
     
     func updateStatus(loginResult: String) {
@@ -62,30 +131,12 @@ class LoginVC: UIViewController {
         }
     }
     
-    func normalLogin(email: String, pass: String) {
-        let parameters = [
-            "email": email, //email
-            "password": pass //password
-        ]
-    
-//        var statusCode: Int = 0
-//        Alamofire.request(.POST, "http://{dreamfactoryinstance}/api/v2/user/session", parameters: parameters, encoding: .JSON)
-//            .responseJSON { response in
-//                statusCode = (response.response?.statusCode)! //Gets HTTP status code, useful for debugging
-//                if let value: AnyObject = response.result.value {
-//                    //Handle the results as JSON
-//                    let post = JSON(value)
-//                    if let key = post["session_id"].string {
-//                        //At this point the user should have authenticated, store the session id and use it as you wish
-//                    } else {
-//                        print("error detected")
-//                    }
-//                }
-//        }
+    func normalLogin(email: String, pass: String, btn: UIButton) {
+        loginUser(email: email, password: pass, sender: btn)
     }
     
-    func startActivityAnimating() {
-        self.startAnimating(self.activityIndicatorView.frame.size, message: "Getting Location", messageFont: nil, type: self.activityIndicatorView.type, color: self.activityIndicatorView.color, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: nil, textColor: self.activityIndicatorView.color)
+    func startActivityAnimating(message: String) {
+        self.startAnimating(self.activityIndicatorView.frame.size, message: message, messageFont: nil, type: self.activityIndicatorView.type, color: self.activityIndicatorView.color, padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: nil, textColor: self.activityIndicatorView.color)
         //        print(currentCity)
     }
     
@@ -94,12 +145,29 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func normalSignInBtnPressed(_ sender: Any) {
+        let btn = sender as! UIButton
 //        let userEmailVal = userEmailField.text
 //        let userPassVal = userPassField.text
+        performSegue(withIdentifier: "loginSuccess", sender: self)
         if let userEmailVal = userEmailField.text, let userPassVal = userPassField.text {
-            normalLogin(email: userEmailVal, pass: userPassVal)
+            if isValidEmail(email: userEmailVal) {
+//                self.defaults.set(userEmailVal, forKey: "user_email")
+//                self.defaults.set(userPassVal, forKey: "user_pass")
+                normalLogin(email: userEmailVal, pass: userPassVal, btn: btn)
+                return
+            }
+//            self.defaults.set(userEmailVal, forKey: "user_email")
+            btn.wiggle()
+            return
         }
+        btn.wiggle()
     }
     
+    func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: email)
+    }
 }
 

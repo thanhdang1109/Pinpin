@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="07O-k1-P2x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -101,7 +101,6 @@
                                         </state>
                                         <connections>
                                             <action selector="normalSignInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1R-U4-i5X"/>
-                                            <segue destination="07O-k1-P2x" kind="showDetail" action="showViewController:sender:" id="IRa-fg-bZW"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vIE-Kv-jtv">
@@ -168,6 +167,7 @@
                         <outlet property="signUpBtn" destination="Ap5-hx-lcq" id="SDh-Tc-qHP"/>
                         <outlet property="userEmailField" destination="S1m-jW-RXC" id="Rd0-Yv-7bf"/>
                         <outlet property="userPassField" destination="Y7V-Io-q3O" id="N5t-di-TxY"/>
+                        <segue destination="07O-k1-P2x" kind="show" identifier="loginSuccess" id="W8G-y9-S9k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -177,7 +177,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Asj-F6-Fwf">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="07O-k1-P2x" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="07O-k1-P2x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f62-sH-rme">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

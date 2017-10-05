@@ -30,10 +30,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dvr-6D-JXd">
-                                <rect key="frame" x="50" y="194" width="275" height="280"/>
+                                <rect key="frame" x="50" y="170" width="275" height="328"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JHy-8m-Amt">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8qB-bc-IHR">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ifw-Ps-8Df"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JHy-8m-Amt">
+                                        <rect key="frame" x="0.0" y="48" width="275" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="rZI-wf-Ku5"/>
                                         </constraints>
@@ -42,7 +51,7 @@
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ckd-KN-4Qj">
-                                        <rect key="frame" x="0.0" y="48" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="96" width="275" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="DZt-HR-Ob2"/>
                                         </constraints>
@@ -51,7 +60,7 @@
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uvl-wC-wXW">
-                                        <rect key="frame" x="0.0" y="96" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="144" width="275" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Os7-JR-duo"/>
                                         </constraints>
@@ -60,7 +69,7 @@
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ok2-t3-pWX">
-                                        <rect key="frame" x="0.0" y="144" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="192" width="275" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Location" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Q5K-aU-cbA">
                                                 <rect key="frame" x="0.0" y="0.0" width="225" height="40"/>
@@ -85,21 +94,24 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIX-lg-RoL" customClass="CorneredButton" customModule="Awesome_Resume" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="192" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="240" width="275" height="40"/>
                                         <color key="backgroundColor" red="0.42712545959999998" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerBtnPressed:" destination="d36-qj-rhX" eventType="touchUpInside" id="mqn-sB-Ng6"/>
+                                        </connections>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------ or ------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8L-aO-0At">
-                                        <rect key="frame" x="0.0" y="236" width="275" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="284" width="275" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0X-xT-wqx" customClass="TouchableUIView" customModule="Awesome_Resume" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="236" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="284" width="275" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUp-QD-ab0">
                                                 <rect key="frame" x="2.5" y="2" width="271" height="36"/>
@@ -135,7 +147,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GWL-j9-3CH">
-                                        <rect key="frame" x="0.0" y="240" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="288" width="275" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugf-mQ-ORo">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
@@ -201,6 +213,7 @@
                         <outlet property="userCurrentLocationBtn" destination="nlB-ph-5Il" id="gZW-HL-ECg"/>
                         <outlet property="userEmail" destination="JHy-8m-Amt" id="mue-Qs-T3y"/>
                         <outlet property="userLocation" destination="Q5K-aU-cbA" id="pSb-A0-bWz"/>
+                        <outlet property="userName" destination="8qB-bc-IHR" id="rMq-aW-sjn"/>
                         <outlet property="userPassword" destination="Ckd-KN-4Qj" id="YGl-2E-Gdw"/>
                     </connections>
                 </viewController>

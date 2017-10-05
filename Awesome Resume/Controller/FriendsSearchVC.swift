@@ -11,6 +11,18 @@ import Alamofire
 import CoreLocation
 import NVActivityIndicatorView
 
+/*
+ {
+ "users": [
+             {
+                 "email": "heuism28392@gmail.com",
+                 "location": "Carlton, VIC, Australia"
+             },
+             
+         ]
+ }
+ */
+
 extension FriendsSearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friendList.count
@@ -153,7 +165,9 @@ class FriendsSearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configVC()
-        
+        let defaults = UserDefaults.standard
+        print(defaults.string(forKey: "user_email"))
+        print(defaults.string(forKey: "user_pass"))
         friendList = (getFriendList(url: "") as? [Friend])!
         if friendList.isEmpty {
             friendListTableView.isHidden = true

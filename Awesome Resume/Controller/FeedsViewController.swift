@@ -12,43 +12,117 @@ import SnapKit
 import Alamofire
 import SwiftyJSON
 
-/*
- let json = {
-     "friends": [
-                     {
-                         "user_name": Hien Tran,
-                         "email": "heuism23892@gmail.com",
-                         "videos":[
-                                     {
-                                         "video_description": "Master of IT"
-                                         "video_date": "23/9/2017"
-                                         "video_link": ""
-                                     }
-                                 ],
-                         "location": "Princes Hill, Victoria, Australia"
-                     }
-                 ]
- }
- */
+extension FeedsViewController {
+    func testingOurServerAPI(url: String, parameters: [String: String]) {
+        print("---------------- TESTING --------------")
+        Alamofire.request(url, method: .post, parameters: parameters, headers: nil)
+            .responseString { response in
+            debugPrint(response)
+
+            if let dataR = response.data {
+                let json = JSON(data: dataR)
+                print("JSON_TESTING: \(json)")
+                print(type(of: json))
+                print(json["url"])
+            }
+        }
+        
+//
+//        Alamofire.request(url, method: .post, parameters: parameters, headers: nil).responseString {
+//            response in
+//            print("JSON TESTING: \(url)")
+//            switch response.result {
+//            case .success:
+//                print("SUCCESSFUL: -> \(response)")
+//
+//                break
+//            case .failure(let error):
+//
+//                print("EREROR: -> \(error)")
+//            }
+//        }
+    }
+    
+    func testAPI() {
+        let parameters = [
+            "type" : "user_sign_up",
+            "username": "HienTran",
+            "email": "heuism23892@gmail.com", //email
+            "password": "awesome1234", //password
+            "location": "VIC, Australia"
+        ]
+        let url = "http://13.66.48.219:8000/pinpin/user_sign_up/"
+        testingOurServerAPI(url: url, parameters: parameters)
+    }
+}
+//extension FeedsViewController {
+//    let json: String = "{ \"friends\": [{ \"user_name\": \"Hien Tran\", \"email\": \"heuism23892@gmail.com\", \"videos\": [{\"video_description\": \"Master of IT\", \"video_date\": \"23/9/2017\", \"video_link\": \"\"}],  \"location\": \"Princes Hill, Victoria, Australia\"}] }"
+//
+////    let jsonTest = "{
+////                        "friends": [
+////                                        {
+////                                            "user_name": Hien Tran,
+////    "email": "heuism23892@gmail.com",
+////    "videos":[
+////    {
+////    "video_description": "Master of IT",
+////    "video_date": "23/9/2017",
+////    "video_link": ""
+////    }
+////    ],
+////    "location": "Princes Hill, Victoria, Australia"
+////    }
+////    ]
+////
+////                    }"
+//}
+
 
 extension FeedsViewController {
-//    func convertJSONtoData(json: [String: JSON]) -> [(Profile, Video)] {
-//        var returnData = [(Profile, Video)]()
-//        let friends = json["friends"]
-//        for friend in friends! {
-//            returnData.append(getVideoFromFriend(friend: friend))
-//        }
-//        return returnData
-//    }
+    func convertJSONtoData(json: JSON) -> [(Profile, Video)] {
+        var returnData = [(Profile, Video)]()
+//        print("testJSON: \(json["friends"])")
+        let friends = json["friends"]
+        print("FriendList: \(friends)")
+        for friend in friends.array! {
+            print(type(of: friend))
+            print(friend["email"])
+            returnData.append(contentsOf: getVideoFromFriend(friend: friend))
+        }
+        return returnData
+    }
 
-//    func getVideoFromFriend(friend: JSON) -> [(Profile, Video)] {
-//        let videosForFriend = [(Profile, Video)]()
-//
-//        let friend_videos = friend["videos"] as
-//    }
+    func getVideoFromFriend(friend: JSON) -> [(Profile, Video)] {
+        var videosData = [(Profile, Video)]()
+        let profile = Friend(userName: friend["user_name"].stringValue, email: friend["email"].stringValue, pictureUrl: nil, location: friend["location"].stringValue)
+        let videos = friend["videos"]
+        for video in videos.array! {
+            print(type(of: video))
+            print(video["video_description"])
+            let vid = Video(title: video["video_title"].stringValue, description: video["video_description"].stringValue, time: video["video_date"].stringValue, link: video["video_link"].stringValue)
+            profile._videos?.append(vid)
+            videosData.append((profile, vid))
+        }
+        return videosData
+    }
+
+    func testAlamofire() {
+        Alamofire.request("https://httpbin.org/get").responseString { response in
+            debugPrint(response)
+            
+            if let dataR = response.data {
+                let json = JSON(data: dataR)
+                print("JSON: \(json)")
+                print(type(of: json))
+                print(json["url"])
+            }
+        }
+    }
 }
 
 class FeedsViewController: UITableViewController {
+    
+    var jsonTest: String!
     
     lazy var refreshCtrl: UIRefreshControl = {
         let refreshCtrl = UIRefreshControl()
@@ -84,10 +158,26 @@ class FeedsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        jsonTest = "{ \"friends\": [{ \"user_name\": \"Hien Tran\", \"email\": \"heuism23892@gmail.com\", \"videos\": [{\"video_title\": \"Master of IT\",\"video_description\": \"Getting out of here\", \"video_date\": \"23/9/2017\", \"video_link\": \"http://www.html5videoplayer.net/videos/toystory.mp4\"}],  \"location\": \"Princes Hill, Victoria, Australia\"}] }"
+        
+        testAlamofire()
+        
+        let data = self.jsonTest.data(using: .utf8)!
+        let json = JSON(data: data)
+        
+        let convertedData = convertJSONtoData(json: json)
+        
+        print(convertedData)
+        
+        dataArr.append(contentsOf: convertedData)
+        
+        testAPI()
         title = "Feeds"
         configureSmallScreenView()
         addTableViewObservers()
         self.tableView.refreshControl = self.refreshCtrl
+        VGPlayerCacheManager.shared.cleanAllCache()
         
         let responseJSON: [String: Any] = [String: Any]()
         
@@ -123,7 +213,10 @@ class FeedsViewController: UITableViewController {
         print(user._videos)
         print(user._userName)
         print(user._email)
-        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link: "http://www.html5videoplayer.net/videos/toystory.mp4")
+        let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link:
+//            "http://www.html5videoplayer.net/videos/toystory.mp4"
+        "https://www.dropbox.com/s/fh05vo1kxzl5ue6/ff.mp4?dl=1"
+        )
         user._videos?.append(video)
         user._videos?.append(video)
         

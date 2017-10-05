@@ -29,6 +29,7 @@
 		EB0837931F5BE9B20015C661 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0837911F5BE9B20015C661 /* LaunchScreen.storyboard */; };
 		EB08379E1F5BE9B30015C661 /* Awesome_ResumeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08379D1F5BE9B30015C661 /* Awesome_ResumeTests.swift */; };
 		EB0837A91F5BE9B30015C661 /* Awesome_ResumeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0837A81F5BE9B30015C661 /* Awesome_ResumeUITests.swift */; };
+		EB0DCE0E1F7E4560001A21E3 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0DCE0D1F7E4560001A21E3 /* UIButtonExt.swift */; };
 		EB4DF0161F5C31A4006E9596 /* TouchableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */; };
 		EB8868A81F5D01080018FA6E /* Hien_Feeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868A41F5D01080018FA6E /* Hien_Feeds.storyboard */; };
 		EB8868A91F5D01080018FA6E /* Claude_Resume.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8868A61F5D01080018FA6E /* Claude_Resume.storyboard */; };
@@ -102,6 +103,7 @@
 		EB0837A41F5BE9B30015C661 /* Awesome ResumeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Awesome ResumeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0837A81F5BE9B30015C661 /* Awesome_ResumeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Awesome_ResumeUITests.swift; sourceTree = "<group>"; };
 		EB0837AA1F5BE9B30015C661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB0DCE0D1F7E4560001A21E3 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		EB4DF0151F5C31A4006E9596 /* TouchableUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableUIView.swift; sourceTree = "<group>"; };
 		EB8868A51F5D01080018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Hien_Feeds.storyboard; sourceTree = "<group>"; };
 		EB8868A71F5D01080018FA6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Claude_Resume.storyboard; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		EB0837841F5BE9B20015C661 /* Awesome Resume */ = {
 			isa = PBXGroup;
 			children = (
+				EB0DCE0C1F7E453F001A21E3 /* Extension */,
 				E76F0B341F6D0AF400F28BBF /* ResumeViewControllers */,
 				E7F76EAA1F6A9033005E8A6F /* Protocols */,
 				E7146E8D1F681E280091C6A7 /* Models */,
@@ -280,6 +283,14 @@
 				EB0837AA1F5BE9B30015C661 /* Info.plist */,
 			);
 			path = "Awesome ResumeUITests";
+			sourceTree = "<group>";
+		};
+		EB0DCE0C1F7E453F001A21E3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EB0DCE0D1F7E4560001A21E3 /* UIButtonExt.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		EB2053B81F5C0084009264E1 /* View */ = {
@@ -639,6 +650,7 @@
 				E73B02D41F75541D0088E38E /* ResumeTableCellTitle.swift in Sources */,
 				EBDBF7F61F756EC8001FBCF7 /* Awesome_Resume.xcdatamodeld in Sources */,
 				EBDBF7F31F756E4C001FBCF7 /* CorneredButton.swift in Sources */,
+				EB0DCE0E1F7E4560001A21E3 /* UIButtonExt.swift in Sources */,
 				EBDBF7F11F756E38001FBCF7 /* LoginVC.swift in Sources */,
 				EBB6DE401F7568A900327251 /* Friend.swift in Sources */,
 				EBB6DE411F7568A900327251 /* Video.swift in Sources */,

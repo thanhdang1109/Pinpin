@@ -173,6 +173,7 @@
                                     <outlet property="CellOuterView" destination="OvX-1c-rQf" id="rCp-Wo-a9p"/>
                                     <outlet property="mediaContent" destination="URF-aD-Qyq" id="l8y-Fk-uS7"/>
                                     <outlet property="mediaInfoView" destination="3xY-Fe-DNV" id="Trp-k3-mSR"/>
+                                    <outlet property="videoSnapshotImage" destination="otj-7S-T91" id="VLx-4n-Vj8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

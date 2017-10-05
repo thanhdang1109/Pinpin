@@ -33,6 +33,8 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     var panGesture = UIPanGestureRecognizer()
     var playerViewSize : CGSize?
     
+    let defaults = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         ///
@@ -41,13 +43,15 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         super.viewDidLoad()
         
         self.connectionString = "DefaultEndpointsProtocol=https;AccountName=cs1ea921f0a44b4x43fbxa0e;AccountKey=B41efiZWKDOt8Gxi0ku/MrHJJoiM7Aal0JA71dJJG0Nx6GNtkQ8fHZZdi8YnD/rwlaXtbejv18ZSm/DceRSGlw=="
-        self.containerName = "videocontainer"
+        
+        self.containerName = self.defaults.string(forKey: "userName")
+        print("User Name:"+self.containerName)
         
         if self.tableView.isEditing != false{
             self.tableView.isEditing = false
         }
-        
-        
+    
+    
         self.navigationItem.title = "My Resume"
         
         configureSmallScreenView()

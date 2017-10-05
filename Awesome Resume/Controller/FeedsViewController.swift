@@ -11,7 +11,10 @@ import VGPlayer
 import SnapKit
 import Alamofire
 import SwiftyJSON
+import NVActivityIndicatorView
 
+// TESTING PURPOSES
+/*
 extension FeedsViewController {
     func testingOurServerAPI(url: String, parameters: [String: String]) {
         print("---------------- TESTING --------------")
@@ -26,21 +29,6 @@ extension FeedsViewController {
                 print(json["url"])
             }
         }
-        
-//
-//        Alamofire.request(url, method: .post, parameters: parameters, headers: nil).responseString {
-//            response in
-//            print("JSON TESTING: \(url)")
-//            switch response.result {
-//            case .success:
-//                print("SUCCESSFUL: -> \(response)")
-//
-//                break
-//            case .failure(let error):
-//
-//                print("EREROR: -> \(error)")
-//            }
-//        }
     }
     
     func testAPI() {
@@ -55,28 +43,66 @@ extension FeedsViewController {
         testingOurServerAPI(url: url, parameters: parameters)
     }
 }
-//extension FeedsViewController {
-//    let json: String = "{ \"friends\": [{ \"user_name\": \"Hien Tran\", \"email\": \"heuism23892@gmail.com\", \"videos\": [{\"video_description\": \"Master of IT\", \"video_date\": \"23/9/2017\", \"video_link\": \"\"}],  \"location\": \"Princes Hill, Victoria, Australia\"}] }"
-//
-////    let jsonTest = "{
-////                        "friends": [
-////                                        {
-////                                            "user_name": Hien Tran,
-////    "email": "heuism23892@gmail.com",
-////    "videos":[
-////    {
-////    "video_description": "Master of IT",
-////    "video_date": "23/9/2017",
-////    "video_link": ""
-////    }
-////    ],
-////    "location": "Princes Hill, Victoria, Australia"
-////    }
-////    ]
-////
-////                    }"
-//}
+*/
 
+extension FeedsViewController {
+    func getVideosFromFriends(email: String) {
+        print("Registering User...")
+        startActivityAnimating(message: "Getting more videos...!")
+        let dataToSend = getDataToSend(type: "friend_feeds", email: email)
+        //        print(dataToSend)
+        let url = "http://13.66.48.219:8000/new_user_signup/"
+        sendDataToServer(url: url, parameters: dataToSend)
+    }
+    
+    func getDataToSend(type: String, email: String) -> [String : Any] {
+        let data = [
+            "type" : type,
+            "email": email
+            ] as [String : Any]
+        return data
+    }
+    
+    func sendDataToServer(url: String, parameters: [String: Any]) {
+        print("---------------- SENDING DATA --------------")
+        Alamofire.request(url, method: .post, parameters: parameters, headers: nil)
+            .responseString { response in
+                debugPrint(response)
+                switch response.result {
+                case .success:
+                    print("SUCCESSFUL: -> \(response)")
+                    if let dataR = response.data {
+                        let json = JSON(data: dataR)
+                        print("JSON_TESTING: \(json)")
+                        print(type(of: json))
+                        print(json["url"])
+                        if json["success"].boolValue {
+                            self.dataArr = self.convertJSONtoData(json: json)
+                            self.tableView.reloadData()
+                        }
+                    }
+                    break
+                case .failure(let error):
+                    print("EREROR: -> \(error)")
+                    break
+                }
+                self.refreshCtrl.endRefreshing()
+                self.stopActivityAnimating()
+        }
+    }
+}
+
+extension FeedsViewController: NVActivityIndicatorViewable {
+    // Just for the UIBlocker
+    func startActivityAnimating(message: String) {
+        self.startAnimating(CGRect(x:0,y:0,width:60,height:60).size, message: message, messageFont: nil, type: .ballScaleMultiple, color: #colorLiteral(red: 0.4274509804, green: 0.737254902, blue: 0.3882352941, alpha: 1), padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: nil, textColor: #colorLiteral(red: 0.4274509804, green: 0.737254902, blue: 0.3882352941, alpha: 1))
+        //        print(currentCity)
+    }
+    
+    func stopActivityAnimating() {
+        self.stopAnimating()
+    }
+}
 
 extension FeedsViewController {
     func convertJSONtoData(json: JSON) -> [(Profile, Video)] {
@@ -124,6 +150,10 @@ class FeedsViewController: UITableViewController {
     
     var jsonTest: String!
     
+    let defaults = UserDefaults.standard
+    
+    var email: String!
+    
     lazy var refreshCtrl: UIRefreshControl = {
         let refreshCtrl = UIRefreshControl()
         refreshCtrl.addTarget(self, action:
@@ -148,40 +178,46 @@ class FeedsViewController: UITableViewController {
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         
         let responseJSON: [String: Any] = [String: Any]()
+        let emailRefresh = self.email
+        self.getVideosFromFriends(email: emailRefresh!)
+        VGPlayerCacheManager.shared.cleanAllCache()
+//        prepData(inputJSON: responseJSON)
+//        startActivityAnimating(message: "Getting more videos...!")
         
-        prepData(inputJSON: responseJSON)
-        
-        self.tableView.reloadData()
-        refreshControl.endRefreshing()
+//        self.tableView.reloadData()
+//        refreshControl.endRefreshing()
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        email = self.defaults.string(forKey: "userEmail")
         jsonTest = "{ \"friends\": [{ \"user_name\": \"Hien Tran\", \"email\": \"heuism23892@gmail.com\", \"videos\": [{\"video_title\": \"Master of IT\",\"video_description\": \"Getting out of here\", \"video_date\": \"23/9/2017\", \"video_link\": \"http://www.html5videoplayer.net/videos/toystory.mp4\"}],  \"location\": \"Princes Hill, Victoria, Australia\"}] }"
         
-        testAlamofire()
-        
-        let data = self.jsonTest.data(using: .utf8)!
-        let json = JSON(data: data)
-        
-        let convertedData = convertJSONtoData(json: json)
-        
-        print(convertedData)
-        
-        dataArr.append(contentsOf: convertedData)
-        
-        testAPI()
+        self.getVideosFromFriends(email: self.email)
         title = "Feeds"
         configureSmallScreenView()
         addTableViewObservers()
         self.tableView.refreshControl = self.refreshCtrl
         VGPlayerCacheManager.shared.cleanAllCache()
         
-        let responseJSON: [String: Any] = [String: Any]()
+//        let responseJSON: [String: Any] = [String: Any]()
         
-        prepData(inputJSON: responseJSON)
+//        prepData(inputJSON: responseJSON)
+        
+        
+        //        testAlamofire()
+        //
+        //        let data = self.jsonTest.data(using: .utf8)!
+        //        let json = JSON(data: data)
+        //
+        //        let convertedData = convertJSONtoData(json: json)
+        //
+        //        print(convertedData)
+        //
+        //        dataArr.append(contentsOf: convertedData)
+        //
+        ////        testAPI()
     }
     
     func requestJSONFromServer(url: String, parameters: [String: Any]) -> Any {

@@ -99,7 +99,7 @@ extension FeedsViewController {
         for video in videos.array! {
             print(type(of: video))
             print(video["video_description"])
-            let vid = Video(title: video["video_title"].stringValue, description: video["video_description"].stringValue, time: video["video_date"].stringValue, link: video["video_link"].stringValue)
+            let vid = Video(title: video["video_title"].stringValue, description: video["video_description"].stringValue, time: video["video_date"].stringValue, link: video["video_link"].stringValue, filename: "")
             profile._videos?.append(vid)
             videosData.append((profile, vid))
         }
@@ -215,7 +215,7 @@ class FeedsViewController: UITableViewController {
         print(user._email)
         let video = Video(title: "Dont know", description: "This is about Unimelb Desc", time: "02/09", link:
 //            "http://www.html5videoplayer.net/videos/toystory.mp4"
-        "https://www.dropbox.com/s/fh05vo1kxzl5ue6/ff.mp4?dl=1"
+            "https://www.dropbox.com/s/fh05vo1kxzl5ue6/ff.mp4?dl=1", filename: ""
         )
         user._videos?.append(video)
         user._videos?.append(video)

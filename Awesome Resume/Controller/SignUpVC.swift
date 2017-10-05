@@ -18,7 +18,7 @@ extension SignUpVC {
         startActivityAnimating(message: "Registering User...")
         let dataToSend = getDataToSend(type: "new_user_signup", username: userName, email: email, password: password, currLoc: currentLocation)
 //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/pinpin/user_sign_up/"
+        let url = "http://13.66.48.219:8000/new_user_signup/"
         sendDataToServer(url: url, parameters: dataToSend, sender: sender)
     }
     

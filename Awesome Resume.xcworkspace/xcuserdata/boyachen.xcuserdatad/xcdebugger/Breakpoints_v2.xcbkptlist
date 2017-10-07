@@ -666,7 +666,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/FirstPageView/VideoMediaTableCell.swift"
-            timestampString = "528970540.63318"
+            timestampString = "529059720.000074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
@@ -698,28 +698,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Awesome Resume/FirstPageView/VideosViewController.swift"
-            timestampString = "529043453.700128"
+            timestampString = "529059720.000205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "571"
-            endingLineNumber = "571"
-            landmarkName = "requestToServer(url:parameters:mode:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Awesome Resume/FirstPageView/VideosViewController.swift"
-            timestampString = "529043453.700808"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "480"
-            endingLineNumber = "480"
-            landmarkName = "observeValue(forKeyPath:of:change:context:)"
+            startingLineNumber = "582"
+            endingLineNumber = "582"
+            landmarkName = "requestTableViewData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

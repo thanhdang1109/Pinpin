@@ -38,10 +38,11 @@ class VideoMediaTableCell: UITableViewCell {
     }
     
     @objc func selectAction(sender: UITapGestureRecognizer){
-        print(self.videoInfo._title!)
-        print(self.videoInfo._description!)
-        print(self.videoInfo._link!)
-        print(self.videoInfo._fileName!)
+        print("TITLE: \(self.videoInfo._title!)")
+        print("DESCRIPTION: \(self.videoInfo._description!)")
+        print("LINK: \(self.videoInfo._link!)")
+        print("FILENAME: \(self.videoInfo._fileName!)")
+        print("VIDEOID: \(self.videoInfo._videoId!)")
     }
     
     @IBAction func startVideo(_ sender: Any) {

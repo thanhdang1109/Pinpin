@@ -14,6 +14,7 @@ class Video {
     var _time: String?
     var _link: String?
     var _fileName: String?
+    var _videoId: Int?
     
     init(title: String?, description: String?, time: String?, link: String?, filename: String?) {
         self._title = title
@@ -21,5 +22,10 @@ class Video {
         self._time = time
         self._link = link
         self._fileName = filename
+        self._videoId = -1
+    }
+    
+    func setVideoId(id: Int) {
+        self._videoId = id
     }
 }

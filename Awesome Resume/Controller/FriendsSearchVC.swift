@@ -42,7 +42,7 @@ extension FriendsSearchVC {
         startActivityAnimating(message: "Unfollowing \(friend_user_name)...")
         let dataToSend = getDataToSend(type: "friend_unfollow", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, city: "", index: index)
         //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/friend_unfollow/"
+        let url = "http://13.66.48.219:8000/pinpin/friend_unfollow/"
         sendDataToServer(url: url, parameters: dataToSend)
     }
     
@@ -51,7 +51,7 @@ extension FriendsSearchVC {
         startActivityAnimating(message: "Following \(friend_user_name)...")
         let dataToSend = getDataToSend(type: "follow_user", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, city: "", index: index)
         //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/follow_user/"
+        let url = "http://13.66.48.219:8000/pinpin/follow_user/"
         sendDataToServer(url: url, parameters: dataToSend)
     }
     
@@ -62,19 +62,20 @@ extension FriendsSearchVC {
 //        while self.location == nil {
 //            print(".")
 //        }
-        print(self.location!)
-        let dataToSend = getDataToSend(type: "find_user", email: email, friend_email: "",friend_user_name: friend_user_name, city: location, index: 0)
+//        print(self.location!)
+        let dataToSend = getDataToSend(type: "find_users_in_location", email: email, friend_email: "",friend_user_name: friend_user_name, city: location, index: 0)
         //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/\(location)/find_user/"
+        let url = "http://13.66.48.219:8000/pinpin/\(location)/users/"
+        print("URL is : \(url)")
         sendDataToServer(url: url, parameters: dataToSend)
     }
     
     func getDataToSend(type: String, email: String, friend_email: String, friend_user_name: String, city: String, index: Int) -> [String : Any] {
         var data: [String: Any] = [String: Any]()
         data["type"] = type
-        data["username_request"] = email
+//        data["username_request"] = email
         switch type {
-        case "find_user":
+        case "find_users_in_location":
 //                let locationArr = (currLoc.replacingOccurrences(of: " ", with: "")).split(separator: ",")
 //                print("Location Array = \(locationArr)")
                 data["city"] = city
@@ -168,7 +169,7 @@ extension FriendsSearchVC {
     }
     
     func getUser(user: JSON) -> [Friend] {
-        let profile = Friend(userName: user["user_name"].stringValue, email: user["email"].stringValue, pictureUrl: nil, location: user["location"].stringValue, followed: user["followed"].boolValue)
+        let profile = Friend(userName: user["user_name"].stringValue, email: user["email"].stringValue, pictureUrl: nil, location: user["location"].stringValue, followed: user["following"].boolValue)
         return [profile]
     }
     

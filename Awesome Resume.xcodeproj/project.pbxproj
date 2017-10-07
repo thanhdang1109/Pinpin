@@ -865,11 +865,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A825RC2X5D;
+				DEVELOPMENT_TEAM = MXE9N2LLEZ;
 				INFOPLIST_FILE = "Awesome Resume/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Pinpin";
+				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Pinpin-final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Awesome Resume/FirstPageView/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -883,11 +883,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A825RC2X5D;
+				DEVELOPMENT_TEAM = MXE9N2LLEZ;
 				INFOPLIST_FILE = "Awesome Resume/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Pinpin";
+				PRODUCT_BUNDLE_IDENTIFIER = "awesome-team.ios11.Pinpin-final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Awesome Resume/FirstPageView/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

@@ -123,12 +123,12 @@ extension FeedsViewController {
 
     func getVideoFromFriend(friend: JSON) -> [(Profile, Video)] {
         var videosData = [(Profile, Video)]()
-        let profile = Friend(userName: friend["user_name"].stringValue, email: friend["email"].stringValue, pictureUrl: nil, location: friend["location"].stringValue, followed: friend["followed"].boolValue)
+        let profile = Friend(userName: friend["username"].stringValue, email: friend["email"].stringValue, pictureUrl: nil, location: friend["location"].stringValue, followed: friend["following"].boolValue)
         let videos = friend["videos"]
         for video in videos.array! {
             print(type(of: video))
             print(video["video_description"])
-            let vid = Video(title: video["video_title"].stringValue, description: video["video_description"].stringValue, time: video["video_date"].stringValue, link: video["video_link"].stringValue, filename: "")
+            let vid = Video(title: video["title"].stringValue, description: video["description"].stringValue, time: video["date"].stringValue, link: video["link"].stringValue, filename: "")
             profile._videos?.append(vid)
             videosData.append((profile, vid))
         }

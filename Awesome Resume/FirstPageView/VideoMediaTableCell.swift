@@ -27,8 +27,8 @@ class VideoMediaTableCell: UITableViewCell {
     }
     
     func configCell(media: Video) {
-        self.CellOuterView.layer.masksToBounds = true
-        self.CellOuterView.layer.cornerRadius = 4.0
+//        self.CellOuterView.layer.masksToBounds = true
+//        self.CellOuterView.layer.cornerRadius = 4.0
         self.videoInfo = media
 //        self.videoSnapshotImage.image = videoSnapshot(filePathLocal: media._link! as NSString)
         self.mediaInfoView.configView(media: media)

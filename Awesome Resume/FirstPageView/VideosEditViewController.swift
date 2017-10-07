@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import MobileCoreServices
+import NVActivityIndicatorView
 
 
 protocol SaveDataDelegate {
@@ -30,6 +31,8 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
     var editMode: String!
     // Edit Mode: 1) Add 2) Edit
     
+    
+    
     func configEditPage(data: Video, mode: String) {
         
         
@@ -48,7 +51,10 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
         if self.tempSavePath != nil {
             confirmSave()
         }else{
-            let alert = UIAlertController.init(title: "Video Requried", message: "Your must record the video to save", preferredStyle: .alert)
+            let alert = UIAlertController.init(title: "Video Requried",
+                                               message: "Your must record the video to save",
+                                               preferredStyle: .alert)
+            
             alert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             print("Must Record Video")
@@ -56,31 +62,67 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
     }
     
     func confirmSave(){
-        let videoData = Video.init(title: self.TitleContent.text!,
-                                   description: self.DescContent.text!,
-                                   time: self.DateContent.text!,
-                                   link: self.tempSavePath,
-                                   filename: self.tempVideoName)
+        self.startActivityAnimating(message: "Uploading Video")
         
-        let alert = UIAlertController(title: "Save Data?", message: self.tempSavePath, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {
-            (action) in self.tempVideo?.write(toFile: self.tempSavePath, atomically: false);
-                        self.saveDataDelegate?.saveBtnPressed(data: videoData);
-                        self.navigationController?.popViewController(animated: true);
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {
-            (action) in self.navigationController?.popViewController(animated: true)
-        }))
-        self.present(alert, animated: true, completion: nil)
+        self.tempVideo?.write(toFile: self.tempSavePath, atomically: false)
+//        self.tempVideo.writeToURL(named: self.tempVideoName) { (result, url) in
+//            self.tempSavePath = url?.relativeString
+//            print(self.tempSavePath)
+//            let videoData = Video(title: self.TitleContent.text!,
+//                                  description: self.DescContent.text!,
+//                                  time: self.DateContent.text!,
+//                                  link: self.tempSavePath,
+//                                  filename: self.tempVideoName)
+//            self.saveDataDelegate?.saveBtnPressed(data: videoData)
+//            self.navigationController?.popViewController(animated: true)
+//        }
+        
+        let videoData = Video(title: self.TitleContent.text!,
+                                          description: self.DescContent.text!,
+                                          time: self.DateContent.text!,
+                                          link: self.tempSavePath,
+                                          filename: self.tempVideoName)
+        self.saveDataDelegate?.saveBtnPressed(data: videoData)
+        self.navigationController?.popViewController(animated: true)
+        
+        
+        
+        
+//        let alert = UIAlertController(title: "Save Data?",
+//                                      message: self.tempSavePath,
+//                                      preferredStyle: .actionSheet)
+//
+//        alert.addAction(UIAlertAction(title: "Save",
+//                                      style: .default,
+//                                      handler: {
+//            (action) in self.tempVideo?.write(toFile: self.tempSavePath, atomically: false)
+//                        self.startActivityAnimating(message: "Uploading Video")
+////                        self.navigationController?.popViewController(animated: true)
+//                        self.saveDataDelegate?.saveBtnPressed(data: videoData)
+        
+//        }))
+        
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {
+//            (action) in self.navigationController?.popViewController(animated: true)
+//        }))
+        
+//        self.present(alert, animated: true, completion: nil)
+        
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.title = "Add/Edit"
-
+        let rightBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(finishEdit))
+        self.navigationItem.rightBarButtonItem = rightBtn
         // Do any additional setup after loading the view.
+    }
+
+    @objc func finishEdit(_ sender: Any){
+        self.view.endEditing(true)
+        self.navigationItem.rightBarButtonItem = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,6 +168,16 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
         print ("Temp Files Removed!")
     }
 
+    
+    
+    // ANIMATION
+    func startActivityAnimating(message: String) {
+        self.startAnimating(CGRect(x:0,y:0,width:60,height:60).size, message: message, messageFont: nil, type: .ballScaleMultiple, color: #colorLiteral(red: 0.4274509804, green: 0.737254902, blue: 0.3882352941, alpha: 1), padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: nil, textColor: #colorLiteral(red: 0.4274509804, green: 0.737254902, blue: 0.3882352941, alpha: 1))
+    }
+    
+    func stopActivityAnimating() {
+        self.stopAnimating()
+    }
 
     /*
     // MARK: - Navigation
@@ -168,11 +220,41 @@ extension VideosEditViewController: UIImagePickerControllerDelegate {
 //        self.editData!["video"] = dataPath
 //        print (self.editData)
         // *** Write video file data to path *** //
-        // videoData?.write(toFile: dataPath, atomically: false)
+//         videoData?.write(toFile: dataPath, atomically: false)
 //        delegate?.saveBtnPressed(data: self.editData!, dataType: self.type!, isSave: isSave, editIndex: self.editIndex)
         // clearTmpDirectory()
     }
     
 
     
+}
+
+
+extension VideosEditViewController: NVActivityIndicatorViewable {
+    
+}
+
+
+extension NSData {
+    
+    func writeToURL(named:String, completion: @escaping (_ result: Bool, _ url:NSURL?) -> Void)  {
+        
+        let filePath = NSTemporaryDirectory() + named
+        //var success:Bool = false
+        let tmpURL = NSURL( fileURLWithPath:  filePath )
+        weak var weakSelf = self
+        
+        DispatchQueue.main.async(group: DispatchGroup.init(), execute: {
+            //write to URL atomically
+            if weakSelf!.write(to: tmpURL as URL, atomically: true) {
+                
+                if FileManager.default.fileExists( atPath: filePath ) {
+                    completion(true, tmpURL)
+                } else {
+                    completion (false, tmpURL)
+                }
+            }
+        })
+        
+    }
 }

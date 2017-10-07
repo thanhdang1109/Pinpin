@@ -21,6 +21,7 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     // If using Shared Key access, fill in your credentials here and un-comment the "UsingSAS" line:
     var connectionString: String!
     var containerName: String!
+    var userName: String!
     var dataArr: [Video] = [
 //        Video(title: "Claude Chen", description: "2 Cobden st. North Melbourne, 3051 VIC", time: "", link: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", filename: ""),
 //        Video(title: "University of Melbourne", description: "Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology, Master of Information Technology", time: "2016-2018", link: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", filename: ""),
@@ -48,10 +49,13 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         
         self.connectionString = "DefaultEndpointsProtocol=https;AccountName=cs1ea921f0a44b4x43fbxa0e;AccountKey=B41efiZWKDOt8Gxi0ku/MrHJJoiM7Aal0JA71dJJG0Nx6GNtkQ8fHZZdi8YnD/rwlaXtbejv18ZSm/DceRSGlw=="
         
-        self.containerName = self.defaults.string(forKey: "userName")
+        self.containerName = "videocontainer"
+        self.userName = self.defaults.string(forKey: "userName")!
         
-        print("User Name: \(self.containerName)")
+        print("User Name: \(self.userName)")
         print("User Email: " + self.defaults.string(forKey: "userEmail")!)
+        print("Container Name: \(self.containerName)")
+        
         
         requestTableViewData()
         
@@ -157,15 +161,12 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
                         return
                     }
                     print(":: Upload Successfully!")
-                    let successAlert = UIAlertController.init(title: "Upload Successfully!", message: "", preferredStyle: .alert)
-                    successAlert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
-                    self.present(successAlert, animated: true, completion: nil)
+//                    let successAlert = UIAlertController.init(title: "Upload Successfully!", message: "", preferredStyle: .alert)
+//                    successAlert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
+//                    self.present(successAlert, animated: true, completion: nil)
                     
-                    print ("Upload Successfully!")
                     video._link = onlineLink // Update the link
-                    
                     self.requestSaveNewVideo(video: video)
-                    
                     self.stopActivityAnimating()
                     semaphore.signal()
                 })
@@ -399,16 +400,16 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         }
     }
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        var deleteButton = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
-            self.tableView.dataSource?.tableView!(self.tableView, commit: .delete, forRowAt: indexPath)
-            return
-        })
-        deleteButton.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
-        
-        return [deleteButton]
-    }
+//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//
+//        var deleteButton = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
+//            self.tableView.dataSource?.tableView!(self.tableView, commit: .delete, forRowAt: indexPath)
+//            return
+//        })
+//        deleteButton.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
+//
+//        return [deleteButton]
+//    }
     
     
     
@@ -490,7 +491,16 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     ///
     
     func startActivityAnimating(message: String) {
-        self.startAnimating(CGRect(x:0,y:0,width:60,height:60).size, message: message, messageFont: nil, type: .ballScaleMultiple, color: #colorLiteral(red: 0.4274509804, green: 0.737254902, blue: 0.3882352941, alpha: 1), padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: nil, textColor: #colorLiteral(red: 0.4274509804, green: 0.737254902, blue: 0.3882352941, alpha: 1))
+        self.startAnimating(CGRect(x:0,y:0,width:60,height:60).size,
+                            message: message,
+                            messageFont: nil,
+                            type: .ballScaleMultiple,
+                            color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
+                            padding: nil,
+                            displayTimeThreshold: nil,
+                            minimumDisplayTime: nil,
+                            backgroundColor: nil,
+                            textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
     }
     
     func stopActivityAnimating() {
@@ -619,7 +629,7 @@ extension VideosViewController {
     func requestTableViewData() {
         let parameters = [
             "type" : "user_videos",
-            "username": self.containerName! //Username
+            "username": self.userName! //Username
         ] as [String: Any]
         let appendix = "user_videos"
         let url = "http://13.66.48.219:8000/pinpin/\(appendix)/"
@@ -636,7 +646,7 @@ extension VideosViewController {
         let url = "http://13.66.48.219:8000/pinpin/\(appendix)/"
         let parameters = [
             "type": "save_new_video",
-            "username": self.containerName!,
+            "username": self.userName!,
             "link": video._link!,
             "title": video._title!,
             "date": video._time!,
@@ -655,7 +665,7 @@ extension VideosViewController {
         let url = "http://13.66.48.219:8000/pinpin/\(appendix)/"
         let parameters = [
             "type": "delete_video",
-            "username": self.containerName!,
+            "username": self.userName!,
             "video_db_id": video._videoId!
             ] as [String: Any]
         print ("#### SENDING REQUEST [Deleting Video] \n\(parameters)")

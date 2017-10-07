@@ -22,15 +22,15 @@ extension FriendsSearchVC: FriendDelegate {
     func followFriendExecute(friendUserName: String, friendEmail: String, index: Int) {
 //        let email = self.defaults.string(forKey: "userEmail")
         print("Following Friend...")
-        if let email = self.defaults.string(forKey: "userEmail") {
-            followFriend(email: email, friend_user_name: friendUserName, friend_email: friendEmail, index: index)
+        if let userName = self.defaults.string(forKey: "userName") {
+            followFriend(email: userName, friend_user_name: friendUserName, friend_email: friendEmail, index: index)
         }
     }
     
     func unfollowFriendExecute(friendUserName: String, friendEmail: String, index: Int) {
         print("Unfollowing Friend...")
-        if let email = self.defaults.string(forKey: "userEmail") {
-            followFriend(email: email, friend_user_name: friendUserName, friend_email: friendEmail, index: index)
+        if let userName = self.defaults.string(forKey: "userName") {
+            unfollowFriend(email: userName, friend_user_name: friendUserName, friend_email: friendEmail, index: index)
         }
     }
 }
@@ -40,7 +40,7 @@ extension FriendsSearchVC {
     func unfollowFriend(email: String, friend_user_name: String, friend_email: String, index: Int) {
         print("Unfollow User...")
         startActivityAnimating(message: "Unfollowing \(friend_user_name)...")
-        let dataToSend = getDataToSend(type: "friend_unfollow", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, currLoc: "", index: index)
+        let dataToSend = getDataToSend(type: "friend_unfollow", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, city: "", index: index)
         //        print(dataToSend)
         let url = "http://13.66.48.219:8000/friend_unfollow/"
         sendDataToServer(url: url, parameters: dataToSend)
@@ -49,40 +49,38 @@ extension FriendsSearchVC {
     func followFriend(email: String, friend_user_name: String, friend_email: String, index: Int) {
         print("Follow User...")
         startActivityAnimating(message: "Following \(friend_user_name)...")
-        let dataToSend = getDataToSend(type: "friend_follow", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, currLoc: "", index: index)
+        let dataToSend = getDataToSend(type: "follow_user", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, city: "", index: index)
         //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/friend_follow/"
+        let url = "http://13.66.48.219:8000/follow_user/"
         sendDataToServer(url: url, parameters: dataToSend)
     }
     
     func fetchFriendWithLocation(email: String, friend_user_name: String, location: String) {
         print("Fetching User...")
 //        startActivityAnimating(message: "Fetching Friends Near You...")
-        self.locationManager.requestLocation()
-        while self.location == nil {
-            print(".")
-        }
+//        self.locationManager.requestLocation()
+//        while self.location == nil {
+//            print(".")
+//        }
         print(self.location!)
-        let dataToSend = getDataToSend(type: "friend_look_up", email: email, friend_email: "",friend_user_name: friend_user_name, currLoc: location, index: 0)
+        let dataToSend = getDataToSend(type: "find_user", email: email, friend_email: "",friend_user_name: friend_user_name, city: location, index: 0)
         //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/friend_look_up/"
+        let url = "http://13.66.48.219:8000/\(location)/find_user/"
         sendDataToServer(url: url, parameters: dataToSend)
     }
     
-    func getDataToSend(type: String, email: String, friend_email: String, friend_user_name: String, currLoc: String, index: Int) -> [String : Any] {
+    func getDataToSend(type: String, email: String, friend_email: String, friend_user_name: String, city: String, index: Int) -> [String : Any] {
         var data: [String: Any] = [String: Any]()
         data["type"] = type
-        data["email"] = email
-        data["friend_name"] = friend_user_name
+        data["username_request"] = email
         switch type {
-        case "friend_look_up":
-                let locationArr = (currLoc.replacingOccurrences(of: " ", with: "")).split(separator: ",")
-                print("Location Array = \(locationArr)")
-                data["city"] = locationArr[0]
-                data["state"] = locationArr[1]
-                data["country"] = locationArr[2]
+        case "find_user":
+//                let locationArr = (currLoc.replacingOccurrences(of: " ", with: "")).split(separator: ",")
+//                print("Location Array = \(locationArr)")
+                data["city"] = city
             break
         default:
+            data["user_name"] = friend_user_name
             data["user_index"] = index
             data["friend_email"] = friend_email
         }
@@ -98,25 +96,26 @@ extension FriendsSearchVC {
     
     func sendDataToServer(url: String, parameters: [String: Any]) {
         print("---------------- SENDING DATA --------------")
+        print("PARAMETERS IS: \(parameters)")
         Alamofire.request(url, method: .post, parameters: parameters, headers: nil)
             .responseString { response in
-                debugPrint(response)
+//                debugPrint(response)
                 switch response.result {
                 case .success:
-                    print("SUCCESSFUL: -> \(response)")
+                    print("SUCCESSFUL: -> /*\(response)*/")
                     if let dataR = response.data {
                         let json = JSON(data: dataR)
                         print("JSON_TESTING: \(json)")
                         print(type(of: json))
                         print(json["url"])
                         switch json["type"].stringValue {
-                            case "friend_look_up":
+                            case "find_user":
                                 self.caseLookUp(json: json)
                                 break
-//                            case "friend_follow":
+//                            case "follow_user":
 //                                self.caseFollow(json: json)
 //                                break
-                            case "friend_follow":
+                            case "follow_user":
                                     self.caseFollow(json: json)
                                 break
                             case "friend_unfollow":
@@ -224,15 +223,16 @@ extension FriendsSearchVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.searchActive = false;
         self.friendSearchBar.resignFirstResponder()
-        print("This is Where we call server!!!")
+        print("This is Where we call server -> Getting Friends!!!")
         print("Search Start!!")
-        print(searchBar.text!)
+        print("Looking for friend: \(searchBar.text!)")
         if searchBar.text != nil {
             self.fetchingFriend = true
+            self.fetchFriendWithLocation(email: self.userName, friend_user_name: self.friendSearchBar.text!, location: searchBar.text!)
             startActivityAnimating(message: "Fetching Friends Near You...")
             //        self.fetchFriendWithLocation(email: self.email, friend_user_name: searchBar.text!)
             //        self.activityIndicatorView.startAnimating()
-            self.locationManager.requestLocation()
+//            self.locationManager.requestLocation()
         } else {
             self.fetchingFriend = false
         }
@@ -291,12 +291,14 @@ extension FriendsSearchVC: CLLocationManagerDelegate {
                 print(postalCode)
                 print(administrativeArea)
                 print(country)
+                self.friendSearchBar.text = locality
+                self.stopActivityAnimating()
                 self.location = "\(locality), \(administrativeArea), \(country)"
-                print(self.fetchingFriend)
-                if self.fetchingFriend {
-                    print("HERE!!!!")
-                    self.fetchFriendWithLocation(email: self.email, friend_user_name: self.friendSearchBar.text!, location: self.location!)
-                }
+//                print(self.fetchingFriend)
+//                if self.fetchingFriend {
+//                    print("HERE!!!!")
+//                    self.fetchFriendWithLocation(email: self.email, friend_user_name: self.friendSearchBar.text!, location: self.location!)
+//                }
             }
         }
     }
@@ -328,6 +330,7 @@ class FriendsSearchVC: UIViewController {
     var searchActive : Bool = false
     var fetchingFriend: Bool = false
     
+    @IBOutlet weak var fetchCurrLocation: UIButton!
     @IBOutlet weak var friendSearchBar: UISearchBar!
     @IBOutlet weak var friendListTableView: UITableView!
     
@@ -347,8 +350,9 @@ class FriendsSearchVC: UIViewController {
 //        self.friendListTableView.tableHeaderView = friendSearchBar
         self.locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+//        locationManager.startUpdatingLocation()
         activityIndicatorView.isHidden = true
     }
     
@@ -384,7 +388,11 @@ class FriendsSearchVC: UIViewController {
         self.friendListTableView.isHidden = true
     }
     
-//    func updateFriendsList(url: String) {
+    @IBAction func getCurrLocation(_ sender: Any) {
+        self.startActivityAnimating(message: "Getting your location...!")
+        self.locationManager.requestLocation()
+    }
+    //    func updateFriendsList(url: String) {
 //        friendList = (getFriendList(url: url) as? [Friend])!
 //        if friendList.isEmpty {
 //            friendListTableView.isHidden = true

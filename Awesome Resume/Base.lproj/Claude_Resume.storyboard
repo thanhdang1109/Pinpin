@@ -7,16 +7,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="AppleSDGothicNeo.ttc">
             <string>AppleSDGothicNeo-Regular</string>
-        </array>
-        <array key="Palatino.ttc">
-            <string>Palatino-Roman</string>
         </array>
     </customFonts>
     <scenes>
@@ -32,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.77644346149918297" green="0.074509803921568626" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -56,15 +52,15 @@
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <color key="sectionIndexBackgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoMediaTableCell" rowHeight="330" id="czh-tN-g71" customClass="VideoMediaTableCell" customModule="Awesome_Resume" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="330"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="VideoMediaTableCell" rowHeight="345" id="czh-tN-g71" customClass="VideoMediaTableCell" customModule="Awesome_Resume" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="345"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="czh-tN-g71" id="Y6B-nO-Gff">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="345"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvX-1c-rQf">
-                                            <rect key="frame" x="0.0" y="8" width="414" height="322"/>
+                                            <rect key="frame" x="0.0" y="6" width="414" height="339"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URF-aD-Qyq">
                                                     <rect key="frame" x="0.0" y="110" width="414" height="230"/>
@@ -107,7 +103,7 @@
                                                                 <constraint firstAttribute="height" constant="22" id="WQG-nv-i3i"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5z-Is-vhI">
@@ -120,12 +116,12 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4H-Mp-GiO">
-                                                            <rect key="frame" x="13" y="43" width="376" height="50"/>
+                                                            <rect key="frame" x="13" y="48" width="376" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="2uy-cZ-36F"/>
                                                             </constraints>
                                                             <string key="text">University of Melbourne - Master of IT 2015 - 2017  University of Melbourne - Master of IT 2015 - 2017 University of Melbourne - Master of IT 2015 - 2017</string>
-                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -133,7 +129,7 @@
                                                     <constraints>
                                                         <constraint firstItem="d79-gw-jto" firstAttribute="leading" secondItem="3xY-Fe-DNV" secondAttribute="leading" constant="13" id="3UB-6r-42N"/>
                                                         <constraint firstItem="a5z-Is-vhI" firstAttribute="top" secondItem="d79-gw-jto" secondAttribute="bottom" id="59m-SU-9HG"/>
-                                                        <constraint firstItem="y4H-Mp-GiO" firstAttribute="top" secondItem="a5z-Is-vhI" secondAttribute="bottom" id="Imd-er-BIB"/>
+                                                        <constraint firstItem="y4H-Mp-GiO" firstAttribute="top" secondItem="a5z-Is-vhI" secondAttribute="bottom" constant="5" id="Imd-er-BIB"/>
                                                         <constraint firstItem="a5z-Is-vhI" firstAttribute="leading" secondItem="3xY-Fe-DNV" secondAttribute="leadingMargin" constant="5" id="KGA-tf-ZnE"/>
                                                         <constraint firstAttribute="trailing" secondItem="y4H-Mp-GiO" secondAttribute="trailing" constant="15" id="Rl2-vq-iw9"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="a5z-Is-vhI" secondAttribute="trailing" constant="7" id="UHi-ho-mER"/>
@@ -162,10 +158,10 @@
                                     </subviews>
                                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="OvX-1c-rQf" firstAttribute="leading" secondItem="Y6B-nO-Gff" secondAttribute="leadingMargin" constant="-8" id="4wc-zH-RVj"/>
-                                        <constraint firstItem="OvX-1c-rQf" firstAttribute="top" secondItem="Y6B-nO-Gff" secondAttribute="topMargin" id="S8W-Ob-6gG"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="OvX-1c-rQf" secondAttribute="trailing" constant="-8" id="VmJ-2w-kwD"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="OvX-1c-rQf" secondAttribute="bottom" constant="-8" id="rin-t1-Du3"/>
+                                        <constraint firstAttribute="bottom" secondItem="OvX-1c-rQf" secondAttribute="bottom" id="Bco-DP-QCe"/>
+                                        <constraint firstItem="OvX-1c-rQf" firstAttribute="top" secondItem="Y6B-nO-Gff" secondAttribute="top" constant="6" id="Lac-Ez-y9I"/>
+                                        <constraint firstItem="OvX-1c-rQf" firstAttribute="leading" secondItem="Y6B-nO-Gff" secondAttribute="leading" id="NJA-VN-LYH"/>
+                                        <constraint firstAttribute="trailing" secondItem="OvX-1c-rQf" secondAttribute="trailing" id="swM-5p-lzW"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -173,6 +169,7 @@
                                     <outlet property="CellOuterView" destination="OvX-1c-rQf" id="rCp-Wo-a9p"/>
                                     <outlet property="mediaContent" destination="URF-aD-Qyq" id="l8y-Fk-uS7"/>
                                     <outlet property="mediaInfoView" destination="3xY-Fe-DNV" id="Trp-k3-mSR"/>
+                                    <outlet property="videoSnapshotImage" destination="otj-7S-T91" id="VLx-4n-Vj8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -182,25 +179,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="kAW-zA-rXo">
-                        <barButtonItem key="leftBarButtonItem" image="upload_btn" id="dwU-q2-kvG">
+                        <barButtonItem key="rightBarButtonItem" image="add_btn" id="e3Y-uM-Znu">
                             <connections>
-                                <action selector="NavigationBtnUploading:" destination="crg-Df-g0k" id="Obx-iI-18w"/>
+                                <action selector="NavigationBtnAdding:" destination="crg-Df-g0k" id="HoA-rO-8K1"/>
+                                <segue destination="WoI-at-tPi" kind="show" identifier="editSegue" id="E03-mD-GDJ"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem image="add_btn" id="e3Y-uM-Znu">
-                                <connections>
-                                    <action selector="NavigationBtnAdding:" destination="crg-Df-g0k" id="HoA-rO-8K1"/>
-                                    <segue destination="WoI-at-tPi" kind="show" identifier="editSegue" id="E03-mD-GDJ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="edit_btn" id="NUj-PK-qil">
-                                <inset key="imageInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <connections>
-                                    <action selector="NavigationBtnEdit:" destination="crg-Df-g0k" id="Ft1-Ib-FRn"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5P-Bg-1j2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,7 +194,7 @@
         <!--Videos Edit View Controller-->
         <scene sceneID="VTB-wf-219">
             <objects>
-                <viewController id="WoI-at-tPi" customClass="VideosEditViewController" customModule="Awesome_Resume" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="VideosEditViewControllerID" id="WoI-at-tPi" customClass="VideosEditViewController" customModule="Awesome_Resume" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lqh-FK-uok">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,7 +204,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7P0-FR-sfs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -238,11 +222,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="GCY-mJ-ueG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input the title ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOs-V4-ppq">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input the date ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOs-V4-ppq">
                                 <rect key="frame" x="12" y="209" width="390" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sUj-YM-YIV"/>
@@ -251,38 +235,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-0j-eYf">
-                                <rect key="frame" x="12" y="577" width="390" height="40"/>
-                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="PnI-He-pgB"/>
-                                </constraints>
-                                <state key="normal" title="Record">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="RecordBtn:" destination="WoI-at-tPi" eventType="touchUpInside" id="yDL-V8-WG9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJA-ZX-rtZ">
-                                <rect key="frame" x="12" y="627" width="390" height="40"/>
-                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="MSA-Fu-Re8"/>
-                                </constraints>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="SaveBtn:" destination="WoI-at-tPi" eventType="touchUpInside" id="i3r-be-RYu"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2N-id-DUm">
                                 <rect key="frame" x="12" y="249" width="390" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cci-mT-1BW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -295,6 +253,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-0j-eYf">
+                                <rect key="frame" x="0.0" y="577" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PnI-He-pgB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="RecordBtn:" destination="WoI-at-tPi" eventType="touchUpInside" id="yDL-V8-WG9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJA-ZX-rtZ">
+                                <rect key="frame" x="0.0" y="627" width="414" height="40"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MSA-Fu-Re8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SaveBtn:" destination="WoI-at-tPi" eventType="touchUpInside" id="i3r-be-RYu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -304,14 +290,14 @@
                             <constraint firstItem="dMp-5W-8KW" firstAttribute="trailing" secondItem="G0C-sc-xlI" secondAttribute="trailing" constant="12" id="7KG-OJ-8ao"/>
                             <constraint firstItem="ej7-GR-PMJ" firstAttribute="leading" secondItem="dMp-5W-8KW" secondAttribute="leading" constant="12" id="FYD-VD-Zp4"/>
                             <constraint firstItem="yJA-ZX-rtZ" firstAttribute="top" secondItem="LWj-0j-eYf" secondAttribute="bottom" constant="10" id="ISN-FO-gXL"/>
-                            <constraint firstItem="LWj-0j-eYf" firstAttribute="leading" secondItem="dMp-5W-8KW" secondAttribute="leading" constant="12" id="JTk-dl-7WX"/>
+                            <constraint firstItem="LWj-0j-eYf" firstAttribute="leading" secondItem="dMp-5W-8KW" secondAttribute="leading" id="JTk-dl-7WX"/>
                             <constraint firstItem="dMp-5W-8KW" firstAttribute="trailing" secondItem="XGE-Xa-tvk" secondAttribute="trailing" constant="12" id="Jrk-IX-2Ph"/>
                             <constraint firstItem="dMp-5W-8KW" firstAttribute="bottom" secondItem="yJA-ZX-rtZ" secondAttribute="bottom" constant="20" id="KZN-nI-mbO"/>
                             <constraint firstItem="M2N-id-DUm" firstAttribute="leading" secondItem="dMp-5W-8KW" secondAttribute="leading" constant="12" id="Kgx-Ha-6SC"/>
-                            <constraint firstItem="dMp-5W-8KW" firstAttribute="trailing" secondItem="yJA-ZX-rtZ" secondAttribute="trailing" constant="12" id="Klf-tG-iey"/>
+                            <constraint firstItem="dMp-5W-8KW" firstAttribute="trailing" secondItem="yJA-ZX-rtZ" secondAttribute="trailing" id="Klf-tG-iey"/>
                             <constraint firstItem="dMp-5W-8KW" firstAttribute="trailing" secondItem="ej7-GR-PMJ" secondAttribute="trailing" constant="12" id="NnO-gU-SHL"/>
                             <constraint firstItem="o0k-Vc-JlD" firstAttribute="top" secondItem="G0C-sc-xlI" secondAttribute="bottom" constant="10" id="PZ2-3Z-r1P"/>
-                            <constraint firstItem="yJA-ZX-rtZ" firstAttribute="leading" secondItem="dMp-5W-8KW" secondAttribute="leading" constant="12" id="R6l-ju-CJP"/>
+                            <constraint firstItem="yJA-ZX-rtZ" firstAttribute="leading" secondItem="dMp-5W-8KW" secondAttribute="leading" id="R6l-ju-CJP"/>
                             <constraint firstItem="o0k-Vc-JlD" firstAttribute="leading" secondItem="dMp-5W-8KW" secondAttribute="leading" constant="12" id="Vvq-Ys-8Om"/>
                             <constraint firstItem="gOs-V4-ppq" firstAttribute="leading" secondItem="dMp-5W-8KW" secondAttribute="leading" constant="12" id="f9P-uc-dCo"/>
                             <constraint firstItem="G0C-sc-xlI" firstAttribute="leading" secondItem="dMp-5W-8KW" secondAttribute="leading" constant="12" id="fPO-Le-Nrq"/>
@@ -321,7 +307,7 @@
                             <constraint firstItem="dMp-5W-8KW" firstAttribute="trailing" secondItem="o0k-Vc-JlD" secondAttribute="trailing" constant="12" id="r0X-3C-03M"/>
                             <constraint firstItem="G0C-sc-xlI" firstAttribute="top" secondItem="ej7-GR-PMJ" secondAttribute="bottom" constant="10" id="thY-2V-shN"/>
                             <constraint firstItem="gOs-V4-ppq" firstAttribute="top" secondItem="o0k-Vc-JlD" secondAttribute="bottom" constant="10" id="uh1-Ww-EVu"/>
-                            <constraint firstItem="dMp-5W-8KW" firstAttribute="trailing" secondItem="LWj-0j-eYf" secondAttribute="trailing" constant="12" id="yfD-51-N6x"/>
+                            <constraint firstItem="dMp-5W-8KW" firstAttribute="trailing" secondItem="LWj-0j-eYf" secondAttribute="trailing" id="yfD-51-N6x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dMp-5W-8KW"/>
                     </view>
@@ -333,14 +319,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4A-gc-LQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="-1362"/>
+            <point key="canvasLocation" x="795.6521739130435" y="-1096.467391304348"/>
         </scene>
     </scenes>
     <resources>
         <image name="add_btn" width="21" height="21"/>
-        <image name="edit_btn" width="21" height="21"/>
         <image name="play-image2" width="64" height="64"/>
         <image name="tap-resume2" width="25" height="25"/>
-        <image name="upload_btn" width="21" height="21"/>
     </resources>
 </document>

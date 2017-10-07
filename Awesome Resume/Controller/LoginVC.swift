@@ -115,11 +115,12 @@ class LoginVC: UIViewController {
         
         userEmailField.delegate = self
         userPassField.delegate = self
-        userEmailField.text = "claude1@gmail.com"
-        userPassField.text = "boyac1234"
+        userEmailField.text = "claude@gmail.com"
+        userPassField.text = "helloworld"
         
         print(self.defaults.string(forKey: "user_email"))
         print(self.defaults.string(forKey: "user_pass"))
+        
     }
     
     func updateStatus(loginResult: String) {

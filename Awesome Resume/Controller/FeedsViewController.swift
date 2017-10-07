@@ -49,33 +49,36 @@ extension FeedsViewController {
     func getVideosFromFriends(email: String) {
         print("Registering User...")
         startActivityAnimating(message: "Getting more videos...!")
-        let dataToSend = getDataToSend(type: "friend_feeds", email: email)
+        let dataToSend = getDataToSend(type: "following_feeds", email: email)
         //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/new_user_signup/"
+        let myUserName = self.defaults.string(forKey: "userName")
+        let url = "http://13.66.48.219:8000/pinpin/\(myUserName!)/feeds/"
         sendDataToServer(url: url, parameters: dataToSend)
     }
     
     func getDataToSend(type: String, email: String) -> [String : Any] {
         let data = [
             "type" : type,
-            "email": email
+//            "email": email
             ] as [String : Any]
         return data
     }
     
     func sendDataToServer(url: String, parameters: [String: Any]) {
         print("---------------- SENDING DATA --------------")
+        print("URL is: \(url)")
+        print("PARAMETER is: \(parameters)")
         Alamofire.request(url, method: .post, parameters: parameters, headers: nil)
             .responseString { response in
-                debugPrint(response)
+//                debugPrint(response)
                 switch response.result {
                 case .success:
-                    print("SUCCESSFUL: -> \(response)")
+                    print("SUCCESSFUL -->")
                     if let dataR = response.data {
                         let json = JSON(data: dataR)
                         print("JSON_TESTING: \(json)")
                         print(type(of: json))
-                        print(json["url"])
+//                        print(json["url"])
                         if json["success"].boolValue {
                             self.dataArr = self.convertJSONtoData(json: json)
                             self.tableView.reloadData()
@@ -108,7 +111,7 @@ extension FeedsViewController {
     func convertJSONtoData(json: JSON) -> [(Profile, Video)] {
         var returnData = [(Profile, Video)]()
 //        print("testJSON: \(json["friends"])")
-        let friends = json["friends"]
+        let friends = json["followings"]
         print("FriendList: \(friends)")
         for friend in friends.array! {
             print(type(of: friend))

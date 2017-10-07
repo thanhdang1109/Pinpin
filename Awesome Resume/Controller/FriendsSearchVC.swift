@@ -178,11 +178,12 @@ extension FriendsSearchVC {
     }
     
     func followFriendUpdate(json: JSON) -> [Friend] {
-        if let index = json["following_index"].int {
-            self.friendList[index]._followed = json["success"].boolValue
+        if let index = json["following_index"].string {
+            self.friendList[Int(index)!]._followed = json["success"].boolValue
+            print(self.friendList)
             return self.friendList
         }
-        self.friendList[json["unfollowing_index"].intValue]._followed = json["success"].boolValue
+        self.friendList[Int(json["unfollowing_index"].stringValue)!]._followed = !json["success"].boolValue
         return self.friendList
     }
 }

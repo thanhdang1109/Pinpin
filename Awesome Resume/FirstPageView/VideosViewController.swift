@@ -493,7 +493,7 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     func startActivityAnimating(message: String) {
         self.startAnimating(CGRect(x:0,y:0,width:60,height:60).size,
                             message: message,
-                            messageFont: nil,
+                            messageFont: UIFont.init(name: "Apple SD Gothic Neo", size: 20),
                             type: .ballScaleMultiple,
                             color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
                             padding: nil,
@@ -631,7 +631,7 @@ extension VideosViewController {
             "type" : "user_videos",
             "username": self.userName! //Username
         ] as [String: Any]
-        let appendix = "user_videos"
+        let appendix = "\(self.userName!)/videos"
         let url = "http://13.66.48.219:8000/pinpin/\(appendix)/"
         print ("#### SENDING REQUEST [Request User Videos] \n\(parameters)")
         requestToServer(videoIndex: nil,
@@ -642,7 +642,7 @@ extension VideosViewController {
     }
     
     func requestSaveNewVideo(video: Video) {
-        let appendix = "new_video"
+        let appendix = "\(self.userName!)/new_video"
         let url = "http://13.66.48.219:8000/pinpin/\(appendix)/"
         let parameters = [
             "type": "save_new_video",
@@ -661,7 +661,7 @@ extension VideosViewController {
     }
     
     func requestDeleteVideo(video: Video, index: Int) {
-        let appendix = "delete_video"
+        let appendix = "\(self.userName!)/delete_video"
         let url = "http://13.66.48.219:8000/pinpin/\(appendix)/"
         let parameters = [
             "type": "delete_video",

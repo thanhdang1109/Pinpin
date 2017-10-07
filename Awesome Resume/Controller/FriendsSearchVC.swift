@@ -40,9 +40,9 @@ extension FriendsSearchVC {
     func unfollowFriend(email: String, friend_user_name: String, friend_email: String, index: Int) {
         print("Unfollow User...")
         startActivityAnimating(message: "Unfollowing \(friend_user_name)...")
-        let dataToSend = getDataToSend(type: "friend_unfollow", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, city: "", index: index)
+        let dataToSend = getDataToSend(type: "unfollowing", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, city: "", index: index)
         //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/pinpin/friend_unfollow/"
+        let url = "http://13.66.48.219:8000/pinpin/\(friend_user_name)/unfollowing/"
         sendDataToServer(url: url, parameters: dataToSend)
     }
     
@@ -51,7 +51,7 @@ extension FriendsSearchVC {
         startActivityAnimating(message: "Following \(friend_user_name)...")
         let dataToSend = getDataToSend(type: "new_following", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, city: "", index: index)
         //        print(dataToSend)
-        let url = "http://13.66.48.219:8000/pinpin/follow_user/"
+        let url = "http://13.66.48.219:8000/pinpin/\(friend_user_name)/new_following/"
         sendDataToServer(url: url, parameters: dataToSend)
     }
     
@@ -79,6 +79,10 @@ extension FriendsSearchVC {
 //                let locationArr = (currLoc.replacingOccurrences(of: " ", with: "")).split(separator: ",")
 //                print("Location Array = \(locationArr)")
                 data["city"] = city
+            break
+        case "unfollowing":
+            data["unfollowing_username"] = friend_user_name
+            data["unfollowing_index"] = index
             break
         default:
             data["following_username"] = friend_user_name
@@ -119,7 +123,7 @@ extension FriendsSearchVC {
                             case "new_following":
                                     self.caseFollow(json: json)
                                 break
-                            case "friend_unfollow":
+                            case "unfollowing":
                                     self.caseFollow(json: json)
                                 break
                             default:
@@ -174,7 +178,11 @@ extension FriendsSearchVC {
     }
     
     func followFriendUpdate(json: JSON) -> [Friend] {
-        self.friendList[json["following_index"].intValue]._followed = json["success"].boolValue
+        if let index = json["following_index"].int {
+            self.friendList[index]._followed = json["success"].boolValue
+            return self.friendList
+        }
+        self.friendList[json["unfollowing_index"].intValue]._followed = json["success"].boolValue
         return self.friendList
     }
 }

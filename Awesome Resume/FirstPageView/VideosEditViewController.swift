@@ -62,9 +62,26 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
     }
     
     func confirmSave(){
-        self.startActivityAnimating(message: "Uploading Video")
+        self.startActivityAnimating(message: "Uploading ...")
+        self.navigationController?.popViewController(animated: true)
+        DispatchQueue.global().async {
+            self.tempVideo?.write(toFile: self.tempSavePath, atomically: false)
+            DispatchQueue.main.async {
+//                [weak self] in
+                let videoData = Video(title: self.TitleContent.text!,
+                                      description: self.DescContent.text!,
+                                      time: self.DateContent.text!,
+                                      link: self.tempSavePath,
+                                      filename: self.tempVideoName)
+                self.saveDataDelegate?.saveBtnPressed(data: videoData)
+                
+//                guard let strongSelf = self else { return }
+//                strongSelf.method()
+            }
+            
+            
+        }
         
-        self.tempVideo?.write(toFile: self.tempSavePath, atomically: false)
         
 //        self.tempVideo.writeToURL(named: self.tempVideoName) { (result, url) in
 //            self.tempSavePath = url?.relativeString
@@ -78,13 +95,7 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
 //            self.navigationController?.popViewController(animated: true)
 //        }
         
-        let videoData = Video(title: self.TitleContent.text!,
-                                          description: self.DescContent.text!,
-                                          time: self.DateContent.text!,
-                                          link: self.tempSavePath,
-                                          filename: self.tempVideoName)
-        self.saveDataDelegate?.saveBtnPressed(data: videoData)
-        self.navigationController?.popViewController(animated: true)
+        
         
         
         
@@ -170,7 +181,16 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
     
     // ANIMATION
     func startActivityAnimating(message: String) {
-        self.startAnimating(CGRect(x:0,y:0,width:60,height:60).size, message: message, messageFont: nil, type: .ballScaleMultiple, color: #colorLiteral(red: 0.4274509804, green: 0.737254902, blue: 0.3882352941, alpha: 1), padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil, backgroundColor: nil, textColor: #colorLiteral(red: 0.4274509804, green: 0.737254902, blue: 0.3882352941, alpha: 1))
+        self.startAnimating(CGRect(x:0,y:0,width:60,height:60).size,
+                            message: message,
+                            messageFont: nil,
+                            type: .ballScaleMultiple,
+                            color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
+                            padding: nil,
+                            displayTimeThreshold: nil,
+                            minimumDisplayTime: nil,
+                            backgroundColor: nil,
+                            textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
     }
     
     func stopActivityAnimating() {

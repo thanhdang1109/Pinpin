@@ -19,12 +19,15 @@ class Friend: Profile {
     
     var _location: String?
     
+    var _followed: Bool!
     
-    init(userName: String?, email: String?, pictureUrl: String?, location: String?) {
+    
+    init(userName: String?, email: String?, pictureUrl: String?, location: String?, followed: Bool) {
         self._userName = userName
         self._email = email
         self._pictureUrl = pictureUrl
         self._videos = [Video]()
         self._location = location
+        self._followed = followed
     }
 }

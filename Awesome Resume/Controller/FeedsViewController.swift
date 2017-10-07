@@ -120,7 +120,7 @@ extension FeedsViewController {
 
     func getVideoFromFriend(friend: JSON) -> [(Profile, Video)] {
         var videosData = [(Profile, Video)]()
-        let profile = Friend(userName: friend["user_name"].stringValue, email: friend["email"].stringValue, pictureUrl: nil, location: friend["location"].stringValue)
+        let profile = Friend(userName: friend["user_name"].stringValue, email: friend["email"].stringValue, pictureUrl: nil, location: friend["location"].stringValue, followed: friend["followed"].boolValue)
         let videos = friend["videos"]
         for video in videos.array! {
             print(type(of: video))
@@ -180,10 +180,10 @@ class FeedsViewController: UITableViewController {
         let responseJSON: [String: Any] = [String: Any]()
         let emailRefresh = self.email
         self.getVideosFromFriends(email: emailRefresh!)
-        VGPlayerCacheManager.shared.cleanAllCache()
+//        VGPlayerCacheManager.shared.cleanAllCache()
 //        prepData(inputJSON: responseJSON)
-//        startActivityAnimating(message: "Getting more videos...!")
-        
+////        startActivityAnimating(message: "Getting more videos...!")
+//
 //        self.tableView.reloadData()
 //        refreshControl.endRefreshing()
     }
@@ -257,7 +257,7 @@ class FeedsViewController: UITableViewController {
         user._videos?.append(video)
         
         print(user._videos![0]._link)
-        user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil, location: "Michigan, USA"))
+        user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil, location: "Michigan, USA", followed: false))
         print(user._friends)
         if let friends = user._friends {
             print(friends[0]._userName)

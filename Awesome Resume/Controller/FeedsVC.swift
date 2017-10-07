@@ -45,7 +45,7 @@ class FeedsVC: UIViewController {
         print(user._videos)
         print(user._userName)
         print(user._email)
-        user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil, location: "Michigan, USA"))
+        user._friends?.append(Friend(userName: "Duong Phan", email: "duong@gmail.com", pictureUrl: nil, location: "Michigan, USA", followed: false))
         print(user._friends)
         if let friends = user._friends {
             print(friends[0]._userName)

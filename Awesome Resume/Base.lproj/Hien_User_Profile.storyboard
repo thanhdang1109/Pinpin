@@ -72,10 +72,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="94P-Oh-D8f">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-male-icon" translatesAutoresizingMaskIntoConstraints="NO" id="94P-Oh-D8f">
                                                             <rect key="frame" x="8" y="8" width="63.5" height="63.5"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="width" constant="63.5" id="61L-Ty-2oi"/>
                                                                 <constraint firstAttribute="width" secondItem="94P-Oh-D8f" secondAttribute="height" multiplier="1:1" id="JR3-tk-EAy"/>
+                                                                <constraint firstAttribute="height" constant="63.5" id="v8h-Ku-qp8"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Claude Chen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kr0-9c-7zw">
@@ -197,5 +199,6 @@
     </scenes>
     <resources>
         <image name="tap-search" width="24" height="24"/>
+        <image name="user-male-icon" width="341" height="341"/>
     </resources>
 </document>

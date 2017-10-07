@@ -49,7 +49,7 @@ extension FriendsSearchVC {
     func followFriend(email: String, friend_user_name: String, friend_email: String, index: Int) {
         print("Follow User...")
         startActivityAnimating(message: "Following \(friend_user_name)...")
-        let dataToSend = getDataToSend(type: "follow_user", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, city: "", index: index)
+        let dataToSend = getDataToSend(type: "new_following", email: email, friend_email: friend_email ,friend_user_name: friend_user_name, city: "", index: index)
         //        print(dataToSend)
         let url = "http://13.66.48.219:8000/pinpin/follow_user/"
         sendDataToServer(url: url, parameters: dataToSend)
@@ -81,9 +81,9 @@ extension FriendsSearchVC {
                 data["city"] = city
             break
         default:
-            data["user_name"] = friend_user_name
-            data["user_index"] = index
-            data["friend_email"] = friend_email
+            data["following_username"] = friend_user_name
+            data["following_index"] = index
+//            data["friend_email"] = friend_email
         }
 //        let data = [
 //            "type" : type,
@@ -116,7 +116,7 @@ extension FriendsSearchVC {
 //                            case "follow_user":
 //                                self.caseFollow(json: json)
 //                                break
-                            case "follow_user":
+                            case "new_following":
                                     self.caseFollow(json: json)
                                 break
                             case "friend_unfollow":
@@ -174,7 +174,7 @@ extension FriendsSearchVC {
     }
     
     func followFriendUpdate(json: JSON) -> [Friend] {
-        self.friendList[json["user_index"].intValue]._followed = json["followed"].boolValue
+        self.friendList[json["following_index"].intValue]._followed = json["success"].boolValue
         return self.friendList
     }
 }

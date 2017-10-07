@@ -110,7 +110,7 @@ extension FriendsSearchVC {
                         print(type(of: json))
                         print(json["url"])
                         switch json["type"].stringValue {
-                            case "find_user":
+                            case "find_users_in_location":
                                 self.caseLookUp(json: json)
                                 break
 //                            case "follow_user":
@@ -169,7 +169,7 @@ extension FriendsSearchVC {
     }
     
     func getUser(user: JSON) -> [Friend] {
-        let profile = Friend(userName: user["user_name"].stringValue, email: user["email"].stringValue, pictureUrl: nil, location: user["location"].stringValue, followed: user["following"].boolValue)
+        let profile = Friend(userName: user["username"].stringValue, email: user["email"].stringValue, pictureUrl: nil, location: user["location"].stringValue, followed: user["following"].boolValue)
         return [profile]
     }
     

@@ -11,10 +11,8 @@ Boya Chen, Hien Tren, Thanh Dang
 Include logo/demo screenshot etc.
 
 ## Features
-What makes your project stand out?
-
-## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+1. Creating Multimedia resume
+1. Professional social network
 
 ## API Reference
 
@@ -25,6 +23,18 @@ Show what the library does as concisely as possible, developers should be able t
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
 
 ## Components
+
+|Component Name|Description|Code Files  
+|-|-|-|
+|Sign Up|User can sign up with username, email, password and location| ~/Awesome Resume/Controller/SignUpVC.swift
+|Log in|User can login using Email Address and Password|~/Awesome Resume/Controller/LoginVC.swift
+|Resume Videos|User can check his/her videos in the first page after login |  ~/Awesome Resume/FirstPageView/VideosViewController.swift <br> ~/Awesome Resume/FirstPageView/VideoMediaTableCell.swift <br> ~/Awesome Resume/FirstPageView/VideoMediaTableCellInfoView.swift
+|Create New Resume Item|User can create a new item with information including title, date, description and record video of brief introduction | ~/Awesome Resume/FirstPageView/VideosEditViewController.swift
+|Feeds|User can see other users' public video who he/she follows| |
+|Search and follow users|User can search other users using username and follow| |
+
+
+
 
 
 ## Credits

@@ -183,7 +183,7 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
     func startActivityAnimating(message: String) {
         self.startAnimating(CGRect(x:0,y:0,width:60,height:60).size,
                             message: message,
-                            messageFont: nil,
+                            messageFont: UIFont.init(name: "Apple SD Gothic Neo", size: 20),
                             type: .ballScaleMultiple,
                             color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),
                             padding: nil,

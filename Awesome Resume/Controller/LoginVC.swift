@@ -115,8 +115,8 @@ class LoginVC: UIViewController {
         
         userEmailField.delegate = self
         userPassField.delegate = self
-        userEmailField.text = "claude@gmail.com"
-        userPassField.text = "helloworld"
+//        userEmailField.text = "claude@gmail.com"
+//        userPassField.text = "helloworld"
         
         print(self.defaults.string(forKey: "user_email"))
         print(self.defaults.string(forKey: "user_pass"))

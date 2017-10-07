@@ -31,7 +31,7 @@ class FollowFriendCell: UITableViewCell {
     
     func configCell(friend: Friend) {
         self.friendUsrName.text = friend._userName
-        self.friendUsrLocation.text = friend._location
+        self.friendUsrLocation.text = friend._email
         if friend._followed {
             print("Followed!")
             setBtn(btn: self.friendFollowBtn, backGroundColorNew: #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1), textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "- Unfollow")

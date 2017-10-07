@@ -66,6 +66,50 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     
 
     
+    func removeVideo(video: Video, index: Int){
+        
+        let blobLink = video._link!
+        let blobName = blobLink.split(separator: "/").last!
+        
+        print ("Deleting Blob \(blobName)")
+        
+        // Create a semaphore to prevent the method from exiting before all of the async operations finish.
+        // -- In most real applications, you wouldn't do this, it makes this whole series of operations synchronous.
+        let semaphore = DispatchSemaphore(value: 0)
+        // Create a storage account object from a connection string.
+        let account = try? AZSCloudStorageAccount(fromConnectionString: self.connectionString)
+        // Create a blob service client object.
+        let blobClient: AZSCloudBlobClient? = account?.getBlobClient()
+        // Create a local container object with a unique name.
+        let blobContainer: AZSCloudBlobContainer? = blobClient?.containerReference(fromName: self.containerName!)
+        // Create the container on the service and check to see if there was an error.
+        let blockBlob: AZSCloudBlockBlob? = blobContainer?.blockBlobReference(fromName: String(blobName))
+        
+        blockBlob?.delete(completionHandler: { (_ error: Error?) -> Void in
+            if error != nil {
+                print("[!] Error in deleting blob.\n --> \(error!)")
+                let successAlert = UIAlertController.init(title: "Delete Failed!", message: "", preferredStyle: .alert)
+                successAlert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
+                self.present(successAlert, animated: true, completion: nil)
+                self.stopActivityAnimating()
+                return
+            }
+            print(":: Delete Successfully!")
+//            let successAlert = UIAlertController.init(title: "Upload Successfully!", message: "", preferredStyle: .alert)
+//            successAlert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
+//            self.present(successAlert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.dataArr.remove(at: index)
+                self.tableView.deleteRows(at: [IndexPath.init(row: index, section: 0)], with: UITableViewRowAnimation.automatic)
+                self.tableView.reloadData()
+                self.stopActivityAnimating()
+            }
+
+            semaphore.signal()
+        })
+        
+    }
+    
     func uploadVideo(fileName: String, filePath: String, video: Video) {
 
         ////////////////////////////////////
@@ -75,8 +119,6 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         ///
         ////////////////////////////////////
         
-        var isUploaded = false
-
         // Create a semaphore to prevent the method from exiting before all of the async operations finish.
         // -- In most real applications, you wouldn't do this, it makes this whole series of operations synchronous.
         let semaphore = DispatchSemaphore(value: 0)
@@ -123,9 +165,6 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
                     video._link = onlineLink // Update the link
                     
                     self.requestSaveNewVideo(video: video)
-                    
-                    self.dataArr.append(video)
-                    self.tableView.reloadData()
                     
                     self.stopActivityAnimating()
                     semaphore.signal()
@@ -350,6 +389,27 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         self.dataArr.insert(rowToMove, at: destinationIndexPath.row)
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            self.startActivityAnimating(message: "Deleting Video...")
+            let video2delete = self.dataArr[indexPath.row]
+            requestDeleteVideo(video: video2delete, index: indexPath.row)
+//            removeVideo(video: video2delete, index: indexPath.row)
+            
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        var deleteButton = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
+            self.tableView.dataSource?.tableView!(self.tableView, commit: .delete, forRowAt: indexPath)
+            return
+        })
+        deleteButton.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
+        
+        return [deleteButton]
+    }
+    
     
     
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -459,73 +519,24 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     }
 }
 
-
-
-
-
-
-
-
 extension VideosViewController {
-    
-    /// Extension to the VideoViewController
-    ///
-    /// - Parameters:
-    ///   - keyPath: <#keyPath description#>
-    ///   - object: <#object description#>
-    ///   - change: <#change description#>
-    ///   - context: <#context description#>
-    
-    override func observeValue(forKeyPath keyPath: String?,
-                               of object: Any?,
-                               change: [NSKeyValueChangeKey : Any]?,
-                               context: UnsafeMutableRawPointer?) {
-        ///
-        ///
-        ///
-        //        if (context == &tableViewContext) {
-        
-//        if keyPath == #keyPath(UITableView.contentOffset) {
-//            if let playIndexPath = currentPlayIndexPath {
-//
-//                if let cell = tableView.cellForRow(at: playIndexPath) as? MediaViewCell {
-//                    if player.displayView.isFullScreen { return }
-//                    let visibleCells = tableView.visibleCells
-//                    if visibleCells.contains(cell) {
-//                        smallScreenView.removeFromSuperview()
-//                        cell.contentView.addSubview(player.displayView)
-//                        player.displayView.snp.remakeConstraints {
-//                            $0.edges.equalTo(cell.mediaContent)
-//                        }
-//                        playerView.isSmallMode = false
-//                    }
-//                } else {
-//                    if isViewLoaded && (view.window != nil) {
-//                        if smallScreenView.superview != UIApplication.shared.keyWindow {
-//                        }
-//                    }
-//                }
-//            }
-//        }
-        //        }
-    }
-    
-    
-    
+
     func convertJSONtoData(jsonData: JSON) -> [Video] {
         var returnData = [Video]()
         print(jsonData.array)
         for videoItem in jsonData.array![0].array!{
-            returnData.append(Video(title: videoItem["title"].stringValue,
-                                         description: videoItem["description"].stringValue,
-                                         time: videoItem["date"].stringValue,
-                                         link: videoItem["link"].stringValue,
-                                         filename: ""))
+            var vid = Video(title: videoItem["title"].stringValue,
+                              description: videoItem["description"].stringValue,
+                              time: videoItem["date"].stringValue,
+                              link: videoItem["link"].stringValue,
+                              filename: "")
+            vid._videoId = videoItem["id"].intValue
+            returnData.append(vid)
         }
         return returnData
     }
     
-    func requestToServer(url: String, parameters: [String: String], mode: String) {
+    func requestToServer(videoIndex: Int?, videoData: Video?, url: String, parameters: [String: Any], mode: String) {
         /// Request Function to the Server
         print("---------------- TESTING ---------------")
         switch mode {
@@ -569,6 +580,29 @@ extension VideosViewController {
                     switch response.result {
                     case .success:
                         print("SUCCESS -> \(JSON(data: response.data!))")
+                        let jsonData = JSON(data: response.data!)
+                        if let id = jsonData["video_db_id"].int {
+                            videoData?._videoId = jsonData["video_db_id"].intValue
+                        }
+                        self.dataArr.append(videoData!)
+                        self.tableView.reloadData()
+                        break
+                    case .failure(let error):
+                        print("EREROR: -> \(error)")
+                        break
+                    }
+            }
+            break
+        case "requestDeleteVideo":
+            ///
+            /// Request for Deleting Video
+            ///
+            Alamofire.request(url, method: .post, parameters: parameters, headers: nil)
+                .responseString { response in
+                    switch response.result {
+                    case .success:
+                        print("SUCCESS -> \(JSON(data: response.data!))")
+                        self.removeVideo(video: videoData!, index: videoIndex!)
                         break
                     case .failure(let error):
                         print("EREROR: -> \(error)")
@@ -589,9 +623,11 @@ extension VideosViewController {
         ] as [String: Any]
         let appendix = "user_videos"
         let url = "http://13.66.48.219:8000/pinpin/\(appendix)/"
-        print ("#### SENDING REQUEST \n\(parameters)")
-        requestToServer(url: url,
-                        parameters: parameters as! [String : String],
+        print ("#### SENDING REQUEST [Request User Videos] \n\(parameters)")
+        requestToServer(videoIndex: nil,
+                        videoData: nil,
+                        url: url,
+                        parameters: parameters,
                         mode: "requestTableViewData")
     }
     
@@ -606,11 +642,30 @@ extension VideosViewController {
             "date": video._time!,
             "description": video._description!
         ] as [String: Any]
-        print ("#### SENDING REQUEST \n\(parameters)")
-        requestToServer(url: url,
-                        parameters: parameters as! [String : String],
+        print ("#### SENDING REQUEST [Adding New Video] \n\(parameters)")
+        requestToServer(videoIndex: nil,
+                        videoData: video,
+                        url: url,
+                        parameters: parameters,
                         mode: "requestSaveNewVideo")
     }
+    
+    func requestDeleteVideo(video: Video, index: Int) {
+        let appendix = "delete_video"
+        let url = "http://13.66.48.219:8000/pinpin/\(appendix)/"
+        let parameters = [
+            "type": "delete_video",
+            "username": self.containerName!,
+            "video_db_id": video._videoId!
+            ] as [String: Any]
+        print ("#### SENDING REQUEST [Deleting Video] \n\(parameters)")
+        requestToServer(videoIndex: index,
+                        videoData: video,
+                        url: url,
+                        parameters: parameters,
+                        mode: "requestDeleteVideo")
+    }
+    
 }
 
 extension VideosViewController: NVActivityIndicatorViewable {

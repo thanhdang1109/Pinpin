@@ -65,6 +65,7 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
         self.startActivityAnimating(message: "Uploading Video")
         
         self.tempVideo?.write(toFile: self.tempSavePath, atomically: false)
+        
 //        self.tempVideo.writeToURL(named: self.tempVideoName) { (result, url) in
 //            self.tempSavePath = url?.relativeString
 //            print(self.tempSavePath)
@@ -108,9 +109,7 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
         
 //        self.present(alert, animated: true, completion: nil)
         
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +121,6 @@ class VideosEditViewController: UIViewController, UINavigationControllerDelegate
 
     @objc func finishEdit(_ sender: Any){
         self.view.endEditing(true)
-        self.navigationItem.rightBarButtonItem = nil
     }
 
     override func didReceiveMemoryWarning() {

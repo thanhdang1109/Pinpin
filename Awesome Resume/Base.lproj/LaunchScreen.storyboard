@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Heavy</string>
+        <array key="TrebuchetMSItalic.ttf">
+            <string>TrebuchetMS-Italic</string>
         </array>
     </customFonts>
     <scenes>
@@ -19,48 +19,40 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcb-ZT-EtO">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcb-ZT-EtO">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SCs-HK-OWT">
-                                        <rect key="frame" x="20" y="248.5" width="300" height="150"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ufZ-aG-zLy">
+                                        <rect key="frame" x="117.5" y="273.5" width="140.5" height="100"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="awesome_resume" translatesAutoresizingMaskIntoConstraints="NO" id="mE3-d8-Ch8">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinpin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYt-li-u3l">
+                                                <rect key="frame" x="0.0" y="0.0" width="140.5" height="100"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="Gqh-hX-cUg"/>
+                                                    <constraint firstAttribute="height" constant="100" id="A3P-HZ-kOq"/>
                                                 </constraints>
-                                            </imageView>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awesome Resume" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZg-OI-klx">
-                                                <rect key="frame" x="0.0" y="-268.5" width="300" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="25"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="50"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="Ydh-sD-yF9"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.91754716634750366" green="0.91770458221435547" blue="0.91753727197647095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="SCs-HK-OWT" firstAttribute="leading" secondItem="zcb-ZT-EtO" secondAttribute="leading" constant="20" symbolic="YES" id="6N5-eQ-BqI"/>
-                                    <constraint firstItem="SCs-HK-OWT" firstAttribute="centerX" secondItem="zcb-ZT-EtO" secondAttribute="centerX" id="aWh-72-Uh6"/>
-                                    <constraint firstItem="SCs-HK-OWT" firstAttribute="centerY" secondItem="zcb-ZT-EtO" secondAttribute="centerY" id="kck-tf-mOl"/>
+                                    <constraint firstItem="ufZ-aG-zLy" firstAttribute="centerX" secondItem="zcb-ZT-EtO" secondAttribute="centerX" id="OEr-67-AC3"/>
+                                    <constraint firstItem="ufZ-aG-zLy" firstAttribute="centerY" secondItem="zcb-ZT-EtO" secondAttribute="centerY" id="ejw-W7-jvY"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.91754716629999999" green="0.91770458219999995" blue="0.91753727200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.29603105783462524" green="0.52881288528442383" blue="0.99813038110733032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zcb-ZT-EtO" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="rbH-Gf-LuU"/>
-                            <constraint firstAttribute="bottom" secondItem="zcb-ZT-EtO" secondAttribute="bottom" id="sMM-7A-UH0"/>
-                            <constraint firstItem="zcb-ZT-EtO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sep-Xb-VmI"/>
-                            <constraint firstItem="zcb-ZT-EtO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="yNk-fr-q5s"/>
+                            <constraint firstItem="zcb-ZT-EtO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6J1-8B-Z5y"/>
+                            <constraint firstItem="zcb-ZT-EtO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FBg-SB-ift"/>
+                            <constraint firstItem="zcb-ZT-EtO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kZf-VH-OSH"/>
+                            <constraint firstItem="zcb-ZT-EtO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qD2-Qo-R9d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -70,7 +62,4 @@
             <point key="canvasLocation" x="50.399999999999999" y="373.76311844077964"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="awesome_resume" width="1000" height="1000"/>
-    </resources>
 </document>

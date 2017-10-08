@@ -162,7 +162,7 @@ class FeedsViewController: UITableViewController {
         refreshCtrl.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
-        refreshCtrl.tintColor = UIColor.red
+        refreshCtrl.tintColor = #colorLiteral(red: 0.2941176471, green: 0.5294117647, blue: 1, alpha: 1)
         refreshCtrl.attributedTitle = NSAttributedString(string: "Fetching Friends Feed Video ...")
 
         

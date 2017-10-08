@@ -46,31 +46,59 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.connectionString = "DefaultEndpointsProtocol=https;AccountName=cs1ea921f0a44b4x43fbxa0e;AccountKey=B41efiZWKDOt8Gxi0ku/MrHJJoiM7Aal0JA71dJJG0Nx6GNtkQ8fHZZdi8YnD/rwlaXtbejv18ZSm/DceRSGlw=="
-        
         self.containerName = "videocontainer"
         self.userName = self.defaults.string(forKey: "userName")!
-        
         print("User Name: \(self.userName)")
         print("User Email: " + self.defaults.string(forKey: "userEmail")!)
         print("Container Name: \(self.containerName)")
-        
-        
         requestTableViewData()
-        
-
+            // Request user's videos immediately after login in
         self.navigationItem.title = "My Resume"
-        
-//        configureSmallScreenView()
-        
-        self.tableView.refreshControl = self.refreshCtrl // Adding refresh control
+        self.tableView.refreshControl = self.refreshCtrl
+            // Adding refresh control
         self.tableView.reloadData()
     }
     
-
+    lazy var refreshCtrl: UIRefreshControl = {
+        ///
+        /// Action when activating the refresh controll
+        ///
+        let refreshCtrl = UIRefreshControl()
+        refreshCtrl.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 0.5327750428)
+        refreshCtrl.addTarget(self,
+                              action: #selector(self.handleRefresh(_:)),
+                              for: UIControlEvents.valueChanged)
+        refreshCtrl.tintColor = #colorLiteral(red: 0.2941176471, green: 0.5294117647, blue: 1, alpha: 1)
+        clearTmpDirectory()
+        return refreshCtrl
+    }()
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        VGPlayerCacheManager.shared.cleanAllCache()
+        requestTableViewData()
+        refreshControl.endRefreshing()
+    }
+    
+    func clearTmpDirectory() {
+        ///
+        /// After confirmation of saving video, all temp videos should be removed
+        ///
+        let tmpDirectory = try? FileManager.default.contentsOfDirectory(atPath: NSTemporaryDirectory())
+        for file: String in tmpDirectory! {
+            try? FileManager.default.removeItem(atPath: "\(NSTemporaryDirectory())\(file)")
+        }
+        print ("Temp Files Removed!")
+    }
     
     func removeVideo(video: Video, index: Int){
+        
+        ////////////////////////////////////
+        ///
+        /// Azure Blob Files Handles
+        /// Uploading Blobs (Videos).
+        ///
+        ////////////////////////////////////
         
         let blobLink = video._link!
         let blobName = blobLink.split(separator: "/").last!
@@ -99,19 +127,14 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
                 return
             }
             print(":: Delete Successfully!")
-//            let successAlert = UIAlertController.init(title: "Upload Successfully!", message: "", preferredStyle: .alert)
-//            successAlert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
-//            self.present(successAlert, animated: true, completion: nil)
             DispatchQueue.main.async {
                 self.dataArr.remove(at: index)
                 self.tableView.deleteRows(at: [IndexPath.init(row: index, section: 0)], with: UITableViewRowAnimation.automatic)
                 self.tableView.reloadData()
                 self.stopActivityAnimating()
             }
-
             semaphore.signal()
         })
-        
     }
     
     func uploadVideo(fileName: String, filePath: String, video: Video) {
@@ -119,7 +142,7 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         ////////////////////////////////////
         ///
         /// Azure Blob Files Handles
-        /// Uploading Videos.
+        /// Uploading Blobs (Videos).
         ///
         ////////////////////////////////////
         
@@ -161,10 +184,6 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
                         return
                     }
                     print(":: Upload Successfully!")
-//                    let successAlert = UIAlertController.init(title: "Upload Successfully!", message: "", preferredStyle: .alert)
-//                    successAlert.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
-//                    self.present(successAlert, animated: true, completion: nil)
-                    
                     video._link = onlineLink // Update the link
                     self.requestSaveNewVideo(video: video)
                     self.stopActivityAnimating()
@@ -227,35 +246,7 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         // Pause the method until the above operations complete.
     }
 
-    
-    lazy var refreshCtrl: UIRefreshControl = {
-        /// Action when activating the refresh controll
-        let refreshCtrl = UIRefreshControl()
-        refreshCtrl.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 0.5327750428)
-        refreshCtrl.addTarget(self,
-                              action: #selector(self.handleRefresh(_:)),
-                              for: UIControlEvents.valueChanged)
-        refreshCtrl.tintColor = #colorLiteral(red: 0.7764705882, green: 0.07450980392, blue: 0.04705882353, alpha: 1)
-        clearTmpDirectory()
-        return refreshCtrl
-    }()
-    
-    func clearTmpDirectory() {
-        ///
-        /// After confirmation of saving video, all temp videos should be removed
-        ///
-        let tmpDirectory = try? FileManager.default.contentsOfDirectory(atPath: NSTemporaryDirectory())
-        for file: String in tmpDirectory! {
-            try? FileManager.default.removeItem(atPath: "\(NSTemporaryDirectory())\(file)")
-        }
-        print ("Temp Files Removed!")
-    }
-    
-    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        VGPlayerCacheManager.shared.cleanAllCache()
-        requestTableViewData()
-        refreshControl.endRefreshing()
-    }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         //
@@ -274,15 +265,6 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         currentPlayIndexPath = nil
     }
     
-//    deinit {
-//        if let playerCheck = player {
-//            player.cleanPlayer()
-//        }
-//        removeTableViewObservers()
-//    }
-    
-
-    
     func configureSmallScreenView() {
         
         smallScreenView = UIView()
@@ -292,7 +274,7 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     
     @objc func onPanGesture(_ gesture: UIPanGestureRecognizer) {
         ///
-        ///
+        /// Configure pan gesture on video player
         ///
         let screenBounds = UIScreen.main.bounds
         
@@ -328,26 +310,20 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
     /// Table View Handles
     ///
     ///////////////////////////
-    
     var tableViewContext = 0
-    
     func addTableViewObservers() {
         let options = NSKeyValueObservingOptions([.new, .initial])
         tableView?.addObserver(self, forKeyPath: #keyPath(UITableView.contentOffset), options: options, context: &tableViewContext)
     }
-    
     func removeTableViewObservers() {
         tableView?.removeObserver(self, forKeyPath: #keyPath(UITableView.contentOffset))
     }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArr.count
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         ///
         /// [Override Tableview Function] cellForRowAt
@@ -362,17 +338,13 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
             strongSelf.currentPlayIndexPath = indexPath
         })
         cell.configCell(media: video)
-        
-
         return cell
     }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 345
     }
-    
-    // Enable tableview to reorder the cell
     override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        // Enable tableview to reorder the cell
         return false
     }
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -389,32 +361,14 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         self.dataArr.remove(at: sourceIndexPath.row)
         self.dataArr.insert(rowToMove, at: destinationIndexPath.row)
     }
-    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             self.startActivityAnimating(message: "Deleting Video...")
             let video2delete = self.dataArr[indexPath.row]
             requestDeleteVideo(video: video2delete, index: indexPath.row)
-//            removeVideo(video: video2delete, index: indexPath.row)
-            
         }
     }
-    
-//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//
-//        var deleteButton = UITableViewRowAction(style: .default, title: "Delete", handler: { (action, indexPath) in
-//            self.tableView.dataSource?.tableView!(self.tableView, commit: .delete, forRowAt: indexPath)
-//            return
-//        })
-//        deleteButton.backgroundColor = #colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)
-//
-//        return [deleteButton]
-//    }
-    
-    
-    
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        print(player.displayView.superview)
         if player != nil && player.displayView.isDescendant(of: cell){
             player.cleanPlayer()
             player.displayView.removeFromSuperview()
@@ -438,17 +392,13 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
             player.cleanPlayer()
         }
         configurePlayer()
-        
         cell.mediaContent.addSubview(player.displayView)
         player.displayView.snp.makeConstraints {
             $0.edges.equalTo(cell.mediaContent)
         }
-        
         let path = URL(string:video._link!)!
         print(path)
         player.replaceVideo(path)
-        
-        
         player.play()
     }
     
@@ -507,8 +457,7 @@ class VideosViewController: UITableViewController, SaveDataDelegate {
         self.stopAnimating()
     }
     
-    ///  ---------------   Loading Animation
-    
+    /// Delegation from the Editting Page
     func saveBtnPressed(data: Video){
         ///
         /// Save Data Delegate Function
@@ -548,7 +497,7 @@ extension VideosViewController {
     
     func requestToServer(videoIndex: Int?, videoData: Video?, url: String, parameters: [String: Any], mode: String) {
         /// Request Function to the Server
-        print("---------------- TESTING ---------------")
+        print("---------------- requestToServer mode:\(mode) ---------------")
         switch mode {
         case "requestTableViewData":
             ///
@@ -556,7 +505,6 @@ extension VideosViewController {
             ///
             Alamofire.request(url, method: .post, parameters: parameters, headers: nil)
                 .responseString { response in
-//                    debugPrint(response)
                     /// receive the response
                     switch response.result {
                     case .success:
@@ -675,7 +623,6 @@ extension VideosViewController {
                         parameters: parameters,
                         mode: "requestDeleteVideo")
     }
-    
 }
 
 extension VideosViewController: NVActivityIndicatorViewable {

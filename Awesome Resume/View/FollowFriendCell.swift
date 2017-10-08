@@ -34,10 +34,10 @@ class FollowFriendCell: UITableViewCell {
         self.friendUsrLocation.text = friend._email
         if friend._followed {
             print("Followed!")
-            setBtn(btn: self.friendFollowBtn, backGroundColorNew: #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1), textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "- Unfollow")
+            setBtn(btn: self.friendFollowBtn, backGroundColorNew: #colorLiteral(red: 0.2941176471, green: 0.5294117647, blue: 1, alpha: 1), textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "- Unfollow")
         } else {
             print("Unfollowed!")
-            setBtn(btn: self.friendFollowBtn, backGroundColorNew: #colorLiteral(red: 0.4274509804, green: 0.737254902, blue: 0.3882352941, alpha: 1), textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "+ Follow")
+            setBtn(btn: self.friendFollowBtn, backGroundColorNew: #colorLiteral(red: 0.004859850742, green: 0.09608627111, blue: 0.5749928951, alpha: 1), textColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), text: "+ Follow")
         }
     }
     
